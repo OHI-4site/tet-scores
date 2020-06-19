@@ -547,13 +547,8 @@ CS <- function(layers) {
     dplyr::mutate(layer = "element_wts_cs_km2_x_storage") %>%
     dplyr::select(rgn_id = region_id, habitat, extent_rank, layer)
 
-  weights_dummy <- data.frame(rgn_id = 1,
-                              habitat = "saltmarsh",
-                              extent_rank = 100,
-                              layer = "element_wts_cs_km2_x_storage")
-
   write.csv(
-    weights_dummy, #saving this to toolbox to make calculate scores run (JA 6/19/2020). Expecting this to be updated or removed
+    weights,
     sprintf(here("region/temp/element_wts_cs_km2_x_storage_%s.csv"), scen_year),
     row.names = FALSE
   )
