@@ -997,8 +997,10 @@ LSP <- function(layers) {
   scen_year <- layers$data$scenario_year
 
   # pull in lsp_status layer (this will become three - Jamie ne as referece)
-  lsp_layer <- AlignDataYears(layer_nm = "lsp_status", layers_obj = layers) %>%
-    select(-layer_name)
+  #land
+
+  lsp_land <- AlignDataYears(layer_nm = "lsp_land_status", layers_obj = layers) %>%
+    #dplyr::select(region_id, year, status)
 
   # multiply layer status by 100 to get score
 
