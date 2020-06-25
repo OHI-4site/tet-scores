@@ -1000,13 +1000,33 @@ LSP <- function(layers) {
   #land
 
   lsp_land <- AlignDataYears(layer_nm = "lsp_land_status", layers_obj = layers) %>%
-    #dplyr::select(region_id, year, status)
+    dplyr::select(-layer_name, -lsp_land_status_year) %>%
+    mutate(layer = "land",
+           region_id = 1)
 
-  # multiply layer status by 100 to get score
+  #lagoon
+  lsp_lagoon <- AlignDataYears(layer_nm = "lsp_lagoon_status", layers_obj = layers) %>%
+    dplyr::select(-layer_name, -lsp_lagoon_status_year) %>%
+    mutate(layer = "lagoon",
+           region_id = 1)
 
-  lsp_status <- lsp_layer %>%
-    dplyr::mutate(status = status * 100) %>%
-    dplyr::select(region_id = rgn_id, status, year = scenario_year) %>%
+  #offshore
+
+  lsp_offshore <- AlignDataYears(layer_nm = "lsp_offshore_status", layers_obj = layers) %>%
+    dplyr::select(-layer_name, -lsp_offshore_status_year) %>%
+    mutate(layer = "offshore",
+           region_id = 1)
+
+  # get percent of each and then average to find final score
+
+  lsp_status <- lsp_land %>%
+    bind_rows(lsp_lagoon, lsp_offshore) %>%
+    rowwise() %>%
+    group_by(scenario_year, region_id) %>%
+    mutate(status = mean(status)*100) %>%
+    ungroup() %>%
+    dplyr::select(-layer) %>%
+    distinct() %>%
     dplyr::mutate(dimension = "status")
 
   # calculate trend
@@ -1019,11 +1039,12 @@ LSP <- function(layers) {
 
   # return scores
   lsp_scores <- lsp_status %>%
-    dplyr::filter(year == scen_year) %>%
+    dplyr::filter(scenario_year == scen_year) %>%
     dplyr::mutate(score = status) %>%
-    dplyr::select(-year, -status) %>%
+    dplyr::select(-scenario_year, -status) %>%
     dplyr::bind_rows(lsp_trend) %>%
-    mutate(goal = "LSP")
+    mutate(goal = "LSP") %>%
+    select(goal, dimension, region_id, score)
 
   return(lsp_scores)
 }
