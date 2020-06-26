@@ -1044,7 +1044,7 @@ LSP <- function(layers) {
     dplyr::select(-scenario_year, -status) %>%
     dplyr::bind_rows(lsp_trend) %>%
     mutate(goal = "LSP") %>%
-    select(goal, dimension, rgn_id = region_id, score)
+    select(goal, dimension, region_id, score)
 
   return(lsp_scores)
 }
