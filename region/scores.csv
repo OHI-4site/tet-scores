@@ -1,13 +1,6 @@
 goal,dimension,region_id,score
-AO,future,0,NaN
-AO,future,1,
 AO,pressures,1,32.07
 AO,resilience,1,67.91
-AO,score,0,NaN
-AO,score,1,
-AO,status,0,NaN
-AO,status,1,
-AO,trend,1,
 BD,future,0,84.87
 BD,future,1,84.87
 BD,pressures,1,
@@ -149,12 +142,5 @@ SPP,score,1,74.34
 SPP,status,0,73.25
 SPP,status,1,73.25
 SPP,trend,1,-0.02
-TR,future,0,NaN
-TR,future,1,
 TR,pressures,1,44.82
 TR,resilience,1,35.91
-TR,score,0,NaN
-TR,score,1,
-TR,status,0,NaN
-TR,status,1,
-TR,trend,1,
