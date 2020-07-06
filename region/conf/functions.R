@@ -1229,24 +1229,43 @@ HAB <- function(layers) {
 SPP <- function(layers) {
 
   scen_year <- layers$data$scenario_year
+#since we calculated scores in prep don't need AlginDataYears
+  #load conservation scores and calculate status
 
-status <- AlignDataYears(layer_nm = "spp_status", layers_obj = layers) %>%
-   dplyr::filter(scenario_year == scen_year) %>%
-    dplyr::select(region_id = rgn_id,
-                  score) %>%
-  dplyr::mutate(dimension = "status") %>%
-  dplyr::mutate(score = score * 100)
+  spp_status <- layers$data$spp_status %>%
+   dplyr::filter(year == scen_year) %>% #do i need this?
+  dplyr::filter(!is.na(status)) %>%
+    group_by(region_id, class) %>%
+    summarize(
+      status = mean(status) #mean per class
+    ) %>%
+    group_by(region_id) %>%
+    summarize(
+      score = mean(status),
+      dimension = "status"#average of the 10 classes, final score
+    )
 
-trend <- layers$data$spp_trend %>%
-  dplyr::select(region_id = rgn_id,
-                score) %>%
-  dplyr::mutate(dimension = "trend")
+  #load trend data and calculate the score, same way as the status
+  spp_trend <- layers$data$spp_trend %>%
+    #dplyr::filter(year == scen_year) %>% #do i need this?
+    dplyr::filter(!is.na(trend)) %>%
+    group_by(region_id, class) %>%
+    summarize(
+      trend = mean(trend) #mean per class
+    ) %>%
+    group_by(region_id) %>%
+    summarize(
+      score = mean(trend),
+      dimension = "trend"#average of the 10 classes, final score
+    )
 
-scores <- rbind(status, trend) %>%
+#add threshold - if over 75% of all species were critically endangered, this would get a zero (I don't really get this)
+
+spp_scores <- rbind(spp_status, spp_trend) %>%
     dplyr::mutate(goal = 'SPP') %>%
     dplyr::select(region_id, goal, dimension, score)
 
-  return(scores)
+  return(spp_scores)
 }
 
 BD <- function(scores) {
