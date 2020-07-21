@@ -9,15 +9,29 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-# Introduction
+# Introduction to the Ocean Health Index + (OHI+) Tetiaroa assessment
 - goal of project, joint project (logos)
 - map showing location of islands
 - description of location
 - bit of history
 - bit of natural history
 
-# A bit about the OHI 
+The Ocean Health Index (OHI) is a scientific framework used to measure how healthy oceans are. Understanding the state of our oceans is a first step towards ensuring they can continue providing humans benefits now and in the future. 
+
+OHI global assessments have been completed for 220 coastal nations and territories every year since 2012, and OHI assessments have also been completed at smaller scales. Code, training, and support is also provided for independent groups interested in leading their own OHI assessments. These are called independent OHI assessments, or “OHI+ assessments”. 
+
+This report is a summary of the methods and results for the Tetiaroa OHI+ assessment, completed in 2020 in partnership with the Tetiaroa 4site team. The Tetiaroa OHI+ assessment uses the best-available data to measure progress toward target conditions for benefits provided by the atoll’s marine ecosystems, resulting in benefit-specific and overall health scores on a scale of 0 to 100. 
+
+[insert OHI logo] [insert 4site logo]
+
+
+# Introduction to the global Ocean Health Index (OHI) assessment 
 - (Feel free to copy and paste from website, etc. Also, this section can be the same in both reports).
+
+The global Ocean Health Index assesses ocean health for 220 coastal countries and territories and has been conducted every year starting in 2012. The Index describes how well we are sustainably managing 10 goals for ocean ecosystems which represent the full suite of benefits that people want and need from the ocean. These goals include: artisanal fishing opportunity, biodiversity, carbon storage, clean waters, coastal livelihoods and economies, coastal protection, food provision, natural products, sense of place, and tourism and recreation. Each goal is given a score ranging from 0 to 100, and the full suite of goal scores are then averaged to obtain an overall index score for each region.
+
+For more information about the philosophy of the Ocean Health Index and model development see Halpern et al. (2012, 2015) and http://ohi-science.org/ohi-global/, which includes information about downloading global ocean health data.
+
 
 # Maybe a quick summary of the overall results and conclusions.
 - paragraph of overall, notable/interesting results
@@ -26,6 +40,23 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Goal: Methods/Results
 - Describe what the goal is measuring in the context of the OHI+ region and why this is relevant. I would also include the goals we are not including. I think the following should provide more on narrative descriptions of goals/models (vs. mathematical models and such...these are good to include, but I wouldn't use these in place of the narrative information).
+
+### Artisinal Opportunities (AO)
+
+### Biodiversity (BD)
+
+### Clean Waters (CW)
+
+### Habitat Services (HS)
+
+### Livelihoods (LIV)
+
+### Sense of Place (SP)
+
+### Tourism and Recreation (TR)
+
+## Goals Not Included:
+- list all the goals not included in Tetiaroa OHI+ and why
 
 ## Status
 - Data
