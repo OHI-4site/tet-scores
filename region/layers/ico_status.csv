@@ -1,70 +1,5 @@
 "region_id","year","name","status"
-1,2020,"coconut crab",NA
-1,2020,"hawksbill turtle",0.2
-1,2020,"short-finned pilot whale",1
-1,2020,"olive ridley sea turtle",0.6
-1,2020,"blainville's beaked whale",NA
-1,2020,"melon-headed whale",1
-1,2020,"spinner dolphin",1
-1,2020,"rough-toothed dolphin",1
-1,2020,"clam",0.9
-1,2020,"blacktip reef shark",0.8
-1,2020,"spotted eagle ray",0.8
-1,2020,"lemon shark",0.4
-1,2020,"milk fish",1
-1,2020,"peacock grouper",1
-1,2020,"honeycomb grouper",1
-1,2020,"humpback whale",0.4
-1,2020,"knob-horned coral",1
-1,2020,"lobe coral",0.8
-1,2020,"staghorn coral",0.6
-1,2020,"fire coral",1
-1,2020,"day octopus",1
-1,2020,"threadfin butterfly fish",1
-1,2020,"pennant bannerfish",1
-1,2020,"racoon butterflyfish",1
-1,2020,"lemonpeel angelfish",1
-1,2020,"orangespine unicornfish",1
-1,2020,"bluespine unicornfish",1
-1,2020,"spotted surgeonfish",1
-1,2020,"striated surgeonfish",1
-1,2020,"sea cucumber",1
-1,2020,"bluestreak cleaner wrasse",1
-1,2020,"sixbar wrasse",1
-1,2020,"slingjaw wrasse",1
-1,2020,"bullethead parrotfish",1
-1,2020,"common parrotfish",1
-1,2020,"spotted pufferfish",1
-1,2020,"starry pufferfish",1
-1,2020,"yellow-margined snapper",1
-1,2020,"reef manta ray",0.6
-1,2020,"giant moray",1
-1,2020,"peppered moray eel",1
-1,2020,"green turtle",1
-1,2020,"goldlined emperor",1
-1,2020,"barred jack",1
-1,2020,"giant jack",1
-1,2020,"bristle thighed curley",0.6
-1,2020,"wandering tattler",1
-1,2020,"pacific golden plover",1
-1,2020,"white common tern",1
-1,2020,"red-footed booby",1
-1,2020,"brown booby",1
-1,2020,"pacific reef egret",1
-1,2020,"great frigatebird",1
-1,2020,"lesser frigatebird",1
-1,2020,"leatherback turtle",0.2
-1,2020,"yellowstripe goatfish",1
-1,2020,"helmet gurnard",1
-1,2020,"yellowbanded pipefish",1
-1,2020,"blackblotch lizardfish",1
-1,2020,"blotch-eye soldier firsh",1
-1,2020,"silver squirrelfish",1
-1,2020,"giant squirrelfish",1
-1,2020,"dot-dashed goatfish",1
-1,2020,"moorish idol",1
-1,2020,"loggerhead turtle",0.2
-1,2014,"coconut crab",NA
+1,2014,"coconut crab",0.4
 1,2014,"hawksbill turtle",0.2
 1,2014,"short-finned pilot whale",0.9
 1,2014,"olive ridley sea turtle",0.6
@@ -129,7 +64,7 @@
 1,2014,"dot-dashed goatfish",1
 1,2014,"moorish idol",1
 1,2014,"loggerhead turtle",0.2
-1,2015,"coconut crab",NA
+1,2015,"coconut crab",0.4
 1,2015,"hawksbill turtle",0.2
 1,2015,"short-finned pilot whale",0.9
 1,2015,"olive ridley sea turtle",0.6
@@ -194,7 +129,7 @@
 1,2015,"dot-dashed goatfish",1
 1,2015,"moorish idol",1
 1,2015,"loggerhead turtle",0.2
-1,2016,"coconut crab",NA
+1,2016,"coconut crab",0.4
 1,2016,"hawksbill turtle",0.2
 1,2016,"short-finned pilot whale",0.9
 1,2016,"olive ridley sea turtle",0.6
@@ -259,7 +194,7 @@
 1,2016,"dot-dashed goatfish",1
 1,2016,"moorish idol",1
 1,2016,"loggerhead turtle",0.2
-1,2017,"coconut crab",NA
+1,2017,"coconut crab",0.4
 1,2017,"hawksbill turtle",0.2
 1,2017,"short-finned pilot whale",0.9
 1,2017,"olive ridley sea turtle",0.6
@@ -324,7 +259,7 @@
 1,2017,"dot-dashed goatfish",1
 1,2017,"moorish idol",1
 1,2017,"loggerhead turtle",0.2
-1,2018,"coconut crab",NA
+1,2018,"coconut crab",0.4
 1,2018,"hawksbill turtle",0.2
 1,2018,"short-finned pilot whale",1
 1,2018,"olive ridley sea turtle",0.6
@@ -389,7 +324,7 @@
 1,2018,"dot-dashed goatfish",1
 1,2018,"moorish idol",1
 1,2018,"loggerhead turtle",0.2
-1,2019,"coconut crab",NA
+1,2019,"coconut crab",0.4
 1,2019,"hawksbill turtle",0.2
 1,2019,"short-finned pilot whale",1
 1,2019,"olive ridley sea turtle",0.6
@@ -454,3 +389,68 @@
 1,2019,"dot-dashed goatfish",1
 1,2019,"moorish idol",1
 1,2019,"loggerhead turtle",0.2
+1,2020,"coconut crab",0.4
+1,2020,"hawksbill turtle",0.2
+1,2020,"short-finned pilot whale",1
+1,2020,"olive ridley sea turtle",0.6
+1,2020,"blainville's beaked whale",NA
+1,2020,"melon-headed whale",1
+1,2020,"spinner dolphin",1
+1,2020,"rough-toothed dolphin",1
+1,2020,"clam",0.9
+1,2020,"blacktip reef shark",0.8
+1,2020,"spotted eagle ray",0.8
+1,2020,"lemon shark",0.4
+1,2020,"milk fish",1
+1,2020,"peacock grouper",1
+1,2020,"honeycomb grouper",1
+1,2020,"humpback whale",0.4
+1,2020,"knob-horned coral",1
+1,2020,"lobe coral",0.8
+1,2020,"staghorn coral",0.6
+1,2020,"fire coral",1
+1,2020,"day octopus",1
+1,2020,"threadfin butterfly fish",1
+1,2020,"pennant bannerfish",1
+1,2020,"racoon butterflyfish",1
+1,2020,"lemonpeel angelfish",1
+1,2020,"orangespine unicornfish",1
+1,2020,"bluespine unicornfish",1
+1,2020,"spotted surgeonfish",1
+1,2020,"striated surgeonfish",1
+1,2020,"sea cucumber",1
+1,2020,"bluestreak cleaner wrasse",1
+1,2020,"sixbar wrasse",1
+1,2020,"slingjaw wrasse",1
+1,2020,"bullethead parrotfish",1
+1,2020,"common parrotfish",1
+1,2020,"spotted pufferfish",1
+1,2020,"starry pufferfish",1
+1,2020,"yellow-margined snapper",1
+1,2020,"reef manta ray",0.6
+1,2020,"giant moray",1
+1,2020,"peppered moray eel",1
+1,2020,"green turtle",1
+1,2020,"goldlined emperor",1
+1,2020,"barred jack",1
+1,2020,"giant jack",1
+1,2020,"bristle thighed curley",0.6
+1,2020,"wandering tattler",1
+1,2020,"pacific golden plover",1
+1,2020,"white common tern",1
+1,2020,"red-footed booby",1
+1,2020,"brown booby",1
+1,2020,"pacific reef egret",1
+1,2020,"great frigatebird",1
+1,2020,"lesser frigatebird",1
+1,2020,"leatherback turtle",0.2
+1,2020,"yellowstripe goatfish",1
+1,2020,"helmet gurnard",1
+1,2020,"yellowbanded pipefish",1
+1,2020,"blackblotch lizardfish",1
+1,2020,"blotch-eye soldier firsh",1
+1,2020,"silver squirrelfish",1
+1,2020,"giant squirrelfish",1
+1,2020,"dot-dashed goatfish",1
+1,2020,"moorish idol",1
+1,2020,"loggerhead turtle",0.2
