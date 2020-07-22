@@ -24,13 +24,14 @@ This report is a summary of the methods and results for the Tetiaroa OHI+ assess
 
 [insert OHI logo] [insert 4site logo]
 
-##About Tetiaroa Atoll 
+## About Tetiaroa Atoll 
 
-![Map of Tetiaroa Atoll](Home/github/tet-scores/documents/methods-results/assets/map_from_web.png)
+![Map of Tetiaroa Atoll](./assets/map_from_web.png)
 
-Tetiaroa Atoll is a group of 13 small islands located 33 miles north of Tahiti. The islands are privately owned, purchased by Marlon Brando in 1967, and remain under the ownership of his trust today. The waters around the island fall under the governance of French Polynesia. 
+Tetiaroa Atoll is a group of 13 small islands located 33 miles north of Tahiti. Originally settled over 4000 years ago, it served as a retreat for Tahitian royalty, until the arrival of James Cook in 1769. Despite falling under control of the British Crown for many years thereafter, local people considered the island as sacred land. Archaeological remains of temples and platforms built can still be found on various islets.  
 
-(Information about the environment)
+In the 1920s, much of the natural vegetation was removed to make way for coconut palm plantations, which remained active until **XXX**. In 1967, Tetiaroa was purchased by Marlon Brando, and remains under the ownership of his trust today. The waters around the island fall under the governance of French Polynesia. 
+
 
 A luxury eco-resort was established on one of the islands, Onetahi, in 2014. Called The Brando, is it managed by Pacific Beachcomber, LLC. The resort strives to be as sustainable as possible, by minimizing visitors' impact on the natural environment and creating programs that showcase the ecology and culture of Polynesia. 
 
