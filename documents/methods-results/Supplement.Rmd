@@ -93,8 +93,6 @@ The Biodiversity (BD) goal is made up of two subgoals, Habitats (HAB) and Specie
 
 #### Species (SPP)
 
-### Clean Waters (CW)
-
 ### Habitat Services (HS)
 The Habitat Services (HS) goal is made up of two subgoals, Carbon Storage (CS) and Coastal Protection (CP).
 
@@ -182,6 +180,8 @@ The following goals that are typically included in the OHI global assessment wer
 The Food Provision (FP) goal is made up of two subgoals, Fisheries (FIS) and Mariculture (MAR).
 
 #### Fisheries (FIS)
+
+### Clean Waters (CW)
 
 #### Mariculture (MAR)
 
