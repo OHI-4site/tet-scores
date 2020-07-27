@@ -35,6 +35,9 @@ library(zoo)
 library(here)
 library(ohicore)
 
+#add helpful function
+"%!in%" <- function(x,y)!('%in%'(x,y))
+
 ## set the working directory to a filepath we all have
 setwd(here::here('region'))
 ```

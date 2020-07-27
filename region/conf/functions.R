@@ -956,38 +956,59 @@ ICO <- function(layers) {
 LSP <- function(layers) {
   scen_year <- layers$data$scenario_year
 
-  # pull in lsp_status layer (this will become three - Jamie ne as referece)
-  #land
+  # pull in lsp_status layer
 
-  lsp_land <- AlignDataYears(layer_nm = "lsp_land_status", layers_obj = layers) %>%
-    dplyr::select(-layer_name, -lsp_land_status_year) %>%
-    mutate(layer = "land",
-           region_id = 1)
 
-  #lagoon
-  lsp_lagoon <- AlignDataYears(layer_nm = "lsp_lagoon_status", layers_obj = layers) %>%
-    dplyr::select(-layer_name, -lsp_lagoon_status_year) %>%
-    mutate(layer = "lagoon",
-           region_id = 1)
+  lsp_all <- AlignDataYears(layer_nm = "lsp_status", layers_obj = layers) %>%
+    dplyr::select(-layer_name, -lsp_status_year)
 
-  #offshore
+  #calculate land scores
 
-  lsp_offshore <- AlignDataYears(layer_nm = "lsp_offshore_status", layers_obj = layers) %>%
-    dplyr::select(-layer_name, -lsp_offshore_status_year) %>%
-    mutate(layer = "offshore",
-           region_id = 1)
+  land_status <- lsp_all %>%
+    filter(zone %!in% c("Offshore","No take zone","Rest of lagoon")) %>%
+    group_by(scenario_year) %>%
+    summarize(
+      status = weighted.mean(status,area)
+    ) #1
 
-  # get percent of each and then average to find final score
+  #calculate lagoon scores
 
-  lsp_status <- lsp_land %>%
-    bind_rows(lsp_lagoon, lsp_offshore) %>%
-    rowwise() %>%
-    group_by(scenario_year, region_id) %>%
-    mutate(status = mean(status)*100) %>%
-    ungroup() %>%
-    dplyr::select(-layer) %>%
-    distinct() %>%
-    dplyr::mutate(dimension = "status")
+  lagoon_status <- lsp_all %>%
+    filter(zone %in% c("No take zone","Rest of lagoon")) %>%
+    group_by(scenario_year) %>%
+    summarize(
+      status = mean(status)
+    )
+
+   #offshore, and add the rest to get the final status
+
+  lsp_status <- lsp_all %>%
+    filter(zone %in% "Offshore") %>%
+    group_by(scenario_year) %>%
+    summarize(
+      status = mean(status)
+    ) %>%
+    bind_rows(land_status, lagoon_status) %>%
+    group_by(scenario_year) %>%
+    summarize(
+      status = mean(status)
+    ) %>%
+    mutate(
+      status = status*100,
+      region_id = 1,
+      dimension = "status"
+    )
+
+
+  # lsp_status <- lsp_land %>%
+  #   bind_rows(lsp_lagoon, lsp_offshore) %>%
+  #   rowwise() %>%
+  #   group_by(scenario_year, region_id) %>%
+  #   mutate(status = mean(status)*100) %>%
+  #   ungroup() %>%
+  #   dplyr::select(-layer) %>%
+  #   distinct() %>%
+  #   dplyr::mutate(dimension = "status")
 
   # calculate trend
 
