@@ -1255,23 +1255,21 @@ SPP <- function(layers) {
     ) %>%
     group_by(region_id) %>%
     summarize(
-      score = mean(trend),
-      dimension = "trend"#average of the 10 classes, final score
+      score = mean(trend),    #average of the 10 classes, final score
+      dimension = "trend",
+      goal = "SPP"
     )
 
 #add threshold - if over 75% of all species were critically endangered, this would get a zero (I don't really get this)
 
-  # scores <- spp_status %>%
-  #   mutate(score = 100*(0.25-status)/0.25, #this assigns a region score of 0 if 80% of all species were critically endangered
-  #          dimension = "status",
-  #          goal = "SPP") %>%
-  #   select(-status) %>%
-  #   bind_rows(rgn_trend)
+  spp_scores <- spp_status %>%
+    mutate(status = 1 - score, #because I scored it backwards
+           score = 100*((0.75-status)/0.75), #this assigns a region score of 0 if 80% of all species were critically endangered
+           dimension = "status",
+           goal = "SPP") %>%
+    select(-status) %>%
+    bind_rows(spp_trend)
 
-
-spp_scores <- rbind(spp_status, spp_trend) %>%
-    dplyr::mutate(goal = 'SPP') %>%
-    dplyr::select(region_id, goal, dimension, score)
 
   return(spp_scores)
 }
