@@ -1566,7 +1566,7 @@ div.tocify {
 </div>
 
 
-<p>Compiled on Fri Jul 24 16:17:46 2020.</p>
+<p>Compiled on Tue Jul 28 15:07:15 2020.</p>
 <hr />
 <div id="ocean-health-index-ohi-global-assessment" class="section level1">
 <h1><span class="header-section-number">1</span> Ocean Health Index (OHI) Global Assessment</h1>
@@ -1617,35 +1617,69 @@ div.tocify {
 <p>The Biodiversity (BD) goal is made up of two subgoals, Habitats (HAB) and Species (SPP).</p>
 <div id="habitats-hab" class="section level4">
 <h4><span class="header-section-number">4.1.1.1</span> Habitats (HAB)</h4>
+<div id="land-habitat" class="section level5">
+<h5><span class="header-section-number">4.1.1.1.1</span> Land Habitat</h5>
+<p>For this assessment, we considered the all land areas coastal habitat, since the motus are so small and all closely linked to ocean ecosystems. Because a long term goal for Tetiaroa is to restore abandoned coconut plantation areas to native vegetation, the status score of the land habitat will be a reflection of how much native vegetation versus non native vegetation exists on the motus.</p>
+<p>Data used for this goal comes from a 2018 forest monitoring monitoring project undertaken by researchers from the University of French Polynesia and Oxford University (McIntosh et al., 2018) in addition to the CASUP_vegetation_flora_JYM_2015.docx found in the dropbox. Because we are not able to access to database online, these documents simply help us understand what vegetation is dominant on each motu. We will assign scores based on whether the motu is dominated by native vegetation or by coconut grove.</p>
+<p>To summarize, our final scoring scheme is as follows:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Habitat</th>
+<th align="center">Score</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Only native vegetation</td>
+<td align="center">1</td>
+</tr>
+<tr class="even">
+<td align="left">Native vegetation dominant, but some coconut grove</td>
+<td align="center">0.6</td>
+</tr>
+<tr class="odd">
+<td align="left">Coconut grove or altered landscape dominant, some vegetation</td>
+<td align="center">0.3</td>
+</tr>
+<tr class="even">
+<td align="left">Dense coconut grove present, lacking details on native vegetation</td>
+<td align="center">0</td>
+</tr>
+</tbody>
+</table>
+<p>Each motu received a score, and with the final score calculated as the average of the motus weighted by their respective areas.</p>
+<p>[equation?]</p>
+</div>
 </div>
 <div id="species-spp" class="section level4">
 <h4><span class="header-section-number">4.1.1.2</span> Species (SPP)</h4>
 </div>
 </div>
-<div id="clean-waters-cw" class="section level3">
-<h3><span class="header-section-number">4.1.2</span> Clean Waters (CW)</h3>
-</div>
 <div id="habitat-services-hs" class="section level3">
-<h3><span class="header-section-number">4.1.3</span> Habitat Services (HS)</h3>
+<h3><span class="header-section-number">4.1.2</span> Habitat Services (HS)</h3>
 <p>The Habitat Services (HS) goal is made up of two subgoals, Carbon Storage (CS) and Coastal Protection (CP).</p>
 <div id="carbon-storage-cs" class="section level4">
-<h4><span class="header-section-number">4.1.3.1</span> Carbon Storage (CS)</h4>
+<h4><span class="header-section-number">4.1.2.1</span> Carbon Storage (CS)</h4>
 </div>
 <div id="coastal-protection-cp" class="section level4">
-<h4><span class="header-section-number">4.1.3.2</span> Coastal Protection (CP)</h4>
+<h4><span class="header-section-number">4.1.2.2</span> Coastal Protection (CP)</h4>
 </div>
 </div>
 <div id="livelihoods-liv" class="section level3">
-<h3><span class="header-section-number">4.1.4</span> Livelihoods (LIV)</h3>
+<h3><span class="header-section-number">4.1.3</span> Livelihoods (LIV)</h3>
 </div>
 <div id="sense-of-place-sp" class="section level3">
-<h3><span class="header-section-number">4.1.5</span> Sense of Place (SP)</h3>
+<h3><span class="header-section-number">4.1.4</span> Sense of Place (SP)</h3>
 <p>The Sense of Place (SP) goal is made up of two subgoals, Iconic Species (ICO) and Lasting Special Places (LSP).</p>
-<div id="iconic-species-ico" class="section level4">
-<h4><span class="header-section-number">4.1.5.1</span> Iconic Species (ICO)</h4>
+<div id="iconic-species-ico." class="section level4">
+<h4><span class="header-section-number">4.1.4.1</span> Iconic Species (ICO).</h4>
+<p>The Iconic Species goal aims to assess the conservation status of species that have particular value to an area. We decided that for this assessment, our iconic species list would be the list of species highlighted on the <a href="https://www.tetiaroasociety.org/index.php/island">Tetiaroa Society’s website</a>.</p>
+<p>After compiling a list of species from this source, we pulled its conservation status using the IUCN RRedlist package and then assign each species a score based on its conservation status. The overall score is determined by finding the average score per species class, and then taking the overall average among the classes. The table below shows how each IUCN conservation status is scored:</p>
+<p>[insert table]</p>
 </div>
 <div id="lasting-special-places-lsp" class="section level4">
-<h4><span class="header-section-number">4.1.5.2</span> Lasting Special Places (LSP)</h4>
+<h4><span class="header-section-number">4.1.4.2</span> Lasting Special Places (LSP)</h4>
 <p>To calculate a score for lasting special places on or around Tetiaroa, we adjusted the methods from what the global index uses to better reflect the long term goal of The Tetiaroa Society and its partners - to create multi-stakeholder management plans for all of Tetiaroa’s land and resources. First, instead of just calculating protected area within 1km of the shore, we will treat all land areas as coastal land on Tetiaroa, since most motus (individual islands) are not wider than 1 km anyway. Second, instead of creating a buffer of 3nm and treating that as all offshore, we will split up the marine area into two categories: the lagoon area, and the area extending outwards 3nm from each motu (“offshore”).</p>
 <p>Lastly, we will adjust what we define as “area protected”, and rather compute each areas score based on if they meet four criteria, developed through conversations with Frank Murphy and Neil Davies:</p>
 <ol style="list-style-type: decimal">
@@ -1708,7 +1742,7 @@ div.tocify {
 </div>
 </div>
 <div id="tourism-and-recreation-tr" class="section level3">
-<h3><span class="header-section-number">4.1.6</span> Tourism and Recreation (TR)</h3>
+<h3><span class="header-section-number">4.1.5</span> Tourism and Recreation (TR)</h3>
 <p>For the goal, we calculated a score describing sustainability of <a href="https://thebrando.com/">The Brando</a> resort, the eco-resort on Onetahi. Data for this goal are descriptive sustainability metrics gathered from <a href="https://en.calameo.com/read/004500545654d0392cc93">SA Beachcomber’s 2019 sustainability report</a>. They are all percentages (i.e. 80% energy provided by solar).</p>
 <p>We did inquire about actual data from The Brando, contacting Alban Perret (sustainability manager). He was not able to share any data at this time, as The Brando has had to push their sustainability work to 2021. Alban said to reach out again in Q2 2021 for an update.</p>
 <p>The Brando has already achieved far more in terms of sustainability than most resorts, so setting a reference point is tricky. They were the first resort building to receive LEED Platinum certification, and already have a very low impact. We’ll assume that being 100% sustainable, i.e. have zero footprint, is a goal. While it does not seem totally feasible, the 2019 sustainability report outlines the following broad goal, which supports this reference point:</p>
@@ -1736,21 +1770,24 @@ div.tocify {
 <div id="fisheries-fis" class="section level4">
 <h4><span class="header-section-number">4.2.1.1</span> Fisheries (FIS)</h4>
 </div>
+</div>
+<div id="clean-waters-cw" class="section level3">
+<h3><span class="header-section-number">4.2.2</span> Clean Waters (CW)</h3>
 <div id="mariculture-mar" class="section level4">
-<h4><span class="header-section-number">4.2.1.2</span> Mariculture (MAR)</h4>
+<h4><span class="header-section-number">4.2.2.1</span> Mariculture (MAR)</h4>
 </div>
 </div>
 <div id="artisanal-fishing-opportunity-ao" class="section level3">
-<h3><span class="header-section-number">4.2.2</span> Artisanal Fishing Opportunity (AO)</h3>
+<h3><span class="header-section-number">4.2.3</span> Artisanal Fishing Opportunity (AO)</h3>
 </div>
 <div id="natural-products-np" class="section level3">
-<h3><span class="header-section-number">4.2.3</span> Natural Products (NP)</h3>
+<h3><span class="header-section-number">4.2.4</span> Natural Products (NP)</h3>
 </div>
 <div id="livelihoods-economies-le" class="section level3">
-<h3><span class="header-section-number">4.2.4</span> Livelihoods &amp; Economies (LE)</h3>
+<h3><span class="header-section-number">4.2.5</span> Livelihoods &amp; Economies (LE)</h3>
 <p>The Livelihoods &amp; Economies (LE) goal is made up of two subgoals, Livelihoods (LIV) and Economies (ECO). While LIV was included as a goal in the Tetiaroa OHI+ assessment, ECO was not.</p>
 <div id="economies-eco" class="section level4">
-<h4><span class="header-section-number">4.2.4.1</span> Economies (ECO)</h4>
+<h4><span class="header-section-number">4.2.5.1</span> Economies (ECO)</h4>
 <hr />
 </div>
 </div>

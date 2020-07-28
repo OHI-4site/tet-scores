@@ -91,6 +91,25 @@ The Biodiversity (BD) goal is made up of two subgoals, Habitats (HAB) and Specie
 
 #### Habitats (HAB)
 
+##### Land Habitat
+
+For this assessment, we considered the all land areas coastal habitat, since the motus are so small and all closely linked to ocean ecosystems. Because a long term goal for Tetiaroa is to restore abandoned coconut plantation areas to native vegetation, the status score of the land habitat will be a reflection of how much native vegetation versus non native vegetation exists on the motus. 
+
+Data used for this goal comes from a 2018 forest monitoring monitoring project undertaken by researchers from the University of French Polynesia and Oxford University (McIntosh et al., 2018) in addition to the CASUP_vegetation_flora_JYM_2015.docx found in the dropbox. Because we are not able to access to database online, these documents simply help us understand what vegetation is dominant on each motu. We will assign scores based on whether the motu is dominated by native vegetation or by coconut grove. 
+
+To summarize, our final scoring scheme is as follows: 
+
+| Habitat | Score
+| :--------------- | :-----: |
+| Only native vegetation | 1 |
+| Native vegetation dominant, but some coconut grove | 0.6 |
+| Coconut grove or altered landscape dominant, some vegetation | 0.3 |
+| Dense coconut grove present, lacking details on native vegetation | 0 |
+
+Each motu received a score, and with the final score calculated as the average of the motus weighted by their respective areas. 
+
+[equation?]
+
 #### Species (SPP)
 
 ### Habitat Services (HS)
@@ -105,7 +124,13 @@ The Habitat Services (HS) goal is made up of two subgoals, Carbon Storage (CS) a
 ### Sense of Place (SP)
 The Sense of Place (SP) goal is made up of two subgoals, Iconic Species (ICO) and Lasting Special Places (LSP).
 
-#### Iconic Species (ICO)
+#### Iconic Species (ICO). 
+
+The Iconic Species goal aims to assess the conservation status of species that have particular value to an area. We decided that for this assessment, our iconic species list would be the list of species highlighted on the [Tetiaroa Society's website](https://www.tetiaroasociety.org/index.php/island).
+
+After compiling a list of species from this source, we pulled its conservation status using the IUCN RRedlist package and then assign each species a score based on its conservation status. The overall score is determined by finding the average score per species class, and then taking the overall average among the classes. The table below shows how each IUCN conservation status is scored: 
+
+[insert table]
 
 #### Lasting Special Places (LSP)
 
@@ -163,9 +188,6 @@ There are a handful of green / eco / sustainable tourism certifications out ther
 * Energy use
 * Waste & Recycling
 * Water management
-
-
-
 
 
 
