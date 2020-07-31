@@ -728,47 +728,48 @@ TR <- function(layers) {
   ##  E   = Ep                         # Ep: % of direct tourism jobs. tr_jobs_pct_tourism.csv
   ##  S   = (S_score - 1) / (7 - 1)    # S_score: raw TTCI score, not normalized (1-7). tr_sustainability.csv
   ##  Xtr = E * S
-  pct_ref <- 90
+  ##pct_ref <- 90
 
   scen_year <- layers$data$scenario_year
 
 
   ## read in layers
-  tourism <-
-    AlignDataYears(layer_nm = "tr_jobs_pct_tourism", layers_obj = layers) %>%
-    dplyr::select(-layer_name)
-  sustain <-
-    AlignDataYears(layer_nm = "tr_sustainability", layers_obj = layers) %>%
+  tr_data <-
+    AlignDataYears(layer_nm = "tr_status", layers_obj = layers) %>%
     dplyr::select(-layer_name)
 
-  tr_data  <-
-    dplyr::full_join(tourism, sustain, by = c('rgn_id', 'scenario_year'))
 
-  tr_model <- tr_data %>%
-    dplyr::mutate(E   = Ep,
-           S   = (S_score - 1) / (7 - 1),
-           # scale score from 1 to 7.
-           Xtr = E * S)
+  # tr_model <- tr_data %>%
+  #   dplyr::mutate(E   = Ep,
+  #          S   = (S_score - 1) / (7 - 1),
+  #          # scale score from 1 to 7.
+  #          Xtr = E * S)
 
 
   # assign NA for uninhabitated islands (i.e., islands with <100 people)
-  if (conf$config$layer_region_labels == 'rgn_global') {
-    unpopulated = layers$data$uninhabited %>%
-      dplyr::filter(est_population < 100 | is.na(est_population)) %>%
-      dplyr::select(rgn_id)
-    tr_model$Xtr = ifelse(tr_model$rgn_id %in% unpopulated$rgn_id,
-                            NA,
-                          tr_model$Xtr)
-  }
+  # if (conf$config$layer_region_labels == 'rgn_global') {
+  #   unpopulated = layers$data$uninhabited %>%
+  #     dplyr::filter(est_population < 100 | is.na(est_population)) %>%
+  #     dplyr::select(rgn_id)
+  #   tr_model$Xtr = ifelse(tr_model$rgn_id %in% unpopulated$rgn_id,
+  #                           NA,
+  #                         tr_model$Xtr)
+  # }
+
+  ### Create status df for 2020
+  tr_status <- tr_data %>%
+    filter(scenario_year == scen_year) %>%
+    mutate(
+      dimension = 'status'
+    ) %>%
+    dplyr::select(region_id,score = status,dimension)
 
 
-
-  ### Calculate status based on quantile reference (see function call for pct_ref)
-  tr_model <- tr_model %>%
-    dplyr::filter(scenario_year >=2008) %>%
-    dplyr::mutate(Xtr_q = quantile(Xtr, probs = pct_ref / 100, na.rm = TRUE)) %>%
-    dplyr::mutate(status  = ifelse(Xtr / Xtr_q > 1, 1, Xtr / Xtr_q)) %>% # rescale to qth percentile, cap at 1
-    dplyr::ungroup()
+  # tr_model <- tr_model %>%
+  #   dplyr::filter(scenario_year >=2008) %>%
+  #   dplyr::mutate(Xtr_q = quantile(Xtr, probs = pct_ref / 100, na.rm = TRUE)) %>%
+  #   dplyr::mutate(status  = ifelse(Xtr / Xtr_q > 1, 1, Xtr / Xtr_q)) %>% # rescale to qth percentile, cap at 1
+  #   dplyr::ungroup()
 
   # get status
   tr_status <- tr_model %>%
@@ -777,36 +778,32 @@ TR <- function(layers) {
     dplyr::mutate(score = score * 100) %>%
     dplyr::mutate(dimension = 'status')
   ## temporary if empty
-  if (dim(tr_status)[1] < 1) {
-    tr_status <- data.frame(region_id = 1,
-                          score = NA,
-                          dimension = "status")
-  }
+  # if (dim(tr_status)[1] < 1) {
+  #   tr_status <- data.frame(region_id = 1,
+  #                         score = NA,
+  #                         dimension = "status")
+  # }
 
   # calculate trend
 
-  trend_data <- tr_model %>%
-    dplyr::filter(!is.na(status))
+  # trend_data <- tr_model %>%
+  #   dplyr::filter(!is.na(status))
 
   trend_years <- (scen_year - 4):(scen_year)
 
   tr_trend <-
-    CalculateTrend(status_data = trend_data, trend_years = trend_years)
+    CalculateTrend(status_data = tr_data, trend_years = trend_years)
+
   ## temporary if empty
-  if (dim(tr_trend)[1] < 1) {
-    tr_trend <- data.frame(region_id = 1,
-                            score = NA,
-                            dimension = "trend")
-  }
+  # if (dim(tr_trend)[1] < 1) {
+  #   tr_trend <- data.frame(region_id = 1,
+  #                           score = NA,
+  #                           dimension = "trend")
+  # }
 
   # bind status and trend by rows
-  tr_score <- dplyr::bind_rows(tr_status, tr_trend) %>%
+  scores <- dplyr::bind_rows(tr_status, tr_trend) %>%
     dplyr::mutate(goal = 'TR')
-
-
-  # return final scores
-  scores <- tr_score %>%
-    dplyr::select(region_id, goal, dimension, score)
 
   return(scores)
 }
