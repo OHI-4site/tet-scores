@@ -82,10 +82,10 @@ ICO,score,1,93.8
 ICO,status,0,89.84
 ICO,status,1,89.84
 ICO,trend,1,0.01
-Index,future,0,74.22
-Index,future,1,74.22
-Index,score,0,71.07
-Index,score,1,71.07
+Index,future,0,63.74
+Index,future,1,63.74
+Index,score,0,61.04
+Index,score,1,61.04
 LE,future,0,60.21
 LE,future,1,60.21
 LE,pressures,1,
@@ -142,5 +142,12 @@ SPP,score,1,86.7
 SPP,status,0,84.99
 SPP,status,1,84.99
 SPP,trend,1,0
+TR,future,0,0.84
+TR,future,1,0.84
 TR,pressures,1,44.82
 TR,resilience,1,35.91
+TR,score,0,0.86
+TR,score,1,0.86
+TR,status,0,0.87
+TR,status,1,0.87
+TR,trend,1,0
