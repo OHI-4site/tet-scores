@@ -772,11 +772,11 @@ TR <- function(layers) {
   #   dplyr::ungroup()
 
   # get status
-  tr_status <- tr_model %>%
-    dplyr::filter(scenario_year == scen_year) %>%
-    dplyr::select(region_id = rgn_id, score = status) %>%
-    dplyr::mutate(score = score * 100) %>%
-    dplyr::mutate(dimension = 'status')
+  # tr_status <- tr_model %>%
+  #   dplyr::filter(scenario_year == scen_year) %>%
+  #   dplyr::select(region_id = rgn_id, score = status) %>%
+  #   dplyr::mutate(score = score * 100) %>%
+  #   dplyr::mutate(dimension = 'status')
   ## temporary if empty
   # if (dim(tr_status)[1] < 1) {
   #   tr_status <- data.frame(region_id = 1,
