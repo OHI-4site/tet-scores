@@ -845,32 +845,43 @@ LIV <- function(layers) {
 
 ECO <- function(layers) {
 
-  # NOTE: scripts and related files for calculating these subgoals is located:
-  # region/archive
-  # These data are no longer available and status/trend have not been updated since 2013
-
   scen_year <- layers$data$scenario_year
 
   ## status data
-  status_eco <-
+  eco_data <-
     AlignDataYears(layer_nm = "eco_status", layers_obj = layers) %>%
     dplyr::select(-layer_name, -eco_status_year) %>%
     dplyr::mutate(goal = "ECO") %>%
-    dplyr::filter(scenario_year == scen_year) %>%
-    dplyr::select(region_id = rgn_id, goal, score = status) %>%
-    dplyr::mutate(dimension = 'status')
-
-# trend data
-  trend_eco <-
-    AlignDataYears(layer_nm = "eco_trend", layers_obj = layers) %>%
-    dplyr::select(-layer_name, -eco_trend_year) %>%
-    dplyr::mutate(goal = "ECO") %>%
-    dplyr::filter(scenario_year == scen_year) %>%
-    dplyr::select(region_id = rgn_id, goal, score = trend) %>%
-    dplyr::mutate(dimension = 'trend')
+    dplyr::select(year = scenario_year, category, income, status, region_id, goal)
 
 
-    scores <- rbind(status_eco, trend_eco) %>%
+eco_status <- eco_data %>%
+  dplyr::filter(year == scen_year) %>%
+  dplyr::select(region_id, goal, score = status) %>%
+  dplyr::mutate(
+    dimension = 'status',
+    score = score*100)
+
+# calculate trend - note we only use 3 years of data here
+
+  trend_years <- (scen_year - 2):(scen_year)
+
+  eco_trend <-
+    CalculateTrend(status_data = eco_data, trend_years = trend_years) %>%
+    mutate(
+      goal = "ECO"
+    )#does this make sense?
+
+  # trend_eco <-
+  #   AlignDataYears(layer_nm = "eco_trend", layers_obj = layers) %>%
+  #   dplyr::select(-layer_name, -eco_trend_year) %>%
+  #   dplyr::mutate(goal = "ECO") %>%
+  #   dplyr::filter(scenario_year == scen_year) %>%
+  #   dplyr::select(region_id = rgn_id, goal, score = trend) %>%
+  #   dplyr::mutate(dimension = 'trend')
+
+
+    scores <- rbind(eco_status, eco_trend) %>%
     dplyr::select(region_id, goal, dimension, score)
 
   return(scores)
