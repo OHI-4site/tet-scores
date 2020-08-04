@@ -1281,13 +1281,13 @@ window.initializeCodeFolding = function(show) {
   var currentIndex = 1;
 
   // select all R code blocks
-  var rCodeBlocks = $('pre.r, pre.python, pre.bash, pre.sql, pre.cpp, pre.stan, pre.julia, pre.foldable');
+  var rCodeBlocks = $('pre.r, pre.python, pre.bash, pre.sql, pre.cpp, pre.stan, pre.julia');
   rCodeBlocks.each(function() {
 
     // create a collapsable div to wrap the code in
     var div = $('<div class="collapse r-code-collapse"></div>');
-    show = (show || $(this).hasClass('fold-show')) && !$(this).hasClass('fold-hide');
-    if (show) div.addClass('in');
+    if (show || $(this)[0].classList.contains('fold-show'))
+      div.addClass('in');
     var id = 'rcode-643E0F36' + currentIndex++;
     div.attr('id', id);
     $(this).before(div);
@@ -1321,22 +1321,6 @@ window.initializeCodeFolding = function(show) {
   });
 
 }
-</script>
-<script>// Hide empty <a> tag within highlighted CodeBlock for screen reader accessibility (see https://github.com/jgm/pandoc/issues/6352#issuecomment-626106786) -->
-// v0.0.1
-// Written by JooYoung Seo (jooyoung@psu.edu) and Atsushi Yasumoto on June 1st, 2020.
-
-document.addEventListener('DOMContentLoaded', function() {
-  const codeList = document.getElementsByClassName("sourceCode");
-  for (var i = 0; i < codeList.length; i++) {
-    var linkList = codeList[i].getElementsByTagName('a');
-    for (var j = 0; j < linkList.length; j++) {
-      if (linkList[j].innerHTML === "") {
-        linkList[j].setAttribute('aria-hidden', 'true');
-      }
-    }
-  }
-});
 </script>
 
 
@@ -1566,7 +1550,7 @@ div.tocify {
 </div>
 
 
-<p>Compiled on Tue Jul 28 15:07:15 2020.</p>
+<p>Compiled on Mon Aug 3 16:07:59 2020.</p>
 <hr />
 <div id="ocean-health-index-ohi-global-assessment" class="section level1">
 <h1><span class="header-section-number">1</span> Ocean Health Index (OHI) Global Assessment</h1>
@@ -1620,40 +1604,72 @@ div.tocify {
 <div id="land-habitat" class="section level5">
 <h5><span class="header-section-number">4.1.1.1.1</span> Land Habitat</h5>
 <p>For this assessment, we considered the all land areas coastal habitat, since the motus are so small and all closely linked to ocean ecosystems. Because a long term goal for Tetiaroa is to restore abandoned coconut plantation areas to native vegetation, the status score of the land habitat will be a reflection of how much native vegetation versus non native vegetation exists on the motus.</p>
-<p>Data used for this goal comes from a 2018 forest monitoring monitoring project undertaken by researchers from the University of French Polynesia and Oxford University (McIntosh et al., 2018) in addition to the CASUP_vegetation_flora_JYM_2015.docx found in the dropbox. Because we are not able to access to database online, these documents simply help us understand what vegetation is dominant on each motu. We will assign scores based on whether the motu is dominated by native vegetation or by coconut grove.</p>
+<p>Data used for this goal comes from a 2018 forest monitoring monitoring project undertaken by researchers from the University of French Polynesia and Oxford University (McIntosh et al., 2018) in addition to the CASUP_vegetation_flora_JYM_2015.docx found in the dropbox. Because we are not able to access the database online, these documents simply help us understand what vegetation is dominant on each motu. We will assign scores based on whether the motu is dominated by native vegetation or by coconut grove.</p>
 <p>To summarize, our final scoring scheme is as follows:</p>
-<table>
-<thead>
-<tr class="header">
-<th align="left">Habitat</th>
-<th align="center">Score</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">Only native vegetation</td>
-<td align="center">1</td>
-</tr>
-<tr class="even">
-<td align="left">Native vegetation dominant, but some coconut grove</td>
-<td align="center">0.6</td>
-</tr>
-<tr class="odd">
-<td align="left">Coconut grove or altered landscape dominant, some vegetation</td>
-<td align="center">0.3</td>
-</tr>
-<tr class="even">
-<td align="left">Dense coconut grove present, lacking details on native vegetation</td>
-<td align="center">0</td>
-</tr>
-</tbody>
-</table>
+<p><strong>Table 5.3. Weights for assessment of species status based on IUCN risk categories</strong> | Habitat | Score | :————— | :—–: | | Only native vegetation | 1 | | Native vegetation dominant, but some coconut grove | 0.6 | | Coconut grove or altered landscape dominant, some vegetation | 0.3 | | Dense coconut grove present, lacking details on native vegetation | 0 |</p>
 <p>Each motu received a score, and with the final score calculated as the average of the motus weighted by their respective areas.</p>
 <p>[equation?]</p>
 </div>
 </div>
 <div id="species-spp" class="section level4">
 <h4><span class="header-section-number">4.1.1.2</span> Species (SPP)</h4>
+<p>This subgoal aims to assess the average condition of the marine species within Tetiaroa based on their IUCN status. The target for the species subgoal is to have all species at a risk status of Least Concern.</p>
+<div id="current-status" class="section level5">
+<h5><span class="header-section-number">4.1.1.2.1</span> Current Status</h5>
+<p>Species status was calculated as the area and status-weighted average of assessed species within Tetiaroa. Marine species distribution and threat category data mostly came from IUCN Red List of Threatened Species <a href="http://www.iucnredlist.org">http://www.iucnredlist.org</a>. Seabird distributions data came from Birdlife International <a href="http://datazone.birdlife.org">http://datazone.birdlife.org</a>.</p>
+<p>We scaled the lower end of the biodiversity goal to be 0 when 75% species are extinct, a level comparable to the five documented mass extinctions <span class="citation">[@barnosky_has_2011]</span> and would constitute a catastrophic loss of biodiversity.</p>
+<p>Threat weights, <span class="math inline">\(w_{i}\)</span>, were assigned based on the IUCN threat categories status of each <span class="math inline">\(i\)</span> species, following the weighting schemes developed by Butchart et al. <span class="citation">[-@butchart_improvements_2007]</span> (Table 5.3). For the purposes of this analysis, we included only data for extant species for which sufficient data were available to conduct an assessment. We did not include the Data Deficient classification as assessed species following previously published guidelines for a mid-point approach <span class="citation">[@schipper_status_2008; @hoffmann_impact_2010]</span>.</p>
+<p>We first calculated each the region’s area-weighted average species risk status, <span class="math inline">\(\bar R_{spp}\)</span>. For each 0.5 degree grid cell within a region, <span class="math inline">\(c\)</span>, the risk status, <span class="math inline">\(w\)</span>, for each species, <span class="math inline">\(i\)</span>, present is summed and multiplied by cell area <span class="math inline">\(A_c\)</span>, to get an area- and count-weighted species risk for each cell. This value is then divided by the sum of count-weighted area <span class="math inline">\(A_c \times N_c\)</span> across all cells within the region. The result is the area-weighted mean species risk across the entire region.</p>
+<p><span class="math display">\[
+\bar R_{spp} = \frac { \displaystyle\sum_{ c=1 }^{ M } \left( \displaystyle\sum _{ i=1 }^{N_c} w_i \right) \times A_c } 
+                { \displaystyle\sum_{ c=1 }^{ M } A_c \times N_c },  (Eq. 5.4)
+\]</span> To convert <span class="math inline">\(\bar R_{spp}\)</span> into a score, we set a floor at 25% (representing a catastrophic loss of biodiversity, as noted above) and then rescaled to produce a <span class="math inline">\(x_{spp}\)</span> value between zero and one.</p>
+<p><span class="math display">\[
+x_{spp} = max \left( \frac { \bar R_{SPP} - .25 }{ .75 }, 0 \right), (Eq. 5.5)
+\]</span></p>
+<p><strong>Table 5.3. Weights for assessment of species status based on IUCN risk categories</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th>Risk Category</th>
+<th>IUCN code</th>
+<th>Weight</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Extinct</td>
+<td>EX</td>
+<td>0.0</td>
+</tr>
+<tr class="even">
+<td>Critically Endangered</td>
+<td>CR</td>
+<td>0.2</td>
+</tr>
+<tr class="odd">
+<td>Endangered</td>
+<td>EN</td>
+<td>0.4</td>
+</tr>
+<tr class="even">
+<td>Vulnerable</td>
+<td>VU</td>
+<td>0.6</td>
+</tr>
+<tr class="odd">
+<td>Near Threatened</td>
+<td>NT</td>
+<td>0.8</td>
+</tr>
+<tr class="even">
+<td>Least Concern</td>
+<td>LC</td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 </div>
 <div id="habitat-services-hs" class="section level3">
@@ -1880,7 +1896,7 @@ $(document).ready(function ()  {
       theme: "bootstrap3",
       context: '.toc-content',
       hashGenerator: function (text) {
-        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
       },
       ignoreSelector: ".toc-ignore",
       scrollTo: 0
