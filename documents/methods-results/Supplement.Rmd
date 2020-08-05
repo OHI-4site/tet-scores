@@ -178,9 +178,10 @@ The Habitat Services (HS) goal is made up of two subgoals, Carbon Storage (CS) a
 
 #### Coastal Protection (CP)
 
-### Livelihoods (LIV)
+### Conservation Economy (CE)
 
-### Sense of Place (SP)
+### Sense of Place (SP). 
+
 The Sense of Place (SP) goal attempts to capture the aspects of Tetiaroa's coastal and marine system that people value as part of their cultural identity. This definition includes people living near the ocean and those who live far from it but still derive a sense of identity or value from knowing particular places or species exist. This goal is calculated using two equally weighted subgoals: iconic species (ICO) and lasting special places (LSP).
 
 #### Iconic Species (ICO). 
