@@ -111,6 +111,10 @@ Each motu received a score, and with the final score calculated as the average o
 
 [equation?]
 
+##### Marine Habitat
+
+*prepare to insert global methods for French Polynesia, since we have nothing*
+
 #### Species (SPP)
 
 This subgoal aims to assess the average condition of the marine species within Tetiaroa based on their IUCN status. The target for the species subgoal is to have all species at a risk status of Least Concern.
@@ -171,13 +175,32 @@ data_layers(goal="SPP", dimension=c("resilience"))
 
 
 ### Habitat Services (HS)
-The Habitat Services (HS) goal is made up of two subgoals, Carbon Storage (CS) and Coastal Protection (CP).
-
-####  Carbon Storage (CS)
+The Habitat Services (HS) goal is made up of two subgoals, Carbon Storage (CS) and Coastal Protection (CP). Lacking specific data on carbon storage capabilities of the native habitat, this assessment only calculated a score for habitat proteciton. 
 
 #### Coastal Protection (CP)
 
+*Note to Laura: I probably can't add this until I talk with Gage about coral data*
+
 ### Conservation Economy (CE)
+
+We modified the livelihoods and economy goal as there are very few full time residents on the island, and all of them are employed by The Brando or the Tetiaroa Society. Essentially all of the Tetiaroa Society's activities and expenditures are related to environmental and cultural conservation of the island, so we refer to this goal in this context "Conservation Economy". Also, because a portion of the Tetiaroa Society's income comes from guest fees at the resort, there is a direct link between a healthy ocean or island environment that attracts tourism, and generating the funds necessary to help preserve it. 
+
+We use the Tetiaroa's Society fundraising goal as the reference point, which breaks down as follows:
+
+| Item | Yearly Cost | Description | 
+| :------- | :--------: | :------------ |
+| Operations | $700 K | Covers core staff and facilities maintenance / depreciation | 
+| **Mission Programs:** |       |          |
+| Conservation & Sustainable Use Plan | $ 250 K 
+| Social-Ecological System Observatory | $750 K | Monitoring CASUP, data management, and establishing baselines for science |
+| Science Programs | $100 K | Seed grants, equipment, meetings, workshops |
+| Cultural and Educational Programs | $100 K |       |
+| Blue Climate Initiative | $100 K |       |
+
+**Total Yearly Budget** = $2,000,000 
+
+To measure the status of this goal, we use the 2018 and 2019 Tetiaroa Society reports for income in 2018 and 2019, and then a measure of $700 K / year for 2020 (per Neil and Frank's estimation).
+
 
 ### Sense of Place (SP). 
 
@@ -283,6 +306,8 @@ There are a handful of green / eco / sustainable tourism certifications out ther
 - list all the goals not included in Tetiaroa OHI+ and why
 
 The following goals that are typically included in the OHI global assessment were not included in the Tetiaroa OHI+ assessment:
+
+### Carbon Storage (CS)
 
 ### Food Provision (FP)
 The Food Provision (FP) goal is made up of two subgoals, Fisheries (FIS) and Mariculture (MAR).
