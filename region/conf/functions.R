@@ -570,64 +570,55 @@ CP <- function(layers) {
   # layers for coastal protection
   extent_lyrs <-
     c(
-      'hab_mangrove_extent',
-      'hab_seagrass_extent',
-      'hab_saltmarsh_extent',
       'hab_coral_extent',
-      'hab_seaice_extent'
+      'hab_land_extent'
     )
   health_lyrs <-
     c(
-      'hab_mangrove_health',
-      'hab_seagrass_health',
-      'hab_saltmarsh_health',
       'hab_coral_health',
-      'hab_seaice_health'
+      'hab_land_health'
     )
   trend_lyrs <-
     c(
-      'hab_mangrove_trend',
-      'hab_seagrass_trend',
-      'hab_saltmarsh_trend',
       'hab_coral_trend',
-      'hab_seaice_trend'
+      'hab_land_trend'
     )
 
 
   # get data together:
   extent <- AlignManyDataYears(extent_lyrs) %>%
-    dplyr::filter(!(habitat %in% "seaice_edge")) %>%
+    #dplyr::filter(!(habitat %in% "seaice_edge")) %>%
     dplyr::filter(scenario_year == scen_year) %>%
-    dplyr::select(region_id = rgn_id, habitat, extent = km2) %>%
+    dplyr::select(region_id, habitat, extent = km2) %>%
     dplyr::mutate(habitat = as.character(habitat))
 
   health <- AlignManyDataYears(health_lyrs) %>%
-    dplyr::filter(!(habitat %in% "seaice_edge")) %>%
+    #dplyr::filter(!(habitat %in% "seaice_edge")) %>%
     dplyr::filter(scenario_year == scen_year) %>%
-    dplyr::select(region_id = rgn_id, habitat, health) %>%
+    dplyr::select(region_id, habitat, health) %>%
     dplyr::mutate(habitat = as.character(habitat))
 
   trend <- AlignManyDataYears(trend_lyrs) %>%
-    dplyr::filter(!(habitat %in% "seaice_edge")) %>%
+    #dplyr::filter(!(habitat %in% "seaice_edge")) %>%
     dplyr::filter(scenario_year == scen_year) %>%
-    dplyr::select(region_id = rgn_id, habitat, trend) %>%
+    dplyr::select(region_id, habitat, trend) %>%
     dplyr::mutate(habitat = as.character(habitat))
 
   ## sum mangrove_offshore + mangrove_inland1km = mangrove to match with extent and trend
-  mangrove_extent <- extent %>%
-    dplyr::filter(habitat %in% c('mangrove_inland1km', 'mangrove_offshore'))
+  # mangrove_extent <- extent %>%
+  #   dplyr::filter(habitat %in% c('mangrove_inland1km', 'mangrove_offshore'))
 
-  if (nrow(mangrove_extent) > 0) {
-    mangrove_extent <- mangrove_extent %>%
-      dplyr::group_by(region_id) %>%
-      dplyr::summarize(extent = sum(extent, na.rm = TRUE)) %>%
-      dplyr::mutate(habitat = 'mangrove') %>%
-      dplyr::ungroup()
-  }
-
-  extent <- extent %>%
-    dplyr::filter(!habitat %in% c('mangrove', 'mangrove_inland1km', 'mangrove_offshore')) %>%  #do not use all mangrove
-    rbind(mangrove_extent)  #just the inland 1km and offshore
+  # if (nrow(mangrove_extent) > 0) {
+  #   mangrove_extent <- mangrove_extent %>%
+  #     dplyr::group_by(region_id) %>%
+  #     dplyr::summarize(extent = sum(extent, na.rm = TRUE)) %>%
+  #     dplyr::mutate(habitat = 'mangrove') %>%
+  #     dplyr::ungroup()
+  # }
+  #
+  # extent <- extent %>%
+  #   dplyr::filter(!habitat %in% c('mangrove', 'mangrove_inland1km', 'mangrove_offshore')) %>%  #do not use all mangrove
+  #   rbind(mangrove_extent)  #just the inland 1km and offshore
 
   ## join layer data
   d <-  extent %>%
@@ -638,19 +629,16 @@ CP <- function(layers) {
   # because seaice edge is due to ice floating into the environment and does not provide coastal protection
   # for these regions
 
-  floaters <- c(174, 178, 222, 70, 69, 189, 143, 180, 176, 175)
+  #floaters <- c(174, 178, 222, 70, 69, 189, 143, 180, 176, 175)
 
 
-   d <- d %>%
-    dplyr::filter(!(region_id %in% floaters & habitat == "seaice_shoreline"))
+   #d <- d %>%
+    #dplyr::filter(!(region_id %in% floaters & habitat == "seaice_shoreline"))
 
   ## set ranks for each habitat
   habitat.rank <- c(
-    'coral'            = 4,
-    'mangrove'         = 4,
-    'saltmarsh'        = 3,
-    'seagrass'         = 1,
-    'seaice_shoreline' = 4
+    'coral'            = 3,
+    'native_land'         = 4
   )
 
   ## limit to CP habitats and add rank
@@ -703,20 +691,20 @@ CP <- function(layers) {
 
   ## create weights file for pressures/resilience calculations
 
-  weights <- extent %>%
-    dplyr::filter(extent > 0) %>%
-    dplyr::mutate(rank = habitat.rank[habitat]) %>%
-    dplyr::mutate(extent_rank = extent * rank) %>%
-    dplyr::mutate(layer = "element_wts_cp_km2_x_protection") %>%
-    dplyr::select(rgn_id = region_id, habitat, extent_rank, layer)
-
-  write.csv(
-    weights,
-    sprintf(here("region/temp/element_wts_cp_km2_x_protection_%s.csv"), scen_year),
-    row.names = FALSE
-  )
-
-  layers$data$element_wts_cp_km2_x_protection <- weights
+  # weights <- extent %>%
+  #   dplyr::filter(extent > 0) %>%
+  #   dplyr::mutate(rank = habitat.rank[habitat]) %>%
+  #   dplyr::mutate(extent_rank = extent * rank) %>%
+  #   dplyr::mutate(layer = "element_wts_cp_km2_x_protection") %>%
+  #   dplyr::select(rgn_id = region_id, habitat, extent_rank, layer)
+  #
+  # write.csv(
+  #   weights,
+  #   sprintf(here("region/temp/element_wts_cp_km2_x_protection_%s.csv"), scen_year),
+  #   row.names = FALSE
+  # )
+  #
+  # layers$data$element_wts_cp_km2_x_protection <- weights
 
   # return scores
   return(scores_CP)
@@ -1154,29 +1142,29 @@ HAB <- function(layers) {
 
   health <- AlignManyDataYears(health_lyrs) %>%
     dplyr::filter(scenario_year == scen_year) %>%
-    dplyr::select(region_id = rgn_id, habitat, health) %>%
+    dplyr::select(region_id, habitat, health) %>%
     dplyr::mutate(habitat = as.character(habitat))
 
   trend <- AlignManyDataYears(trend_lyrs) %>%
     dplyr::filter(scenario_year == scen_year) %>%
-    dplyr::select(region_id = rgn_id, habitat, trend) %>%
+    dplyr::select(region_id, habitat, trend) %>%
     dplyr::mutate(habitat = as.character(habitat))
 
 
-  # join and limit to HAB habitats
+  # join extent, health and trend
   d <- health %>%
     dplyr::full_join(trend, by = c('region_id', 'habitat')) %>%
     dplyr::full_join(extent, by = c('region_id', 'habitat')) %>%
-    dplyr::filter(
-      habitat %in% c(
-        'coral',
-        'mangrove',
-        'saltmarsh',
-        'seaice_edge',
-        'seagrass',
-        'soft_bottom'
-      )
-    ) %>%
+    # dplyr::filter(
+    #   habitat %in% c(
+    #     'coral',
+    #     'mangrove',
+    #     'saltmarsh',
+    #     'seaice_edge',
+    #     'seagrass',
+    #     'soft_bottom'
+    #   )
+    # ) %>%
     dplyr::mutate(w  = ifelse(!is.na(extent) & extent > 0, 1, NA)) %>%
     dplyr::filter(!is.na(w))
 
@@ -1213,29 +1201,29 @@ HAB <- function(layers) {
     dplyr::select(region_id, goal, dimension, score)
 
 
-  ## create weights file for pressures/resilience calculations
+  ## create weights file for pressures/resilience calculations (come back to this)
 
-  weights <- extent %>%
-    filter(
-      habitat %in% c(
-        'seagrass',
-        'saltmarsh',
-        'mangrove',
-        'coral',
-        'seaice_edge',
-        'soft_bottom'
-      )
-    ) %>%
-    dplyr::filter(extent > 0) %>%
-    dplyr::mutate(boolean = 1) %>%
-    dplyr::mutate(layer = "element_wts_hab_pres_abs") %>%
-    dplyr::select(rgn_id = region_id, habitat, boolean, layer)
+  # weights <- extent %>%
+  #   # filter(
+  #   #   habitat %in% c(
+  #   #     'seagrass',
+  #   #     'saltmarsh',
+  #   #     'mangrove',
+  #   #     'coral',
+  #   #     'seaice_edge',
+  #   #     'soft_bottom'
+  #   #   )
+  #   # ) %>%
+  #   dplyr::filter(extent > 0) %>%
+  #   dplyr::mutate(boolean = 1) %>%
+  #   dplyr::mutate(layer = "element_wts_hab_pres_abs") %>%
+  #   dplyr::select(rgn_id = region_id, habitat, boolean, layer)
+  #
+  # write.csv(weights,
+  #           sprintf(here("region/temp/element_wts_hab_pres_abs_%s.csv"), scen_year),
+  #           row.names = FALSE)
 
-  write.csv(weights,
-            sprintf(here("region/temp/element_wts_hab_pres_abs_%s.csv"), scen_year),
-            row.names = FALSE)
-
-  layers$data$element_wts_hab_pres_abs <- weights
+  #layers$data$element_wts_hab_pres_abs <- weights
 
 
   # return scores
