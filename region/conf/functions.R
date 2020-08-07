@@ -1132,36 +1132,24 @@ HAB <- function(layers) {
 
   extent_lyrs <-
     c(
-      'hab_mangrove_extent',
-      'hab_seagrass_extent',
-      'hab_saltmarsh_extent',
       'hab_coral_extent',
-      'hab_seaice_extent',
-      'hab_softbottom_extent'
+      'hab_land_extent'
     )
   health_lyrs <-
     c(
-      'hab_mangrove_health',
-      'hab_seagrass_health',
-      'hab_saltmarsh_health',
       'hab_coral_health',
-      'hab_seaice_health',
-      'hab_softbottom_health'
+      'hab_land_health'
     )
   trend_lyrs <-
     c(
-      'hab_mangrove_trend',
-      'hab_seagrass_trend',
-      'hab_saltmarsh_trend',
       'hab_coral_trend',
-      'hab_seaice_trend',
-      'hab_softbottom_trend'
+      'hab_land_trend'
     )
 
   # get data together:
   extent <- AlignManyDataYears(extent_lyrs) %>%
     dplyr::filter(scenario_year == scen_year) %>%
-    dplyr::select(region_id = rgn_id, habitat, extent = km2) %>%
+    dplyr::select(region_id, habitat, extent = km2) %>%
     dplyr::mutate(habitat = as.character(habitat))
 
   health <- AlignManyDataYears(health_lyrs) %>%
