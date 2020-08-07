@@ -158,19 +158,19 @@ We calculate trend using data the IUCN provides for current and past assessments
 _Status and trend_
 
 ```{r SPP data st, results="asis", echo=FALSE}
-data_layers(goal="SPP", dimension=c("status", "trend"))
+#data_layers(goal="SPP", dimension=c("status", "trend"))
 ```
 
 _Pressure_
 
 ```{r SPP data p, results="asis", echo=FALSE}
-data_layers(goal="SPP", dimension=c("pressure"))
+#data_layers(goal="SPP", dimension=c("pressure"))
 ```
 
 _Resilience_
 
 ```{r SPP r, results="asis", echo=FALSE}
-data_layers(goal="SPP", dimension=c("resilience"))
+#data_layers(goal="SPP", dimension=c("resilience"))
 ```
 
 
@@ -225,19 +225,19 @@ We calculated trend using data the IUCN provides for current and past assessment
 _Status and trend_
 
 ```{r ICO data st, results="asis", echo=FALSE}
-data_layers(goal="ICO", dimension=c("status", "trend"))
+#data_layers(goal="ICO", dimension=c("status", "trend"))
 ```
 
 _Pressure_
 
 ```{r ICO data p, results="asis", echo=FALSE}
-data_layers(goal="ICO", dimension=c("pressure"))
+#data_layers(goal="ICO", dimension=c("pressure"))
 ```
 
 _Resilience_
 
 ```{r ICO r, results="asis", echo=FALSE}
-data_layers(goal="ICO", dimension=c("resilience"))
+#data_layers(goal="ICO", dimension=c("resilience"))
 ```
 
 
@@ -303,29 +303,62 @@ There are a handful of green / eco / sustainable tourism certifications out ther
 ***
 
 ## Goals Not Included:
-- list all the goals not included in Tetiaroa OHI+ and why
 
 The following goals that are typically included in the OHI global assessment were not included in the Tetiaroa OHI+ assessment:
 
 ### Carbon Storage (CS)
 
-### Food Provision (FP)
-The Food Provision (FP) goal is made up of two subgoals, Fisheries (FIS) and Mariculture (MAR).
+The Carbon Storage goal measures the health of carbon storing habitats. Highly productive coastal wetland ecosystems (e.g., mangroves, salt marshes, seagrass beds) have substantially larger areal carbon burial rates than terrestrial forets, and "Blue Carbon" has been suggested as an alternate, more manageable carbon sequestration approach. The rapid destruction of these coastal habitats may release large amounts of buried carbon back into the ocean-atmosphere system. Our focus here, therefore, is on coastal habitats because they are threatened, have large amounts of stored carbon that would rapidly be released with further habitat destruction, have the highest per-area sequestration rates of any habitat on the planet, and are amenable to management, conservation, and restoration efforts. We refer to this goal as carbon storage but intend its meaning to include sequestration.
 
-#### Fisheries (FIS)
+[Explanation of why it wasn't included]
 
 ### Clean Waters (CW)
 
+People value marine waters that are free of pollution and debris for aesthetic and health reasons. Contamination of waters comes from oil spills, chemicals, eutrophication, algal blooms, disease pathogens (e.g., fecal coliform, viruses, and parasites from sewage outflow), floating trash, and mass kills of organisms due to pollution. People are sensitive to these phenomena occurring in areas they access for recreation or other purposes as well as for simply knowing that clean waters exist. This goal scores highest when the contamination level is zero.
+
+[Explanation of why it wasn't included]
+
+### Food Provision (FP)
+
+The Food Provision (FP) goal is made up of two subgoals, Fisheries (FIS) and Mariculture (MAR).
+
+One of the most fundamental services the ocean provides people is the provision of seafood. The Food Provision goal measures the amount of seafood sustainably harvested within an EEZ or region through any means for use primarily in human consumption and thus includes wild-caught commercial fisheries, mariculture, and artisanal-scale and recreational fisheries. 
+
+[Explanation of why it wasn't included] 
+
+#### Fisheries (FIS)
+
+The Fisheries subgoal aims to assess the amount of wild-caught seafood that can be sustainably harvested. 
+
+[Explanation of why it wasn't included]
+
 #### Mariculture (MAR)
+
+The Mariculture subgoal attempts to measure a region's food production from mariculture relative to its capacity.  
+
+[Explanation of why it wasn't included]
 
 ### Artisanal Fishing Opportunity (AO)
 
+Artisanal fishing, often also called small-scale fishing, provides a critical source of food, nutrition, poverty alleviation, and livelihood opportunities for many people around the world, in particular in developing nations (Allison & Ellis 2001). Artisanal fishing refers to fisheries involving households, cooperatives, or small firms (as opposed to large, commercial companies) that use relatively small amounts of capital and energy and small fishing vessels (if any), make relatively short fishing trips, and use fish mainly for local consumption or trade. 
+
+[Explanation of why it wasn't included]  
+
 ### Natural Products (NP)
 
+In many countries the harvest of non-food natural products is important for local economies and can also be traded internationally. The sustainable harvest of these products is therefore an important component of a healthy ocean. This goal assesses the ability of countries to maximize the sustainable harvest of living marine resources, such as corals, shells, seaweeds, and fish for the aquarium trade. 
+
+This type of harvesting of natural products for sale or trade does not occur on Tetiaroa and therefore is not included in this OHI+ assessment.   
+
 ### Livelihoods & Economies (LE)
+
 The Livelihoods & Economies (LE) goal is made up of two subgoals, Livelihoods (LIV) and Economies (ECO). While LIV was included as a goal in the Tetiaroa OHI+ assessment, ECO was not.
 
+The jobs and revenue produced from marine-related industries are clearly of huge value to many people, even those who do not directly participate in the industries but value community identity, tax revenue, and indirect economic and social impacts of a stable coastal economy. This goal measures both livelihood quantity and job quality.   
+
 #### Economies (ECO)
+
+[Explanation of why ECO wasn't included but LIV was included] 
 
 ***
 
