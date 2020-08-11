@@ -1250,6 +1250,14 @@ SPP <- function(layers) {
       dimension = "status"#average of the 10 classes, final score
     )
 
+  #create resilience layer (comment out afterwards?)
+#
+#   res_spp <- data.frame(
+#     region_id = 1,
+#     year = seq(2014,2020,1),
+#     res_score = spp_status$score
+#   )
+
   #load trend data and calculate the score, same way as the status
   spp_trend <- layers$data$spp_trend %>%
     #dplyr::filter(year == scen_year) %>% #do i need this?
