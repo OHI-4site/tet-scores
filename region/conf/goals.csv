@@ -1,5 +1,4 @@
 order_color,order_hierarchy,order_calculate,goal,parent,name,name_flower,description,weight,preindex_function,postindex_function
-4,4,5,CS,,Carbon Storage,Carbon Storage,This goal captures the carbon stored in natural coastal ecosystems that absorb and sequester carbon in large amounts.,1,CS(layers),
 5,5,6,CP,,Coastal Protection,Coastal\nProtection,This goal measures the amount of protection certain coastal habitats provide by measuring the current area they cover relative to the area they covered in the recent past.,1,CP(layers),
 7.2,7,16,LE,,Coastal Livelihoods & Economies,Coastal Livelihoods & Economies,This goal aims to maintain coastal and ocean-dependent livelihoods and productive coastal economies while also maximizing livelihood quality.,1,,"LE(scores, layers)"
 7.1,7.1,8,LIV,LE,Livelihoods,Livelihoods,This subgoal evaluates the benefits people obtain from the oceans in the form of jobs and wages.,0.5,LIV(layers),
