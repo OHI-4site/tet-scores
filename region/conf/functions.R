@@ -691,20 +691,20 @@ CP <- function(layers) {
 
   ## create weights file for pressures/resilience calculations
 
-  # weights <- extent %>%
-  #   dplyr::filter(extent > 0) %>%
-  #   dplyr::mutate(rank = habitat.rank[habitat]) %>%
-  #   dplyr::mutate(extent_rank = extent * rank) %>%
-  #   dplyr::mutate(layer = "element_wts_cp_km2_x_protection") %>%
-  #   dplyr::select(rgn_id = region_id, habitat, extent_rank, layer)
-  #
-  # write.csv(
-  #   weights,
-  #   sprintf(here("region/temp/element_wts_cp_km2_x_protection_%s.csv"), scen_year),
-  #   row.names = FALSE
-  # )
-  #
-  # layers$data$element_wts_cp_km2_x_protection <- weights
+  weights <- extent %>%
+    dplyr::filter(extent > 0) %>%
+    dplyr::mutate(rank = habitat.rank[habitat]) %>%
+    dplyr::mutate(extent_rank = extent * rank) %>%
+    dplyr::mutate(layer = "element_wts_cp_km2_x_protection") %>%
+    dplyr::select(rgn_id = region_id, habitat, extent_rank, layer)
+
+  write.csv(
+    weights,
+    sprintf(here("region/temp/element_wts_cp_km2_x_protection_%s.csv"), scen_year),
+    row.names = FALSE
+  )
+
+  layers$data$element_wts_cp_km2_x_protection <- weights
 
   # return scores
   return(scores_CP)
@@ -1203,27 +1203,27 @@ HAB <- function(layers) {
 
   ## create weights file for pressures/resilience calculations (come back to this)
 
-  # weights <- extent %>%
-  #   # filter(
-  #   #   habitat %in% c(
-  #   #     'seagrass',
-  #   #     'saltmarsh',
-  #   #     'mangrove',
-  #   #     'coral',
-  #   #     'seaice_edge',
-  #   #     'soft_bottom'
-  #   #   )
-  #   # ) %>%
-  #   dplyr::filter(extent > 0) %>%
-  #   dplyr::mutate(boolean = 1) %>%
-  #   dplyr::mutate(layer = "element_wts_hab_pres_abs") %>%
-  #   dplyr::select(rgn_id = region_id, habitat, boolean, layer)
-  #
-  # write.csv(weights,
-  #           sprintf(here("region/temp/element_wts_hab_pres_abs_%s.csv"), scen_year),
-  #           row.names = FALSE)
+  weights <- extent %>%
+      filter(
+        habitat %in% c(
+       'seagrass',
+       'saltmarsh',
+       'mangrove',
+       'coral',
+       'native_land',
+       'soft_bottom'
+     )
+   ) %>%
+     dplyr::filter(extent > 0) %>%
+     dplyr::mutate(boolean = 1) %>%
+     dplyr::mutate(layer = "element_wts_hab_pres_abs") %>%
+     dplyr::select(rgn_id = region_id, habitat, boolean, layer)
 
-  #layers$data$element_wts_hab_pres_abs <- weights
+      write.csv(weights,
+             sprintf(here("region/temp/element_wts_hab_pres_abs_%s.csv"), scen_year),
+             row.names = FALSE)
+
+     layers$data$element_wts_hab_pres_abs <- weights
 
 
   # return scores

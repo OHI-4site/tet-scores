@@ -15,9 +15,9 @@ fp_com_lb,ecological,fishing_pressure
 fp_art_lb,ecological,fishing_pressure
 fp_art_hb,ecological,fishing_pressure
 fp_targetharvest,ecological,fishing_pressure
-cc_sst,ecological,climate_change
+prs_sst,ecological,climate_change
 cc_acid,ecological,climate_change
-cc_uv,ecological,climate_change
+prs_uv,ecological,climate_change
 cc_slr,ecological,climate_change
 ss_wgi,social,social
 ss_spi,social,social
