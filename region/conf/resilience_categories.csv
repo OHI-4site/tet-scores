@@ -6,10 +6,10 @@ g_cites,ecological,regulatory,goal,0.5
 fp_mpa_coast,ecological,regulatory,fishing_pressure,1
 fp_mpa_eez,ecological,regulatory,fishing_pressure,1
 fp_habitat,ecological,regulatory,fishing_pressure,1
-fp_fish_management,ecological,regulatory,fishing_pressure,1
+res_fishing_reg,ecological,regulatory,fishing_pressure,1
 fp_mora_artisanal,ecological,regulatory,fishing_pressure,1
 hd_habitat,ecological,regulatory,habitat_destruction,1
-hd_mpa_coast,ecological,regulatory,habitat_destruction,1
+res_mpa,ecological,regulatory,habitat_destruction,1
 hd_mpa_eez,ecological,regulatory,habitat_destruction,1
 g_mariculture,ecological,regulatory,goal,1
 g_msi_gov,ecological,regulatory,goal,1
@@ -18,4 +18,4 @@ po_water,ecological,regulatory,pollution,1
 li_gci,social,social,social,1
 li_sector_evenness,social,social,social,1
 wgi_all,social,social,social,1
-res_spi,social,social,social,1
+res_local_emp,social,social,social,1

@@ -435,15 +435,13 @@ hd_intertidal,2017,2017
 hd_intertidal,2018,2018
 hd_intertidal,2019,2019
 hd_intertidal,2020,2019
-hd_mpa_coast,2012,2012
-hd_mpa_coast,2013,2013
-hd_mpa_coast,2014,2014
-hd_mpa_coast,2015,2015
-hd_mpa_coast,2016,2016
-hd_mpa_coast,2017,2017
-hd_mpa_coast,2018,2018
-hd_mpa_coast,2019,2019
-hd_mpa_coast,2020,2019
+res_mpa,2014,2020
+res_mpa,2015,2020
+res_mpa,2016,2020
+res_mpa,2017,2020
+res_mpa,2018,2020
+res_mpa,2019,2020
+res_mpa,2020,2020
 hd_mpa_eez,2012,2012
 hd_mpa_eez,2013,2013
 hd_mpa_eez,2014,2014
@@ -615,15 +613,13 @@ po_trash,2017,2015
 po_trash,2018,2015
 po_trash,2019,2015
 po_trash,2020,2015
-res_spi,2012,2016
-res_spi,2013,2016
-res_spi,2014,2016
-res_spi,2015,2016
-res_spi,2016,2016
-res_spi,2017,2017
-res_spi,2018,2018
-res_spi,2019,2019
-res_spi,2020,2019
+res_local_emp,2014,2020
+res_local_emp,2015,2020
+res_local_emp,2016,2020
+res_local_emp,2017,2020
+res_local_emp,2018,2020
+res_local_emp,2019,2020
+res_local_emp,2020,2020
 sp_genetic,2012,2010
 sp_genetic,2013,2011
 sp_genetic,2014,2012
@@ -676,12 +672,17 @@ tr_status,2017,2019
 tr_status,2018,2019
 tr_status,2019,2019
 tr_status,2020,2019
-wgi_all,2012,2010
-wgi_all,2013,2011
-wgi_all,2014,2012
-wgi_all,2015,2013
-wgi_all,2016,2014
-wgi_all,2017,2015
-wgi_all,2018,2016
-wgi_all,2019,2017
-wgi_all,2020,2017
+res_mgmt,2014,2020
+res_mgmt,2015,2020
+res_mgmt,2016,2020
+res_mgmt,2017,2020
+res_mgmt,2018,2020
+res_mgmt,2019,2020
+res_mgmt,2020,2020
+res_fishing_reg, 2014, 2020
+res_fishing_reg, 2015, 2020
+res_fishing_reg, 2016, 2020
+res_fishing_reg, 2017, 2020
+res_fishing_reg, 2018, 2020
+res_fishing_reg, 2019, 2020
+res_fishing_reg, 2020, 2020
