@@ -748,7 +748,8 @@ TR <- function(layers) {
   tr_status <- tr_data %>%
     filter(scenario_year == scen_year) %>%
     mutate(
-      dimension = 'status'
+      dimension = 'status',
+      status = status*100
     ) %>%
     dplyr::select(region_id,score = status,dimension)
 
