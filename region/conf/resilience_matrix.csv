@@ -1,5 +1,6 @@
 goal,element,res_mpa,res_fishing_reg,res_local_emp,res_mgmt,res_spp_div
 AO,,x,x,,,
+CE,,x,x,x,x,x
 CP,coral,x,,,x,x
 CP,mangrove,x,,,x,
 CP,saltmarsh,x,,,x,
