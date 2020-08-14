@@ -445,6 +445,30 @@ AO <- function(layers) {
   return(scores)
 }
 
+RAO <-function(layers){
+
+  scen_year <- layers$data$scenario_year
+
+  # Placeholder status
+  rao_status <- AlignDataYears(layer_nm = "rao_status_placeholder", layers_obj = layers) %>%
+    dplyr::mutate(dimension = "status") %>%
+    dplyr::select(region_id, scenario_year, score = status, dimension)
+
+  # Calculate trend - NA for now
+  rao_trend <- data.frame(region_id = 1,
+                          scenario_year = 2020,
+                          score = NA,
+                          dimension = "trend")
+  # Calculate scores
+  rao_score <- rao_status %>%
+    filter(scenario_year == scen_year) %>%
+    bind_rows(rao_trend) %>%
+    dplyr::mutate(goal = "RAO") %>%
+    dplyr::select(region_id, goal, dimension, score)
+  return(rao_score)
+
+}
+
 CS <- function(layers) {
   scen_year <- layers$data$scenario_year
 
@@ -1116,26 +1140,33 @@ CW <- function(layers) {
       'cw_nutrient_trend',
       'cw_trash_trend',
       'cw_pathogen_trend')
-  prs_lyrs <-
-    c('po_pathogens',
-      'po_nutrients_3nm',
-      'po_chemicals_3nm',
-      'po_trash')
+  # prs_lyrs <-
+  #   c('po_pathogens',
+  #     'po_nutrients_3nm',
+  #     'po_chemicals_3nm',
+  #     'po_trash')
 
   # get data together:
-  prs_data <- AlignManyDataYears(prs_lyrs) %>%
-    dplyr::filter(scenario_year == scen_year) %>%
-    dplyr::select(region_id = rgn_id, value = pressure_score)
+  # prs_data <- AlignManyDataYears(prs_lyrs) %>%
+  #   dplyr::filter(scenario_year == scen_year) %>%
+  #   dplyr::select(region_id = rgn_id, value = pressure_score)
 
-  d_pressures <- prs_data %>%
-    dplyr::mutate(pressure = 1 - value) %>%  # invert pressure
-    dplyr::mutate(pressure = ifelse(pressure == 0 , pressure + 0.01, pressure)) %>% # add small modifier to zeros to
-    dplyr::group_by(region_id) %>%                                                  # prevent zeros with geometric mean
-    dplyr::summarize(score = geometric.mean2(pressure, na.rm = TRUE)) %>% # take geometric mean
-    dplyr::mutate(score = score * 100) %>%
+  # d_pressures <- prs_data %>%
+  #   dplyr::mutate(pressure = 1 - value) %>%  # invert pressure
+  #   dplyr::mutate(pressure = ifelse(pressure == 0 , pressure + 0.01, pressure)) %>% # add small modifier to zeros to
+  #   dplyr::group_by(region_id) %>%                                                  # prevent zeros with geometric mean
+  #   dplyr::summarize(score = geometric.mean2(pressure, na.rm = TRUE)) %>% # take geometric mean
+  #   dplyr::mutate(score = score * 100) %>%
+  #   dplyr::mutate(dimension = "status") %>%
+  #   dplyr::ungroup()
+
+  # status
+
+  # Placeholder status
+  cw_status <- AlignDataYears(layer_nm = "cw_status_placeholder", layers_obj = layers) %>%
+    filter(scenario_year == scen_year) %>%
     dplyr::mutate(dimension = "status") %>%
-    dplyr::ungroup()
-
+    dplyr::select(region_id, score = status, dimension)
 
   # get trend data together:
   trend_data <- AlignManyDataYears(trend_lyrs) %>%
@@ -1150,8 +1181,9 @@ CW <- function(layers) {
     dplyr::ungroup()
 
 
+
   # return scores
-  scores <- rbind(d_pressures, d_trends) %>%
+  scores <- rbind(cw_status, d_trends)%>%
     dplyr::mutate(goal = "CW") %>%
     dplyr::select(region_id, goal, dimension, score) %>%
     data.frame()
@@ -1347,6 +1379,7 @@ BD <- function(scores) {
   return(rbind(scores, d[, c('region_id', 'goal', 'dimension', 'score')]))
 }
 
+
 PreGlobalScores <- function(layers, conf, scores) {
   # get regions
   name_region_labels <- conf$config$layer_region_labels
@@ -1362,6 +1395,7 @@ PreGlobalScores <- function(layers, conf, scores) {
 
   return(scores)
 }
+
 
 FinalizeScores <- function(layers, conf, scores) {
   # get regions
