@@ -2,6 +2,7 @@ layer,category,category_type,subcategory,weight
 res_fishing_reg,ecological,regulatory,fishing_pressure,1
 res_mpa,ecological,regulatory,habitat_destruction,1
 res_spp_div,ecological,ecological,ecosystem,1
+res_biosecurity,ecological,regulatory,alien_species,1
 res_local_emp,social,social,social,1
 res_mgmt,social,social,social,1
 

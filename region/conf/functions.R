@@ -1135,12 +1135,12 @@ CW <- function(layers) {
 
 
   # layers
-  trend_lyrs <-
-    c('cw_chemical_trend',
-      'cw_nutrient_trend',
-      'cw_trash_trend',
-      'cw_pathogen_trend')
-  # prs_lyrs <-
+  # trend_lyrs <-
+  #   c('cw_chemical_trend',
+  #     'cw_nutrient_trend',
+  #     'cw_trash_trend',
+  #     'cw_pathogen_trend')
+  # # prs_lyrs <-
   #   c('po_pathogens',
   #     'po_nutrients_3nm',
   #     'po_chemicals_3nm',
@@ -1170,7 +1170,6 @@ CW <- function(layers) {
 
   # Calculate trend - NA for now
   cw_trend <- data.frame(region_id = 1,
-                          scenario_year = 2020,
                           score = NA,
                           dimension = "trend")
 
