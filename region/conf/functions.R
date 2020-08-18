@@ -469,120 +469,120 @@ RAO <-function(layers){
 
 }
 
-CS <- function(layers) {
-  scen_year <- layers$data$scenario_year
-
-  # layers for carbon storage
-  extent_lyrs <-
-    c('hab_mangrove_extent',
-      'hab_seagrass_extent',
-      'hab_saltmarsh_extent')
-  health_lyrs <-
-    c('hab_mangrove_health',
-      'hab_seagrass_health',
-      'hab_saltmarsh_health')
-  trend_lyrs <-
-    c('hab_mangrove_trend',
-      'hab_seagrass_trend',
-      'hab_saltmarsh_trend')
-
-  # get data together:
-  extent <- AlignManyDataYears(extent_lyrs) %>%
-    dplyr::filter(!(habitat %in% c(
-      "mangrove_inland1km", "mangrove_offshore"
-    ))) %>%
-    dplyr::filter(scenario_year == scen_year) %>%
-    dplyr::select(region_id = rgn_id, habitat, extent = km2) %>%
-    dplyr::mutate(habitat = as.character(habitat))
-
-  health <- AlignManyDataYears(health_lyrs) %>%
-    dplyr::filter(!(habitat %in% c(
-      "mangrove_inland1km", "mangrove_offshore"
-    ))) %>%
-    dplyr::filter(scenario_year == scen_year) %>%
-    dplyr::select(region_id = rgn_id, habitat, health) %>%
-    dplyr::mutate(habitat = as.character(habitat))
-
-  trend <- AlignManyDataYears(trend_lyrs) %>%
-    dplyr::filter(!(habitat %in% c(
-      "mangrove_inland1km", "mangrove_offshore"
-    ))) %>%
-    dplyr::filter(scenario_year == scen_year) %>%
-    dplyr::select(region_id = rgn_id, habitat, trend) %>%
-    dplyr::mutate(habitat = as.character(habitat))
-
-  ## join layer data
-  d <-  extent %>%
-    dplyr::full_join(health, by = c("region_id", "habitat")) %>%
-    dplyr::full_join(trend, by = c("region_id", "habitat"))
-
-  ## set ranks for each habitat
-  habitat.rank <- c('mangrove'         = 139,
-                    'saltmarsh'        = 210,
-                    'seagrass'         = 83)
-
-  ## limit to CS habitats and add rank
-  d <- d %>%
-    dplyr::mutate(rank = habitat.rank[habitat],
-           extent = ifelse(extent == 0, NA, extent))
-
-  # status
-  status <- d %>%
-    dplyr::filter(!is.na(rank) & !is.na(health) & !is.na(extent)) %>%
-    dplyr::group_by(region_id) %>%
-    dplyr::summarize(score = pmin(1, sum(rank * health * extent, na.rm = TRUE) / (sum(
-      extent * rank, na.rm = TRUE
-    ))) * 100,
-    dimension = 'status') %>%
-    ungroup()
-  ## temporary if empty
-  if (dim(status)[1] < 1) {
-    status <- data.frame(region_id = 1,
-                                    score = NA,
-                                    dimension = "status")
-  }
-
-  # trend
-
-  trend <- d %>%
-    filter(!is.na(rank) & !is.na(trend) & !is.na(extent)) %>%
-    dplyr::group_by(region_id) %>%
-    dplyr::summarize(score = sum(rank * trend * extent, na.rm = TRUE) / (sum(extent *
-                                                                        rank, na.rm = TRUE)),
-              dimension = 'trend') %>%
-    dplyr::ungroup()
-  ## temporary if empty
-  if (dim(trend)[1] < 1) {
-    trend <- data.frame(region_id = 1,
-                                    score = NA,
-                                    dimension = "trend")
-  }
-
-  scores_CS <- rbind(status, trend)  %>%
-    dplyr::mutate(goal = 'CS') %>%
-    dplyr::select(goal, dimension, region_id, score)
-
-
-  ## create weights file for pressures/resilience calculations
-  weights <- extent %>%
-    dplyr::filter(extent > 0) %>%
-    dplyr::mutate(rank = habitat.rank[habitat]) %>%
-    dplyr::mutate(extent_rank = extent * rank) %>%
-    dplyr::mutate(layer = "element_wts_cs_km2_x_storage") %>%
-    dplyr::select(rgn_id = region_id, habitat, extent_rank, layer)
-
-  write.csv(
-    weights,
-    sprintf(here("region/temp/element_wts_cs_km2_x_storage_%s.csv"), scen_year),
-    row.names = FALSE
-  )
-
-  layers$data$element_wts_cs_km2_x_storage <- weights
-
-
-  # return scores
-  return(scores_CS)
-}
+# CS <- function(layers) {
+#   scen_year <- layers$data$scenario_year
+#
+#   # layers for carbon storage
+#   extent_lyrs <-
+#     c('hab_mangrove_extent',
+#       'hab_seagrass_extent',
+#       'hab_saltmarsh_extent')
+#   health_lyrs <-
+#     c('hab_mangrove_health',
+#       'hab_seagrass_health',
+#       'hab_saltmarsh_health')
+#   trend_lyrs <-
+#     c('hab_mangrove_trend',
+#       'hab_seagrass_trend',
+#       'hab_saltmarsh_trend')
+#
+#   # get data together:
+#   extent <- AlignManyDataYears(extent_lyrs) %>%
+#     dplyr::filter(!(habitat %in% c(
+#       "mangrove_inland1km", "mangrove_offshore"
+#     ))) %>%
+#     dplyr::filter(scenario_year == scen_year) %>%
+#     dplyr::select(region_id = rgn_id, habitat, extent = km2) %>%
+#     dplyr::mutate(habitat = as.character(habitat))
+#
+#   health <- AlignManyDataYears(health_lyrs) %>%
+#     dplyr::filter(!(habitat %in% c(
+#       "mangrove_inland1km", "mangrove_offshore"
+#     ))) %>%
+#     dplyr::filter(scenario_year == scen_year) %>%
+#     dplyr::select(region_id = rgn_id, habitat, health) %>%
+#     dplyr::mutate(habitat = as.character(habitat))
+#
+#   trend <- AlignManyDataYears(trend_lyrs) %>%
+#     dplyr::filter(!(habitat %in% c(
+#       "mangrove_inland1km", "mangrove_offshore"
+#     ))) %>%
+#     dplyr::filter(scenario_year == scen_year) %>%
+#     dplyr::select(region_id = rgn_id, habitat, trend) %>%
+#     dplyr::mutate(habitat = as.character(habitat))
+#
+#   ## join layer data
+#   d <-  extent %>%
+#     dplyr::full_join(health, by = c("region_id", "habitat")) %>%
+#     dplyr::full_join(trend, by = c("region_id", "habitat"))
+#
+#   ## set ranks for each habitat
+#   habitat.rank <- c('mangrove'         = 139,
+#                     'saltmarsh'        = 210,
+#                     'seagrass'         = 83)
+#
+#   ## limit to CS habitats and add rank
+#   d <- d %>%
+#     dplyr::mutate(rank = habitat.rank[habitat],
+#            extent = ifelse(extent == 0, NA, extent))
+#
+#   # status
+#   status <- d %>%
+#     dplyr::filter(!is.na(rank) & !is.na(health) & !is.na(extent)) %>%
+#     dplyr::group_by(region_id) %>%
+#     dplyr::summarize(score = pmin(1, sum(rank * health * extent, na.rm = TRUE) / (sum(
+#       extent * rank, na.rm = TRUE
+#     ))) * 100,
+#     dimension = 'status') %>%
+#     ungroup()
+#   ## temporary if empty
+#   if (dim(status)[1] < 1) {
+#     status <- data.frame(region_id = 1,
+#                                     score = NA,
+#                                     dimension = "status")
+#   }
+#
+#   # trend
+#
+#   trend <- d %>%
+#     filter(!is.na(rank) & !is.na(trend) & !is.na(extent)) %>%
+#     dplyr::group_by(region_id) %>%
+#     dplyr::summarize(score = sum(rank * trend * extent, na.rm = TRUE) / (sum(extent *
+#                                                                         rank, na.rm = TRUE)),
+#               dimension = 'trend') %>%
+#     dplyr::ungroup()
+#   ## temporary if empty
+#   if (dim(trend)[1] < 1) {
+#     trend <- data.frame(region_id = 1,
+#                                     score = NA,
+#                                     dimension = "trend")
+#   }
+#
+#   scores_CS <- rbind(status, trend)  %>%
+#     dplyr::mutate(goal = 'CS') %>%
+#     dplyr::select(goal, dimension, region_id, score)
+#
+#
+#   ## create weights file for pressures/resilience calculations
+#   weights <- extent %>%
+#     dplyr::filter(extent > 0) %>%
+#     dplyr::mutate(rank = habitat.rank[habitat]) %>%
+#     dplyr::mutate(extent_rank = extent * rank) %>%
+#     dplyr::mutate(layer = "element_wts_cs_km2_x_storage") %>%
+#     dplyr::select(rgn_id = region_id, habitat, extent_rank, layer)
+#
+#   write.csv(
+#     weights,
+#     sprintf(here("region/temp/element_wts_cs_km2_x_storage_%s.csv"), scen_year),
+#     row.names = FALSE
+#   )
+#
+#   layers$data$element_wts_cs_km2_x_storage <- weights
+#
+#
+#   # return scores
+#   return(scores_CS)
+# }
 
 
 
@@ -822,101 +822,101 @@ TR <- function(layers) {
 }
 
 
-LIV <- function(layers) {
+# LIV <- function(layers) {
+#
+#   # NOTE: scripts and related files for calculating these subgoals is located:
+#   # region/archive
+#   # These data are no longer available and status/trend have not been updated since 2013
+#
+#   scen_year <- layers$data$scenario_year
+#
+#   ## status data
+#   status_liv <-
+#     AlignDataYears(layer_nm = "liv_status", layers_obj = layers) %>%
+#     dplyr::select(-layer_name, -liv_status_year) %>%
+#     dplyr::mutate(goal = "LIV") %>%
+#     dplyr::filter(scenario_year == scen_year) %>%
+#     dplyr::select(region_id = rgn_id, goal, score = status) %>%
+#     dplyr::mutate(dimension = 'status')
+#
+#   # trend data
+#   trend_liv <-
+#     AlignDataYears(layer_nm = "liv_trend", layers_obj = layers) %>%
+#     dplyr::select(-layer_name, -liv_trend_year) %>%
+#     dplyr::mutate(goal = "LIV") %>%
+#     dplyr::filter(scenario_year == scen_year) %>%
+#     dplyr::select(region_id = rgn_id, goal, score = trend) %>%
+#     dplyr::mutate(dimension = 'trend')
+#
+#
+#   scores <- rbind(status_liv, trend_liv) %>%
+#     dplyr::select(region_id, goal, dimension, score)
+#
+#   return(scores)
+# }
 
-  # NOTE: scripts and related files for calculating these subgoals is located:
-  # region/archive
-  # These data are no longer available and status/trend have not been updated since 2013
-
-  scen_year <- layers$data$scenario_year
-
-  ## status data
-  status_liv <-
-    AlignDataYears(layer_nm = "liv_status", layers_obj = layers) %>%
-    dplyr::select(-layer_name, -liv_status_year) %>%
-    dplyr::mutate(goal = "LIV") %>%
-    dplyr::filter(scenario_year == scen_year) %>%
-    dplyr::select(region_id = rgn_id, goal, score = status) %>%
-    dplyr::mutate(dimension = 'status')
-
-  # trend data
-  trend_liv <-
-    AlignDataYears(layer_nm = "liv_trend", layers_obj = layers) %>%
-    dplyr::select(-layer_name, -liv_trend_year) %>%
-    dplyr::mutate(goal = "LIV") %>%
-    dplyr::filter(scenario_year == scen_year) %>%
-    dplyr::select(region_id = rgn_id, goal, score = trend) %>%
-    dplyr::mutate(dimension = 'trend')
-
-
-  scores <- rbind(status_liv, trend_liv) %>%
-    dplyr::select(region_id, goal, dimension, score)
-
-  return(scores)
-}
-
-
-ECO <- function(layers) {
-
-  scen_year <- layers$data$scenario_year
-
-  ## status data
-  eco_data <-
-    AlignDataYears(layer_nm = "eco_status", layers_obj = layers) %>%
-    dplyr::select(-layer_name, -eco_status_year) %>%
-    dplyr::mutate(goal = "ECO") %>%
-    dplyr::select(year = scenario_year, category, income, status, region_id, goal)
-
-
-eco_status <- eco_data %>%
-  dplyr::filter(year == scen_year) %>%
-  dplyr::select(region_id, goal, score = status) %>%
-  dplyr::mutate(
-    dimension = 'status',
-    score = score*100)
-
-# calculate trend - note we only use 3 years of data here
-
-  trend_years <- (scen_year - 2):(scen_year)
-
-  eco_trend <-
-    CalculateTrend(status_data = eco_data, trend_years = trend_years) %>%
-    mutate(
-      goal = "ECO"
-    )#does this make sense?
-
-  # trend_eco <-
-  #   AlignDataYears(layer_nm = "eco_trend", layers_obj = layers) %>%
-  #   dplyr::select(-layer_name, -eco_trend_year) %>%
-  #   dplyr::mutate(goal = "ECO") %>%
-  #   dplyr::filter(scenario_year == scen_year) %>%
-  #   dplyr::select(region_id = rgn_id, goal, score = trend) %>%
-  #   dplyr::mutate(dimension = 'trend')
-
-
-    scores <- rbind(eco_status, eco_trend) %>%
-    dplyr::select(region_id, goal, dimension, score)
-
-  return(scores)
-}
-
-LE <- function(scores, layers) {
-
-  s <- scores %>%
-    dplyr::filter(goal %in% c('LIV', 'ECO'),
-           dimension %in% c('status', 'trend', 'future', 'score')) %>%
-    dplyr::group_by(region_id, dimension) %>%
-    dplyr::summarize(score = mean(score, na.rm = TRUE)) %>%
-    dplyr::ungroup() %>%
-    dplyr::arrange(region_id) %>%
-    dplyr::mutate(goal = "LE") %>%
-    dplyr::select(region_id, goal, dimension, score) %>%
-    data.frame()
-
-  # return all scores
-  return(rbind(scores, s))
-
-}
+#
+# ECO <- function(layers) {
+#
+#   scen_year <- layers$data$scenario_year
+#
+#   ## status data
+#   eco_data <-
+#     AlignDataYears(layer_nm = "eco_status", layers_obj = layers) %>%
+#     dplyr::select(-layer_name, -eco_status_year) %>%
+#     dplyr::mutate(goal = "ECO") %>%
+#     dplyr::select(year = scenario_year, category, income, status, region_id, goal)
+#
+#
+# eco_status <- eco_data %>%
+#   dplyr::filter(year == scen_year) %>%
+#   dplyr::select(region_id, goal, score = status) %>%
+#   dplyr::mutate(
+#     dimension = 'status',
+#     score = score*100)
+#
+# # calculate trend - note we only use 3 years of data here
+#
+#   trend_years <- (scen_year - 2):(scen_year)
+#
+#   eco_trend <-
+#     CalculateTrend(status_data = eco_data, trend_years = trend_years) %>%
+#     mutate(
+#       goal = "ECO"
+#     )#does this make sense?
+#
+#   # trend_eco <-
+#   #   AlignDataYears(layer_nm = "eco_trend", layers_obj = layers) %>%
+#   #   dplyr::select(-layer_name, -eco_trend_year) %>%
+#   #   dplyr::mutate(goal = "ECO") %>%
+#   #   dplyr::filter(scenario_year == scen_year) %>%
+#   #   dplyr::select(region_id = rgn_id, goal, score = trend) %>%
+#   #   dplyr::mutate(dimension = 'trend')
+#
+#
+#     scores <- rbind(eco_status, eco_trend) %>%
+#     dplyr::select(region_id, goal, dimension, score)
+#
+#   return(scores)
+# }
+#
+# LE <- function(scores, layers) {
+#
+#   s <- scores %>%
+#     dplyr::filter(goal %in% c('LIV', 'ECO'),
+#            dimension %in% c('status', 'trend', 'future', 'score')) %>%
+#     dplyr::group_by(region_id, dimension) %>%
+#     dplyr::summarize(score = mean(score, na.rm = TRUE)) %>%
+#     dplyr::ungroup() %>%
+#     dplyr::arrange(region_id) %>%
+#     dplyr::mutate(goal = "LE") %>%
+#     dplyr::select(region_id, goal, dimension, score) %>%
+#     data.frame()
+#
+#   # return all scores
+#   return(rbind(scores, s))
+#
+# }
 
 
 CE <- function(layers){
