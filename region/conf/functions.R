@@ -469,6 +469,31 @@ RAO <-function(layers){
 
 }
 
+
+CS <-function(layers){
+
+  scen_year <- layers$data$scenario_year
+
+  # Placeholder status
+  cs_status <- AlignDataYears(layer_nm = "cs_status_placeholder", layers_obj = layers) %>%
+    dplyr::mutate(dimension = "status") %>%
+    dplyr::select(region_id, scenario_year, score = status, dimension)
+
+  # Calculate trend - NA for now
+  cs_trend <- data.frame(region_id = 1,
+                          scenario_year = 2020,
+                          score = NA,
+                          dimension = "trend")
+  # Calculate scores
+  cs_score <- cs_status %>%
+    filter(scenario_year == scen_year) %>%
+    bind_rows(cs_trend) %>%
+    dplyr::mutate(goal = "CS") %>%
+    dplyr::select(region_id, goal, dimension, score)
+  return(cs_score)
+
+}
+
 # CS <- function(layers) {
 #   scen_year <- layers$data$scenario_year
 #

@@ -17,7 +17,12 @@ CP,resilience,1,62.82
 CP,score,1,85.62
 CP,status,1,86.04
 CP,trend,1,0.01
+CS,future,1,
 CS,pressures,1,30.12
+CS,resilience,1,
+CS,score,1,
+CS,status,1,
+CS,trend,1,
 CW,future,1,
 CW,pressures,1,45.83
 CW,resilience,1,54.17
