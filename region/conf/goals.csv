@@ -7,6 +7,6 @@ order_color,order_hierarchy,order_calculate,goal,parent,name,name_flower,descrip
 5.2,5,11,BD,,Biodiversity,Biodiversity,This goal captures the conservation status of marine species.,1,,BD(scores)
 5.1,5.1,6,HAB,BD,Habitats,Habitats,This subgoal measures the condition of habitats that are important for supporting a wide array of species diversity.,0.5,HAB(layers),
 5.3,5.2,7,SPP,BD,Species,Species,This subgoal aims to estimate how successfully the richness and variety of marine life is being maintained.,0.5,SPP(layers),
-6,6,8,TR,,Tourism & Recreation,Tourism & n\Recreation,This goal captures the value people have for experiencing and taking pleasure in coastal areas.,1,TR(layers),
+6,6,8,TR,,Tourism & Recreation,Tourism & \nRecreation,This goal captures the value people have for experiencing and taking pleasure in coastal areas.,1,TR(layers),
 4,4,5,CW,,Clean Waters,Clean\nWaters,This goal captures the degree to which waters are polluted.,1,CW(layers),
-8,8,9,RAO,,Resource Access Opportunity,Resourse Access\nOpportunity,"This goal captures the access people have to coastal resources, whether or not they actually take fish or harvest from coastal waters.",1,RAO(layers),
+8,8,9,RAO,,Resource Access Opportunity,Resource Access\nOpportunity,"This goal captures the access people have to coastal resources, whether or not they actually take fish or harvest from coastal waters.",1,RAO(layers),
