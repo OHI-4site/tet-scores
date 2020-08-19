@@ -1566,7 +1566,7 @@ div.tocify {
 </div>
 
 
-<p>Compiled on Wed Aug 19 11:20:03 2020.</p>
+<p>Compiled on Wed Aug 19 13:14:51 2020.</p>
 <hr />
 <div id="ocean-health-index-ohi-global-assessment" class="section level1">
 <h1><span class="header-section-number">1</span> Ocean Health Index (OHI) Global Assessment</h1>
@@ -1617,50 +1617,122 @@ div.tocify {
 <p>The Biodiversity (BD) goal is made up of two subgoals, Habitats (HAB) and Species (SPP).</p>
 <div id="habitats-hab" class="section level4">
 <h4><span class="header-section-number">4.1.1.1</span> Habitats (HAB)</h4>
-<div id="land-habitat" class="section level5">
-<h5><span class="header-section-number">4.1.1.1.1</span> Land Habitat</h5>
-<p>For this assessment, we considered the all land areas coastal habitat, since the motus are so small and all closely linked to ocean ecosystems. Because a long term goal for Tetiaroa is to restore abandoned coconut plantation areas to native vegetation, the status score of the land habitat will be a reflection of how much native vegetation versus non native vegetation exists on the motus.</p>
-<p>Data used for this goal comes from a 2018 forest monitoring monitoring project undertaken by researchers from the University of French Polynesia and Oxford University (McIntosh et al., 2018) in addition to the CASUP_vegetation_flora_JYM_2015.docx found in the dropbox. Because we are not able to access the database online, these documents simply help us understand what vegetation is dominant on each motu. We will assign scores based on whether the motu is dominated by native vegetation or by coconut grove.</p>
-<p>To summarize, our final scoring scheme is as follows:</p>
-<p><strong>Table 4.1. Scores for Tetiaroa habitats</strong></p>
-<table>
+<p>The habitat subgoal measures the average condition of marine habitats present in each region that provide critical habitat for a broad range of species (mangroves, coral reefs, seagrass beds, salt marshes, sea ice edge, and subtidal soft bottom). This subgoal is considered a proxy for the condition of the broad suite of marine species. For this assessment, we include the native vegetation of the motus as well as the coral reef habitats in this goal.</p>
+<div id="current-status" class="section level5">
+<h5><span class="header-section-number">4.1.1.1.1</span> Current Status</h5>
+<p>The status of the habitat sub-goal, xhab, was assessed as the average of the condition estimates, C, for each habitat, k, present in a region; measured as the loss of habitat and/or % degradation of remaining habitat, such that:</p>
+<p><span class="math display">\[
+xhab=∑k=1NCkN,(Eq.5.3)
+\]</span></p>
+<p>where, Ck=Cc/Cr and N is the number of habitats in a region. Cc is the current condition and Cr is the reference condition specific to each k habitat present in the region (Table 5.2). This formulation ensures that each country is assessed only for those habitats that can exist (e.g., Canada is not assessed on the status of its nonexistent coral reefs).</p>
+<p><strong>Table 5.2.</strong> Habitat data Description of condition, extent, and trend calculations for habitat data (Note: extent is not used to calculate the habitat subgoal, but is used for the coastal protection and carbon storage goals). More information about the sources used to generate these values is located in Section 6 and Table 6.1.</p>
+<table style="width:100%;">
+<colgroup>
+<col width="12%"></col>
+<col width="38%"></col>
+<col width="27%"></col>
+<col width="21%"></col>
+</colgroup>
 <thead>
 <tr class="header">
 <th align="left">Habitat</th>
-<th align="center">Score</th>
+<th align="left">Condition</th>
+<th align="left">Extent</th>
+<th align="left">Trend</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">Only native vegetation</td>
-<td align="center">1</td>
+<td align="left">Native land vegetation</td>
+<td align="left">Scored based on relative area of coconut palms, native forest, and landscaped area (see below)</td>
+<td align="left">Frank’s map</td>
+<td align="left">No trend</td>
 </tr>
 <tr class="even">
-<td align="left">Native vegetation dominant, but some coconut grove</td>
-<td align="center">0.6</td>
-</tr>
-<tr class="odd">
-<td align="left">Coconut grove or altered landscape dominant, some vegetation</td>
-<td align="center">0.3</td>
-</tr>
-<tr class="even">
-<td align="left">Dense coconut grove present, lacking details on native vegetation</td>
-<td align="center">0</td>
+<td align="left">Coral reef</td>
+<td align="left">Used global OHI score for French Polynesia</td>
+<td align="left">Total extent of coral reef within 3 nm of Tetiaroa</td>
+<td align="left">Used global trend for French Polynesia</td>
 </tr>
 </tbody>
 </table>
-<p>Each motu received a score, and with the final score calculated as the average of the motus weighted by their respective areas.</p>
-<p>[equation?]</p>
+<p><strong>Land Habitat</strong> Because a long term goal for Tetiaroa is to restore abandoned coconut plantation areas to native vegetation, the condition score of the land habitat will be based on the extent of coconut grove versus native habitat. We will also include altered habitat (ie landscaped) since much of the habitat on Onetahi has been altered for construction of the Brando.</p>
+<p>Frank used Google Earth to estimate the area of coconut grove, coconut grove and native habitat mix, and just native habitat. He also includes the estimated area of landscaped habitat on Onetahi. We will assign scores based on whether the motu is dominated by native vegetation or by coconut grove. Each motu will receive a score, and then the final score will be calculated using the average weighted by area of the motu. The summary below includes information about the native species and benefits they provide to the island, which is why we consider areas dominated by native species the ideal state of land habitat. Note: if the tree is designated on the Tetiaroa website as ‘Polynesian Introduction’ we still consider it native.</p>
+<table style="width:100%;">
+<colgroup>
+<col width="14%"></col>
+<col width="23%"></col>
+<col width="14%"></col>
+<col width="47%"></col>
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Motu</th>
+<th align="left">Dominant species</th>
+<th align="left">Native?</th>
+<th align="left">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Reiono</td>
+<td align="left">Pisonia grandis / Cabbage tree</td>
+<td align="left">yes</td>
+<td align="left">Important nesting site, helps protect against storm surge</td>
+</tr>
+<tr class="even">
+<td align="left">Tiaraunu N</td>
+<td align="left">Cocos nucifera / Coconut palm</td>
+<td align="left">no</td>
+<td align="left">Coco plantations have made motus more vulnerable to storm surge and coastal erosion</td>
+</tr>
+<tr class="odd">
+<td align="left">Tiaraunu S</td>
+<td align="left">Callophyllum inophyllum / Tamanu</td>
+<td align="left">yes</td>
+<td align="left">Introduced by native Polynesians, oil from its fruit used for many purposes</td>
+</tr>
+<tr class="even">
+<td align="left">Rimatu</td>
+<td align="left">Pandanus tectorius / Screwpine</td>
+<td align="left">yes</td>
+<td align="left">Key food staple for native atoll inhabitants, used also for medicinal purposes and weaving</td>
+</tr>
+<tr class="odd">
+<td align="left">Onetahi</td>
+<td align="left">Casuarina equisetifoilia / Ironwood</td>
+<td align="left">yes</td>
+<td align="left">Introduced by native Polynesians, can grow to 100 ft tall, symbol of the war god ’Oro</td>
+</tr>
+<tr class="even">
+<td align="left">A’ie</td>
+<td align="left">Mixed forest</td>
+<td align="left">yes</td>
+<td align="left">No further details</td>
+</tr>
+</tbody>
+</table>
+<p>Between the report and the species profiles on the Tetiaroa Society we can see that the native ecosystem has many benefits compared to coconut groves. Also, while landscaped areas are most likely replacing removed or altered native habitat, we know from The Brando’s website that they only use native plants and do their best to recreate the ecosystem. We therefore will score these areas slightly better than “only coconut grove”. See full scoring scheme below:</p>
+<p><strong>Table 4.1. Scores for different vegetation zones on Tetiaroa</strong> | Habitat | Score | | :————— | :———— | | Only native vegetation | 1 | | Native vegetation mixed with coconut grove | 0.5 | | Landscaped area | 0.3 | | Only coconut grove | 0 |</p>
+<p><strong>Marine Habitat</strong></p>
+<p>The condition of the marine habitat was difficult to establish as temporal data on coral reef extent over time was not available. We therefore used the global score for French Polynesia as a substitute for coral health here.</p>
+<p><strong>global methods?</strong></p>
 </div>
-<div id="marine-habitat" class="section level5">
-<h5><span class="header-section-number">4.1.1.1.2</span> Marine Habitat</h5>
-<p>Marine habitat that fosters biodiversity on Tetiaroa consists of the coral reefs that surround the islands and exist in the lagoon.</p>
+<div id="trend" class="section level5">
+<h5><span class="header-section-number">4.1.1.1.2</span> Trend</h5>
+<p>Frank does not feel that the land vegetation makeup has changed much over the past 5 years, therefore the trend for land habitats was zero. For coral reefs, we substituted the global trend score for French Polynesia.</p>
+</div>
+<div id="data" class="section level5">
+<h5><span class="header-section-number">4.1.1.1.3</span> Data</h5>
+<p><em>Status and trend</em></p>
+<p><em>Pressure</em></p>
+<p><em>Resilience</em></p>
 </div>
 </div>
 <div id="species-spp" class="section level4">
 <h4><span class="header-section-number">4.1.1.2</span> Species (SPP)</h4>
 <p>This subgoal aims to assess the average condition of the marine species within Tetiaroa based on their IUCN status. The target for the species subgoal is to have all species at a risk status of Least Concern.</p>
-<div id="current-status" class="section level5">
+<div id="current-status-1" class="section level5">
 <h5><span class="header-section-number">4.1.1.2.1</span> Current Status</h5>
 <p>Species status was calculated as the area and status-weighted average of assessed species within Tetiaroa. Marine species distribution and threat category data mostly came from IUCN Red List of Threatened Species <a href="http://www.iucnredlist.org">http://www.iucnredlist.org</a>. Seabird distributions data came from Birdlife International <a href="http://datazone.birdlife.org">http://datazone.birdlife.org</a>.</p>
 <p>We scaled the lower end of the biodiversity goal to be 0 when 75% species are extinct, a level comparable to the five documented mass extinctions <span class="citation">[@barnosky_has_2011]</span> and would constitute a catastrophic loss of biodiversity.</p>
@@ -1716,11 +1788,11 @@ x_{spp} = max \left( \frac { \bar R_{SPP} - .25 }{ .75 }, 0 \right), (Eq. 4.2)
 </tbody>
 </table>
 </div>
-<div id="trend" class="section level5">
+<div id="trend-1" class="section level5">
 <h5><span class="header-section-number">4.1.1.2.2</span> Trend</h5>
 <p>We calculate trend using data the IUCN provides for current and past assessments of species, which we use to estimate annual change in IUCN risk status for each species. We then summarize these species trend values for Tetiaroa using the same general approach used to calculate status.</p>
 </div>
-<div id="data" class="section level5">
+<div id="data-1" class="section level5">
 <h5><span class="header-section-number">4.1.1.2.3</span> Data</h5>
 <p><em>Status and trend</em></p>
 <p><em>Pressure</em></p>
@@ -1728,9 +1800,21 @@ x_{spp} = max \left( \frac { \bar R_{SPP} - .25 }{ .75 }, 0 \right), (Eq. 4.2)
 </div>
 </div>
 </div>
-<div id="coastal-protection-cp" class="section level3">
-<h3><span class="header-section-number">4.1.2</span> Coastal Protection (CP)</h3>
-<p><em>Note to Laura: I probably can’t add this until I talk with Gage about coral data</em></p>
+<div id="coastal-protection-cp." class="section level3">
+<h3><span class="header-section-number">4.1.2</span> Coastal Protection (CP).</h3>
+<p>This goal aims to assess the amount of protection provided by marine and coastal habitats to coastal areas that people value, both inhabited (homes and other structures) and uninhabited (parks, special places, etc.). On Tetiaroa, both the coral reefs and native forest provide protection against storm surge from cyclones. Both habitats were therefore considered in calculated this goal.</p>
+<p>For an estimate of the extent of coral reefs, we used data from the Living Oceans Foundation French Polynesia report, which was published in 2017 to assess the condition of coral reefs based on the ratio of different benthic habitats on Tetiaroa.</p>
+<p>The Living Oceans Foundation is a non-profit dedicated to ocean protection rooted in science-based solutions. Their 5-year Global Reef Expedition was the largest coral reef survey and high resolution mapping expedition, with the goal of studying the health and resilience of reefs. The GRE mapped out benthic habitats in the Society Islands in 2012, including Tetiaroa. The final report where the habitat areas were published was released in 2017, but the data was collected in 2012.</p>
+<div id="trend-2" class="section level5">
+<h5><span class="header-section-number">4.1.2.0.1</span> Trend</h5>
+<p>We calculate trend using data the IUCN provides for current and past assessments of species, which we use to estimate annual change in IUCN risk status for each species. We then summarize these species trend values for Tetiaroa using the same general approach used to calculate status.</p>
+</div>
+<div id="data-2" class="section level5">
+<h5><span class="header-section-number">4.1.2.0.2</span> Data</h5>
+<p><em>Status and trend</em></p>
+<p><em>Pressure</em></p>
+<p><em>Resilience</em></p>
+</div>
 </div>
 <div id="conservation-economy-ce" class="section level3">
 <h3><span class="header-section-number">4.1.3</span> Conservation Economy (CE)</h3>
@@ -1794,11 +1878,11 @@ x_{spp} = max \left( \frac { \bar R_{SPP} - .25 }{ .75 }, 0 \right), (Eq. 4.2)
 x_{ce} = avg \left( \frac { \bar I_{yr}}{ G_{yr} }) 
 \]</span></p>
 <p>Where <span class="math inline">\(I_{yr}\)</span> is the yearly income and <span class="math inline">\(G_{yr}\)</span> is the yearly fundraising goal.</p>
-<div id="trend-1" class="section level5">
+<div id="trend-3" class="section level5">
 <h5><span class="header-section-number">4.1.3.0.1</span> Trend</h5>
 <p>The trend for this goal was calculated using only the three years of data we have available, rather than the usual five.</p>
 </div>
-<div id="data-1" class="section level5">
+<div id="data-3" class="section level5">
 <h5><span class="header-section-number">4.1.3.0.2</span> Data</h5>
 <p><em>Status and trend</em></p>
 <p><em>Pressure</em></p>
@@ -1812,7 +1896,7 @@ x_{ce} = avg \left( \frac { \bar I_{yr}}{ G_{yr} })
 <h4><span class="header-section-number">4.1.4.1</span> Iconic Species (ICO).</h4>
 <p>Iconic species are those that are relevant to local cultural identity through their relationship to one or more of the following: 1) traditional activities such as fishing, hunting or commerce; 2) local ethnic or religious practices; 3) existence value; and 4) locally-recognized aesthetic value (e.g., touristic attractions/common subjects for art such as whales). Ultimately, almost any species can be iconic to someone, and so the intent with this goal was to focus on those species widely seen as iconic from a cultural or existence value (rather than a livelihoods or extractive reason). Habitat-forming species were not included, nor were species harvested solely for economic or utilitarian purposes (even though they may be iconic to a sector or individual).</p>
 <p>The Iconic Species subgoal aims to assess the conservation status of species that have particular value to Tetiaroa. We decided that for this assessment, our iconic species list would be the list of species highlighted on the <a href="https://www.tetiaroasociety.org/index.php/island">Tetiaroa Society’s website</a>.</p>
-<div id="current-status-1" class="section level5">
+<div id="current-status-2" class="section level5">
 <h5><span class="header-section-number">4.1.4.1.1</span> Current Status</h5>
 <p>After compiling a list of species from this source, we pulled its conservation status using the IUCN RRedlist package and then assigned each species a score based on its conservation status. The overall score is determined by finding the average score per species class, and then taking the overall average among the classes. The table below shows how each IUCN conservation status is scored:</p>
 <p><strong>Table 4.2. Weights for assessment of species status based on IUCN risk categories</strong></p>
@@ -1858,11 +1942,11 @@ x_{ce} = avg \left( \frac { \bar I_{yr}}{ G_{yr} })
 </tbody>
 </table>
 </div>
-<div id="trend-2" class="section level5">
+<div id="trend-4" class="section level5">
 <h5><span class="header-section-number">4.1.4.1.2</span> Trend</h5>
 <p>We calculated trend using data the IUCN provides for current and past assessments of species, which we used to create a time series of average risk status for species within Tetiaroa. Because IUCN assessments are generally infrequent for any given species, we derive the trend as the annual change in risk status for each species across the previous twenty years, rather than a five-year window typical of other goals, and include only taxa with two or more IUCN assessments within the past 20 years.</p>
 </div>
-<div id="data-2" class="section level5">
+<div id="data-4" class="section level5">
 <h5><span class="header-section-number">4.1.4.1.3</span> Data</h5>
 <p><em>Status and trend</em></p>
 <p><em>Pressure</em></p>
@@ -1941,15 +2025,15 @@ x_{ce} = avg \left( \frac { \bar I_{yr}}{ G_{yr} })
 <p>The Tetiaroa Society and The Brando are still involved in the management of the rest of the lagoon, so we consider this area to have multiple stakeholders. There is also technically a plan, as seasonal fishing restrictions are in place and enforced. Frank feels this enforcement is pretty effective, more so than the no-take zone. This zone therefore meets 4 out of 4 criteria.</p>
 <p><strong>Offshore</strong></p>
 <p>The marine area 3 nm offshore from Tetiaroa is managed solely by the French Polynesian Government. While there exist restrictions on fishing in all FP waters (ie year-round prohibitions on shark fishing), there does not seem to exist a comprehensive management plan for pelagic ecosystems, so we’ll score this criteria as 0.5. Because the existing “management plan” is very simple, Frank and Neil feel that it is being enforced well, even if it is not monitored well. This might seem counterintuitive, but it may be that fishers and visitors are adhering to the restrictions more because violation can result in a large fine and possible jail time, acting a strong deterrent despite a lack of monitoring.</p>
-<div id="current-status-2" class="section level5">
+<div id="current-status-3" class="section level5">
 <h5><span class="header-section-number">4.1.4.2.1</span> Current status</h5>
 <p>The status score will be the average of the land, lagoon and offshore. We will calculate the land score by calculating the weighted average of each motu’s score, which leaves room for the score of a specific motu to change if future monitoring finds that the management plans have not been effective in things like deterring poachers or preventing introductions of native species.</p>
 </div>
-<div id="trend-3" class="section level5">
+<div id="trend-5" class="section level5">
 <h5><span class="header-section-number">4.1.4.2.2</span> Trend</h5>
 <p>This management scheme has not changed since 2014, when The Brando opened. Therefore, the trend for this score is zero.</p>
 </div>
-<div id="data-3" class="section level5">
+<div id="data-5" class="section level5">
 <h5><span class="header-section-number">4.1.4.2.3</span> Data</h5>
 <p><em>Status and trend</em></p>
 <p><em>Pressure</em></p>
@@ -1971,7 +2055,7 @@ x_{ce} = avg \left( \frac { \bar I_{yr}}{ G_{yr} })
 <li>Waste &amp; Recycling</li>
 <li>Water management</li>
 </ul>
-<div id="current-status-3" class="section level5">
+<div id="current-status-4" class="section level5">
 <h5><span class="header-section-number">4.1.5.0.1</span> Current Status</h5>
 <p>For this goal, we will score each sustainability category based on two criteria:</p>
 <ol style="list-style-type: decimal">
@@ -1981,11 +2065,11 @@ x_{ce} = avg \left( \frac { \bar I_{yr}}{ G_{yr} })
 <p>If the answer to the second criteria is “no”, the score will be reduced by 0.5.</p>
 <p>Based on our limited information, we believe that energy and waste meet both these criteria, while water does not. Furthermore, it is unclear how much water sourced from non-native freshwater is actually being used, so its difficult to give this category a score. If a category has multiple metrics, those will be averaged to get the category score. We will then average the three category scores to get the final score.</p>
 </div>
-<div id="trend-4" class="section level5">
+<div id="trend-6" class="section level5">
 <h5><span class="header-section-number">4.1.5.0.2</span> Trend</h5>
 <p>Since we only have the Sustainability Report for 2019, we do not know at this time if any of these measures has changed since 2014 (when the resort opened). For now, the trend will be zero, but with more detailed data can be updated.</p>
 </div>
-<div id="data-4" class="section level5">
+<div id="data-6" class="section level5">
 <h5><span class="header-section-number">4.1.5.0.3</span> Data</h5>
 <p><em>Status and trend</em></p>
 <p><em>Pressure</em></p>
@@ -2044,19 +2128,19 @@ x_{ce} = avg \left( \frac { \bar I_{yr}}{ G_{yr} })
 </div>
 </div>
 </div>
-<div id="status" class="section level2">
-<h2><span class="header-section-number">4.3</span> Status</h2>
+<div id="pressures" class="section level2">
+<h2><span class="header-section-number">4.3</span> Pressures</h2>
 <ul>
-<li>Data</li>
-<li>Reference point how calculated (narrative of calculation plus, mathematical model)</li>
+<li>Description</li>
+<li>Table how calculated (narrative of calculation plus, mathematical model)</li>
 </ul>
 <hr />
 </div>
-<div id="trend-5" class="section level2">
-<h2><span class="header-section-number">4.4</span> Trend</h2>
+<div id="resilience" class="section level2">
+<h2><span class="header-section-number">4.4</span> Resilience</h2>
 <ul>
-<li>Data</li>
-<li>how calculated</li>
+<li>Description</li>
+<li>table</li>
 </ul>
 <hr />
 </div>

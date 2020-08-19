@@ -79,7 +79,7 @@ Essentially all human activities that occur on Tetiaroa make use of marine resou
 
 ***
 
-# Goal: Methods/Results
+# Models: Methods/Results
 - Describe what the goal is measuring in the context of the OHI+ region and why this is relevant. I would also include the goals we are not including. I think the following should provide more on narrative descriptions of goals/models (vs. mathematical models and such...these are good to include, but I wouldn't use these in place of the narrative information).
 
 ## Goals Included in Tetiaroa OHI+ Assessment:
@@ -90,30 +90,84 @@ The Biodiversity (BD) goal is made up of two subgoals, Habitats (HAB) and Specie
 
 #### Habitats (HAB)
 
-##### Land Habitat
+The habitat subgoal measures the average condition of marine habitats present in each region that provide critical habitat for a broad range of species (mangroves, coral reefs, seagrass beds, salt marshes, sea ice edge, and subtidal soft bottom). This subgoal is considered a proxy for the condition of the broad suite of marine species. For this assessment, we include the native vegetation of the motus as well as the coral reef habitats in this goal.
 
-For this assessment, we considered the all land areas coastal habitat, since the motus are so small and all closely linked to ocean ecosystems. Because a long term goal for Tetiaroa is to restore abandoned coconut plantation areas to native vegetation, the status score of the land habitat will be a reflection of how much native vegetation versus non native vegetation exists on the motus. 
+##### Current Status
 
-Data used for this goal comes from a 2018 forest monitoring monitoring project undertaken by researchers from the University of French Polynesia and Oxford University (McIntosh et al., 2018) in addition to the CASUP_vegetation_flora_JYM_2015.docx found in the dropbox. Because we are not able to access the database online, these documents simply help us understand what vegetation is dominant on each motu. We will assign scores based on whether the motu is dominated by native vegetation or by coconut grove. 
+The status of the habitat sub-goal, xhab, was assessed as the average of the condition estimates, C, for each habitat, k, present in a region; measured as the loss of habitat and/or % degradation of remaining habitat, such that:
 
-To summarize, our final scoring scheme is as follows: 
+$$
+xhab=∑k=1NCkN,(Eq.5.3)
+$$
 
-**Table 4.1. Scores for Tetiaroa habitats**
+where, Ck=Cc/Cr and N is the number of habitats in a region. Cc is the current condition and Cr is the reference condition specific to each k habitat present in the region (Table 5.2). This formulation ensures that each country is assessed only for those habitats that can exist (e.g., Canada is not assessed on the status of its nonexistent coral reefs).
 
-| Habitat | Score
-| :--------------- | :-----: |
+**Table 5.2.** Habitat data Description of condition, extent, and trend calculations for habitat data (Note: extent is not used to calculate the habitat subgoal, but is used for the coastal protection and carbon storage goals). More information about the sources used to generate these values is located in Section 6 and Table 6.1.
+
+| Habitat | Condition | Extent | Trend |
+| :----- | :-----------------| :------------ | :--------- |
+| Native land vegetation | Scored based on relative area of coconut palms, native forest, and landscaped area (see below) | Frank's map | No trend
+| Coral reef | Used global OHI score for French Polynesia | Total extent of coral reef within 3 nm of Tetiaroa | Used global trend for French Polynesia
+
+**Land Habitat**. 
+
+Because a long term goal for Tetiaroa is to restore abandoned coconut plantation areas to native vegetation, the condition score of the land habitat will be based on the extent of coconut grove versus native habitat. We will also include altered habitat (ie landscaped) since much of the habitat on Onetahi has been altered for construction of the Brando. 
+
+Frank used Google Earth to estimate the area of coconut grove, coconut grove and native habitat mix, and just native habitat. He also includes the estimated area of landscaped habitat on Onetahi. We will assign scores based on whether the motu is dominated by native vegetation or by coconut grove. Each motu will receive a score, and then the final score will be calculated using the average weighted by area of the motu. The summary below includes information about the native species and benefits they provide to the island, which is why we consider areas dominated by native species the ideal state of land habitat. Note: if the tree is designated on the Tetiaroa website as 'Polynesian Introduction' we still consider it native.
+
+
+| Motu | Dominant species | Native? | Notes |
+| :----- | :--------- | :----- | :-------------------|
+| Reiono | Pisonia grandis / Cabbage tree | yes | Important nesting site, helps protect against storm surge |
+| Tiaraunu N | Cocos nucifera / Coconut palm | no | Coco plantations have made motus more vulnerable to storm surge and coastal erosion
+| Tiaraunu S | Callophyllum inophyllum / Tamanu | yes | Introduced by native Polynesians, oil from its fruit used for many purposes |
+| Rimatu | Pandanus tectorius / Screwpine | yes | Key food staple for native atoll inhabitants, used also for medicinal purposes and weaving | 
+| Onetahi | Casuarina equisetifoilia / Ironwood | yes | Introduced by native Polynesians, can grow to 100 ft tall, symbol of the war god 'Oro |
+| A'ie | Mixed forest | yes | No further details |
+
+Between the report and the species profiles on the Tetiaroa Society we can see that the native ecosystem has many benefits compared to coconut groves. Also, while landscaped areas are most likely replacing removed or altered native habitat, we know from The Brando's website that they only use native plants and do their best to recreate the ecosystem. We therefore will score these areas slightly better than "only coconut grove". See full scoring scheme below:
+
+**Table 4.1. Scores for different vegetation zones on Tetiaroa**  
+
+| Habitat | Score |
+| :--------------- | :------------ |
 | Only native vegetation | 1 |
-| Native vegetation dominant, but some coconut grove | 0.6 |
-| Coconut grove or altered landscape dominant, some vegetation | 0.3 |
-| Dense coconut grove present, lacking details on native vegetation | 0 |
+| Native vegetation mixed with coconut grove | 0.5 |
+| Landscaped area | 0.3 |
+| Only coconut grove | 0 | 
 
-Each motu received a score, and with the final score calculated as the average of the motus weighted by their respective areas. 
+**Marine Habitat** 
 
-[equation?]
 
-##### Marine Habitat
+The condition of the marine habitat was difficult to establish as temporal data on coral reef extent over time was not available. We therefore used the global score for French Polynesia as a substitute for coral health here. 
 
-Marine habitat that fosters biodiversity on Tetiaroa consists of the coral reefs that surround the islands and exist in the lagoon. 
+**global methods?**
+
+
+##### Trend
+
+Frank does not feel that the land vegetation makeup has changed much over the past 5 years, therefore the trend for land habitats was zero. For coral reefs, we substituted the global trend score for French Polynesia.  
+
+##### Data
+_Status and trend_
+
+```{r HAB data st, results="asis", echo=FALSE}
+#data_layers(goal="HAB", dimension=c("status", "trend"))
+```
+
+_Pressure_
+
+```{r HAB data p, results="asis", echo=FALSE}
+#data_layers(goal="HAB", dimension=c("pressure"))
+```
+
+_Resilience_
+
+```{r HAB r, results="asis", echo=FALSE}
+#data_layers(goal="HAB", dimension=c("resilience"))
+```
+
+
 
 #### Species (SPP)
 
@@ -174,9 +228,37 @@ _Resilience_
 ```
 
 
-### Coastal Protection (CP)
+### Coastal Protection (CP) 
 
-*Note to Laura: I probably can't add this until I talk with Gage about coral data*
+This goal aims to assess the amount of protection provided by marine and coastal habitats to coastal areas that people value, both inhabited (homes and other structures) and uninhabited (parks, special places, etc.). On Tetiaroa, both the coral reefs and native forest provide protection against storm surge from cyclones. Both habitats were therefore considered in calculated this goal. 
+
+For an estimate of the extent of coral reefs, we used data from the Living Oceans Foundation French Polynesia report, which was published in 2017 to assess the condition of coral reefs based on the ratio of different benthic habitats on Tetiaroa. 
+
+The Living Oceans Foundation is a non-profit dedicated to ocean protection rooted in science-based solutions. Their 5-year Global Reef Expedition was the largest coral reef survey and high resolution mapping expedition, with the goal of studying the health and resilience of reefs. The GRE mapped out benthic habitats in the Society Islands in 2012, including Tetiaroa. The final report where the habitat areas were published was released in 2017, but the data was collected in 2012. 
+
+##### Trend
+We calculate trend using data the IUCN provides for current and past assessments of species, which we use to estimate annual change in IUCN risk status for each species.  We then summarize these species trend values for Tetiaroa using the same general approach used to calculate status.
+
+##### Data
+_Status and trend_
+
+```{r CP data st, results="asis", echo=FALSE}
+#data_layers(goal="CP", dimension=c("status", "trend"))
+```
+
+_Pressure_
+
+```{r CP data p, results="asis", echo=FALSE}
+#data_layers(goal="CP", dimension=c("pressure"))
+```
+
+_Resilience_
+
+```{r CP r, results="asis", echo=FALSE}
+#data_layers(goal="CP", dimension=c("resilience"))
+```
+
+
 
 ### Conservation Economy (CE)
 
