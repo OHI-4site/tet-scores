@@ -83,7 +83,7 @@ Run this to create flower plots for each region.
 source('https://raw.githubusercontent.com/OHI-Science/arc/master/circle2016/plot_flower_local.R')
 source('conf/test_flower_plot.R')
 
-PlotFlower(assessment_name = "Tetiaroa",
+PlotFlowerTet(assessment_name = "Tetiaroa",
 dir_fig_save    = "reports/figures")
 ```
 

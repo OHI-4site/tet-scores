@@ -20,7 +20,7 @@ library(tidyverse)
 library(stringr)
 library(RColorBrewer)
 #'
-PlotFlower <- function(region_plot     = NA,
+PlotFlowerTet <- function(region_plot     = NA,
                        year_plot       = NA,
                        assessment_name = "OHI Assessment",
                        dir_fig_save    = "reports/figures") {
@@ -300,7 +300,7 @@ PlotFlower <- function(region_plot     = NA,
 
 
     ## position supra arc and names. x is angle, y is distance from center
-    supra_rad  <- 145  ## supra goal radius from center
+    supra_rad  <- 150  ## supra goal radius from center
 
     plot_obj <- plot_obj +
       ## add supragoal arcs
@@ -318,6 +318,16 @@ PlotFlower <- function(region_plot     = NA,
       geom_errorbar(data = supra_df, inherit.aes = FALSE,
                     aes(x = 2.5, ymin = supra_rad, ymax = supra_rad),
                     size = 0.25, show.legend = NA) +
+      geom_text(data = supra_df, inherit.aes = FALSE,
+                aes(label = name_supra, x = pos_supra, y = supra_rad, angle = myAng),
+                hjust = .5, vjust = .5,
+                size = 3,
+                color = dark_line)
+    ## add supragoal arcs hs
+    plot_obj <- plot_obj+
+    geom_errorbar(data = supra_df, inherit.aes = FALSE,
+                  aes(x = 6.5, ymin = supra_rad, ymax = supra_rad),
+                  size = 0.25, show.legend = NA) +
       geom_text(data = supra_df, inherit.aes = FALSE,
                 aes(label = name_supra, x = pos_supra, y = supra_rad, angle = myAng),
                 hjust = .5, vjust = .5,

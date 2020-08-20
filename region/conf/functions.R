@@ -469,6 +469,23 @@ RAO <-function(layers){
 
 }
 
+HS <- function(scores) {
+
+  s <- scores %>%
+    filter(goal %in% c('CP', 'CS'),
+           dimension %in% c('status', 'trend', 'future', 'score')) %>%
+    group_by(region_id, dimension) %>%
+    summarize(score = mean(score, na.rm = TRUE)) %>%
+    ungroup() %>%
+    arrange(region_id) %>%
+    mutate(goal = "HS") %>%
+    select(region_id, goal, dimension, score) %>%
+    data.frame()
+
+  # return all scores
+  return(rbind(scores, s))
+}
+
 
 CS <-function(layers){
 
