@@ -1,0 +1,35 @@
+layer,fn,name_data_fld,units,name,description,layer_gl,dir,file_exists
+sp_alien,sp_alien.csv,status,scaled 0-1,Nonindigenous terrestrial species,Measure of harmful invasive species,sp_alien,,TRUE
+prs_mgmt,prs_mgmt.csv,pressure_score,scaled 0-1,Poorly managed areas,Inverse of LSP scores,prs_mgmt,,TRUE
+res_local_emp,res_local_emp.csv,res_score,scaled 0-1,Proportion of local resort employees ,Percentage of staff that is local to Polynesia,res_local_emp,,TRUE
+res_mgmt,res_mgmt.csv,res_score,scaled 0-1,Stakeholder engagement and management effectiveness,"How many criteria that make up a well managed area each zone meets, scaled 0 -1",res_mgmt,,TRUE
+res_mpa,res_mpa.csv,res_score,scaled 0-1,Coastal protected marine areas (habitat preservation),Protected marine areas within 3nm of coastline,res_mpa,,TRUE
+res_fishing_reg,res_fishing_reg.csv,res_score,scaled 0-1,Proportion of species with year round fishing regulations,Percent species that have fishing regulations,res_fishing_reg,,TRUE
+res_spp_div,res_spp_div.csv,res_score,scaled 0-1,Measure of coastal ecological integrity,Marine species condition (same calculation and data as the species subgoal status score)  calculated within 3 nm of shoreline as a proxy for ecological integrity,res_spp_div,,TRUE
+res_biosecurity,res_biosecurity.csv,res_score,scaled 0-1,Biosecurity,Measured by how many key procedures Tetiaroa implements for biosecurity,res_biosecurity,,TRUE
+ce_status,ce_status.csv,status,scaled 0-1,Conservation economy status scores,Calculated using  revenue data for the Tetiaroa Society (2018-2020),ce_status,,TRUE
+hab_coral_extent,hab_coral_extent.csv,km2,km2,Habitat extent of coral,Area of coral habitat,hab_coral_extent,,TRUE
+hab_land_extent,hab_land_extent.csv,km2,km2,Habitat extent of seaice,Area of seaice (edge and shoreline) habitat,hab_land_extent,,TRUE
+prs_sst,prs_sst.csv,pressure_score,scaled 0-1,Sea surface temperature,Presure due to increasing extreme sea surface temperature events,prs_sst,,TRUE
+prs_uv,prs_uv.csv,pressure_score,scaled 0-1,UV radiation,Pressure due to increasing frequency of UV anomolies,prs_uv,,TRUE
+prs_oa,prs_oa.csv,pressure_score,scaled 0-1,Ocean acidification,"Pressure due to increasing ocean acidification, scaled using biological thresholds",prs_oa,,TRUE
+prs_slr,prs_slr.csv,pressure_score,scaled 0-1,Sea level rise,Pressure due to rising mean sea level,prs_slr,,TRUE
+prs_po_tr,prs_po_tr.csv,pressure_score,scaled 0-1,Pollution from tourism,Inverse of the waste management TR sustainability score ,prs_po_tr,,TRUE
+prs_fp_targetharvest,prs_fp_targetharvest.csv,pressure_score,scaled 0-1,Placeholder for layer quantifying poaching pressure on Tetiaroa,Placeholder for layer quantifying poaching pressure on Tetiaroa,prs_fp_targestharvest,,TRUE
+hab_coral_health,hab_coral_health.csv,health,proportion,Habitat condition of coral,Current condition of coral habitat relative to historical condition,hab_coral_health,,TRUE
+hab_coral_trend,hab_coral_trend.csv,trend,trend,Habitat condition trend of coral,Estimated trend in coral condition,hab_coral_trend,,TRUE
+hab_land_health,hab_land_health.csv,health,proportion,Habitat condition of seaice,Current condition of seaice habitat relative to historical condition,hab_seaice_health,,TRUE
+hab_land_trend,hab_land_trend.csv,trend,trend,Habitat condition trend of seaice,Estimated trend in seaice condition,hab_seaice_trend,,TRUE
+cs_status_placeholder,cs_status_placeholder.csv,status,scaled 0-1,Placeholder for layers informing carbon storage goal,Placeholder for some measure of carbon storage,cw_status_placeholder,,TRUE
+cw_status_placeholder,cw_status_placeholder.csv,status,scaled 0-1,Clean waters status,Placeholder for score informed by how clean the water is ,cw_status_placeholder,,TRUE
+ico_status,ico_status.csv,status,scaled 0-1,IUCN extinction risk,IUCN extinction risk category for iconic species located on or withing 3nm of Tetiaroa,,,TRUE
+lsp_status,lsp_status.csv,status,scaled 0-1,Stakeholder engagement and mangement effectiveness,"How many criteria that make up a well managed area each zone meets, scaled 0 -1",,,TRUE
+rao_status_placeholder,rao_status_placeholder.csv,status,scaled 0-1,Resource access opportunities,Placeholder for score informed by how well people can access marine resources,rao_status_placeholder,,TRUE
+rgn_area,rgn_area.csv,area_km2,km2,Region areas based on EEZ boundaries,"Area of Ocean Health Index regions modified from exclusive economic zones, weights used to calculate global score",rgn_area,,TRUE
+rgn_tet,rgn_tet.csv,label,label,Tetiaroa region id,The region for this analysis ,rgn_tet,,TRUE
+rgn_labels,rgn_labels.csv,label,label,Regions,"Regions by type (eez, subocean, unclaimed)",rgn_labels,,TRUE
+spp_status,spp_status.csv,status,scaled 0-1,Average species condition,Overall measure of species condition based on IUCN status of species within each region,spp_status,,TRUE
+spp_trend,spp_trend.csv,trend,scaled 0-1,Average species condition trend,Overall measure of species condition trends based on change in IUCN status of species within each region,spp_trend,,TRUE
+tr_status,tr_status.csv,status,scaled 0-1,Tourism sustainability ,"Percent of energy, waste management, and water operations that are zero impact",,,TRUE
+element_wts_cp_km2_x_protection,element_wts_cp_km2_x_protection_gl2019.csv,extent_rank,extent*rank_protection,Coastal protection weights,"Habitat extent multiplied by habitat protection rank for: coral, mangrove (offshore and inland 1km), saltmarsh, sea ice (shoreline), and seagrass (empty dataframe filled by functions.R in ohi-global)",element_wts_cp_km2_x_protection,,TRUE
+element_wts_hab_pres_abs,element_wts_hab_pres_abs_gl2019.csv,boolean,0 or 1,Habitat presence/absence,List of habitats in each region (empty dataframe filled by functions.R in ohi-global),element_wts_hab_pres_abs,,TRUE

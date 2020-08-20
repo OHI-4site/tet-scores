@@ -17,21 +17,9 @@ output:
     toc: yes
 ---
 
-Compiled on `r date()`.
+Compiled on Thu Aug 20 10:50:26 2020.
 
-```{r setup, echo=FALSE, warning=FALSE, error=FALSE, message=FALSE}
 
-library(knitr)
-library(xtable)
-library(pander)
-library(dplyr)
-library(tidyr)
-library(ggplot2)
-library(here)
-
-options(knitr.kable.NA = '')
-
-```
 
 ***
 
@@ -150,21 +138,15 @@ Frank does not feel that the land vegetation makeup has changed much over the pa
 ##### Data
 _Status and trend_
 
-```{r HAB data st, results="asis", echo=FALSE}
-#data_layers(goal="HAB", dimension=c("status", "trend"))
-```
+
 
 _Pressure_
 
-```{r HAB data p, results="asis", echo=FALSE}
-#data_layers(goal="HAB", dimension=c("pressure"))
-```
+
 
 _Resilience_
 
-```{r HAB r, results="asis", echo=FALSE}
-#data_layers(goal="HAB", dimension=c("resilience"))
-```
+
 
 
 
@@ -210,21 +192,15 @@ We calculate trend using data the IUCN provides for current and past assessments
 ##### Data
 _Status and trend_
 
-```{r SPP data st, results="asis", echo=FALSE}
-#data_layers(goal="SPP", dimension=c("status", "trend"))
-```
+
 
 _Pressure_
 
-```{r SPP data p, results="asis", echo=FALSE}
-#data_layers(goal="SPP", dimension=c("pressure"))
-```
+
 
 _Resilience_
 
-```{r SPP r, results="asis", echo=FALSE}
-#data_layers(goal="SPP", dimension=c("resilience"))
-```
+
 
 
 ### Coastal Protection (CP) 
@@ -268,21 +244,15 @@ The trend for this goal used the same metrics used for the HAB goal trend. For n
 ##### Data
 _Status and trend_
 
-```{r CP data st, results="asis", echo=FALSE}
-#data_layers(goal="CP", dimension=c("status", "trend"))
-```
+
 
 _Pressure_
 
-```{r CP data p, results="asis", echo=FALSE}
-#data_layers(goal="CP", dimension=c("pressure"))
-```
+
 
 _Resilience_
 
-```{r CP r, results="asis", echo=FALSE}
-#data_layers(goal="CP", dimension=c("resilience"))
-```
+
 
 ### Conservation Economy (CE)
 
@@ -319,21 +289,15 @@ The trend for this goal was calculated using only the three years of data we hav
 ##### Data
 _Status and trend_
 
-```{r CE data st, results="asis", echo=FALSE}
-#data_layers(goal="SPP", dimension=c("status", "trend"))
-```
+
 
 _Pressure_
 
-```{r CE data p, results="asis", echo=FALSE}
-#data_layers(goal="SPP", dimension=c("pressure"))
-```
+
 
 _Resilience_
 
-```{r CE r, results="asis", echo=FALSE}
-#data_layers(goal="SPP", dimension=c("resilience"))
-```
+
 
 
 
@@ -369,21 +333,15 @@ We calculated trend using data the IUCN provides for current and past assessment
 ##### Data
 _Status and trend_
 
-```{r ICO data st, results="asis", echo=FALSE}
-#data_layers(goal="ICO", dimension=c("status", "trend"))
-```
+
 
 _Pressure_
 
-```{r ICO data p, results="asis", echo=FALSE}
-#data_layers(goal="ICO", dimension=c("pressure"))
-```
+
 
 _Resilience_
 
-```{r ICO r, results="asis", echo=FALSE}
-#data_layers(goal="ICO", dimension=c("resilience"))
-```
+
 
 
 #### Lasting Special Places (LSP)
@@ -449,21 +407,15 @@ This management scheme has not changed since 2014, when The Brando opened. There
 ##### Data
 _Status and trend_
 
-```{r LSP data st, results="asis", echo=FALSE}
-#data_layers(goal="SPP", dimension=c("status", "trend"))
-```
+
 
 _Pressure_
 
-```{r LSP data p, results="asis", echo=FALSE}
-#data_layers(goal="SPP", dimension=c("pressure"))
-```
+
 
 _Resilience_
 
-```{r LSP r, results="asis", echo=FALSE}
-#data_layers(goal="SPP", dimension=c("resilience"))
-```
+
 
 
 ### Tourism and Recreation (TR)
@@ -501,21 +453,15 @@ Since we only have the Sustainability Report for 2019, we do not know at this ti
 ##### Data
 _Status and trend_
 
-```{r TR data st, results="asis", echo=FALSE}
-#data_layers(goal="SPP", dimension=c("status", "trend"))
-```
+
 
 _Pressure_
 
-```{r TR data p, results="asis", echo=FALSE}
-#data_layers(goal="SPP", dimension=c("pressure"))
-```
+
 
 _Resilience_
 
-```{r TR r, results="asis", echo=FALSE}
-#data_layers(goal="SPP", dimension=c("resilience"))
-```
+
 
 
 ***
@@ -598,20 +544,17 @@ Pressure is calculated using both social and ecological pressures.  Ecological p
 **Table 4.1. Pressure data and categories**
 Description of the stressor data layers used to calculate overall pressure for each goal and region for the global assessment (descriptions of pressure data in section 6).  Each data layer is assigned to an ecological or social category, and ecological data are assigned to one of five subcategories. 
 
-```{r pressure categories, echo = FALSE, warning=FALSE, message = FALSE, error =FALSE}
 
-#table (global now)
-
-full_lyr_names <- read.csv(here("documents/methods-results/metadata_documentation/layers_tet_base.csv")) %>%
-  select(layer, name, description)
-pressure_cat <- read.csv(here("region/conf/pressure_categories.csv")) %>%
-  left_join(full_lyr_names, by = "layer") %>%
-  mutate(subcategory = gsub("_", " ", subcategory)) %>%
-  select(Data = name, "Short name" = layer, Category = category, Subcategory = subcategory, Description = description)
-kable(pressure_cat, align = "l")
-
-
-```
+|Data                              |Short name           |Category   |Subcategory      |Description                                                                        |
+|:---------------------------------|:--------------------|:----------|:----------------|:----------------------------------------------------------------------------------|
+|Nonindigenous terrestrial species |sp_alien             |ecological |alien species    |Measure of harmful invasive species                                                |
+|Sea surface temperature           |prs_sst              |ecological |climate change   |Presure due to increasing extreme sea surface temperature events                   |
+|UV radiation                      |prs_uv               |ecological |climate change   |Pressure due to increasing frequency of UV anomolies                               |
+|Ocean acidification               |prs_oa               |ecological |climate change   |Pressure due to increasing ocean acidification, scaled using biological thresholds |
+|Sea level rise                    |prs_slr              |ecological |climate change   |Pressure due to rising mean sea level                                              |
+|Poorly managed areas              |prs_mgmt             |social     |social           |Inverse of LSP scores                                                              |
+|Pollution from tourism            |prs_po_tr            |ecological |pollution        |Inverse of the waste management TR sustainability score                            |
+|                                  |prs_fp_targetharvset |ecological |fishing pressure |                                                                                   |
 
 The global OHI includes five ecological pressure categories (Figure XX). For this assessment, we included four of broad, globally-relevant categories of ecological stressors: fishing pressure, climate change (including ocean acidification), water pollution, and species introductions (invasive species and genetic escapes). The four categories are intended to capture known pressures to the social-ecological system associated with each goal. More pressures can be added to Tetiaroa's assessment as data becomes more available. The intensity of each stressor within each OHI region is scaled from 0 to 1, with 1 indicating the highest stress (e.g., example of one of these data layers is [sea surface temperature](https://github.com/OHI-Science/ohi-global/blob/draft/eez/layers/cc_sst.csv)).
 
@@ -621,19 +564,23 @@ We determined the rank sensitivity of each goal/subgoal to each stressor (or, wh
 
 **Table 4.2. Pressure matrix**
 Rank sensitivity of each goal (or, goal element) to each stressor.
-```{r pressure matrix, echo = FALSE}
 
-pressure_matrix <- read.csv(here("region/conf/pressures_matrix.csv"), na.strings=c("","NA"), stringsAsFactors = FALSE) %>%
-  mutate(element = ifelse(is.na(element_name), element, element_name)) %>%
-  select(-element_name) %>%
-  gather("layer", "rank", -(1:2)) %>%
-  spread(layer, rank, fill="") %>%
-  mutate(element = gsub("_", " ", element))
-kable(pressure_matrix, align = "l")
-
-
-
-```
+|goal |element     |prs_mgmt |prs_oa |prs_po_tr |prs_slr |prs_sst |prs_uv |sp_alien |
+|:----|:-----------|:--------|:------|:---------|:-------|:-------|:------|:--------|
+|CE   |            |1        |       |          |        |        |       |         |
+|CP   |coral       |1        |3      |2         |2       |3       |1      |1        |
+|CP   |native land |1        |       |          |        |        |       |1        |
+|CS   |mangrove    |         |       |          |        |        |       |         |
+|CS   |saltmarsh   |         |       |          |        |        |       |         |
+|CS   |seagrass    |         |       |          |        |2       |       |         |
+|CW   |            |1        |       |3         |        |        |       |         |
+|HAB  |coral       |1        |3      |2         |2       |3       |1      |1        |
+|HAB  |native land |1        |       |          |2       |        |       |1        |
+|ICO  |            |1        |1      |1         |1       |2       |1      |3        |
+|LSP  |            |1        |       |          |1       |        |       |         |
+|RAO  |            |1        |       |          |        |1       |       |         |
+|SPP  |            |1        |1      |          |1       |2       |1      |1        |
+|TR   |            |1        |       |          |1       |        |       |         |
 
 #### Ecological Pressures 
 
@@ -693,23 +640,33 @@ Each resilience category is composed of 1 or more data layers (Table 4.3) with v
 
 **Table 4.3. Resilience categories and weights**
 The data layers used to calculate resilience for each goal and region for the global assessment (descriptions of data layers and sources are in section 6).  Each data layer is assigned to an ecological or social category.  The ecological category is broken into an ecosystem and regulatory category type.
-```{r Resilience categories and weight table, echo=FALSE, warning=FALSE, message=FALSE, error=FALSE}
-full_lyr_names <- read.csv(here("documents/methods-results/metadata_documentation/layers_tet_base.csv")) %>% 
-  select(layer, name)
-res_cat <- read.csv(here("region/conf/resilience_categories.csv")) %>%
-  left_join(full_lyr_names, by = "layer") %>%
-  mutate(subcategory = gsub("_", " ", subcategory)) %>%
-  select(Data = name, "Short name" = layer, Category = category, "Category type" = category_type, Subcategory = subcategory, Weight=weight)
-kable(res_cat, align = "l")
-```
+
+|Data                                                      |Short name      |Category   |Category type |Subcategory         |Weight |
+|:---------------------------------------------------------|:---------------|:----------|:-------------|:-------------------|:------|
+|Proportion of species with year round fishing regulations |res_fishing_reg |ecological |regulatory    |fishing pressure    |1      |
+|Coastal protected marine areas (habitat preservation)     |res_mpa         |ecological |regulatory    |habitat destruction |1      |
+|Measure of coastal ecological integrity                   |res_spp_div     |ecological |ecological    |ecosystem           |1      |
+|Biosecurity                                               |res_biosecurity |ecological |regulatory    |alien species       |1      |
+|Proportion of local resort employees                      |res_local_emp   |social     |social        |social              |1      |
+|Stakeholder engagement and management effectiveness       |res_mgmt        |social     |social        |social              |1      |
 
 
 **Table 4.4. Resilience matrix**
 Describes which goals/subgoals (and goal elements) are influenced by the resilience data layers.
-```{r Resilience matrix, echo=FALSE, warning=FALSE, error=FALSE, message=FALSE}
-res_matrix <- read.csv(here("region/conf/resilience_matrix.csv"), na.strings="") 
-kable(res_matrix, align = "l")
-```
+
+|goal |element     |res_mpa |res_fishing_reg |res_local_emp |res_mgmt |res_spp_div |res_biosecurity |
+|:----|:-----------|:-------|:---------------|:-------------|:--------|:-----------|:---------------|
+|CE   |            |x       |x               |x             |x        |x           |x               |
+|CP   |coral       |x       |                |              |x        |x           |x               |
+|CP   |native_land |        |                |              |x        |x           |x               |
+|CW   |            |        |                |              |x        |            |                |
+|HAB  |coral       |x       |                |              |x        |x           |x               |
+|HAB  |native_land |        |                |              |x        |x           |x               |
+|ICO  |            |x       |x               |              |x        |x           |x               |
+|SPP  |            |x       |x               |              |x        |            |x               |
+|LSP  |            |x       |                |x             |x        |x           |x               |
+|TR   |            |        |                |x             |x        |            |                |
+|RAO  |            |x       |x               |              |x        |x           |                |
 
 #### Ecological resilience
 
