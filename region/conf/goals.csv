@@ -4,7 +4,7 @@ order_color,order_hierarchy,order_calculate,goal,parent,name,name_flower,descrip
 3,3,3,CE,,Conservation Economy,Conservation\nEconomy,This goal measures the amount of money generated for the ecological protection and restoration of Tetiaroa,1,CE(layers),
 4.1,4,11,SP,,Sense of Place,Sense of Place,This goal aims to capture the level of protection for aspects of Tetiaroa that contribute to a person's sense of cultural identity.,1,,SP(scores)
 4.1,4.1,4,ICO,SP,Iconic Species,Iconic\nSpecies,This subgoal captures the species that are important to Tetiaroa  because they are relevant to local cultural identity.,0.5,ICO(layers),
-4.3,4.2,5,LSP,SP,Lasting Special Places,Lasting Special\nPlaces,"This subgoal captures the level of management of Tetiaroa's marine and coastal areas to best preserve aesthetic, spiritual, cultural, recreational, or existence value for people.",0.5,LSP(layers),
+4.3,4.2,5,LSP,SP,Lasting Special Places,Lasting\nSpecial\nPlaces,"This subgoal captures the level of management of Tetiaroa's marine and coastal areas to best preserve aesthetic, spiritual, cultural, recreational, or existence value for people.",0.5,LSP(layers),
 6.2,6,12,BD,,Biodiversity,Biodiversity,This goal captures the conservation status of marine species.,1,,BD(scores)
 6.1,6.1,7,HAB,BD,Habitats,Habitats,This subgoal measures the condition of habitats that are important for supporting a wide array of species diversity.,0.5,HAB(layers),
 6.3,6.2,8,SPP,BD,Species,Species,This subgoal aims to estimate how successfully the richness and variety of marine life is being maintained.,0.5,SPP(layers),
