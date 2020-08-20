@@ -49,8 +49,22 @@ OHI assessments have also been completed at smaller scales. Code, training, and 
 
 This report is a summary of the methods and results for the Tetiaroa OHI+ assessment, completed in 2020 in partnership with the Tetiaroa 4site team. The Tetiaroa OHI+ assessment uses the best-available data to measure progress toward target conditions for benefits provided by the atoll’s marine ecosystems, resulting in benefit-specific and overall health scores on a scale of 0 to 100. 
 
-![](assets/ohi-logo.jpg) 
-[insert 4site logo]
+<div class = "row">
+<div class = "col-md-2">
+<br><br>![OHI logo](assets/ohi-logo.jpg)
+</div>
+
+<div class = "col-md-2">
+<br><br>![Tetiaroa Society](assets/TS-logo.png)
+</div>
+
+<div class = "col-md-2">
+<br><br>![CRIOBE logo](assets/CRIOBE-logo.jpg)
+</div>
+</div>
+
+
+
 
 ## About Tetiaroa Atoll 
 
@@ -69,7 +83,20 @@ The ecology of Tetiaroa is similar to other small islands in the South Pacific. 
 
 Essentially all human activities that occur on Tetiaroa make use of marine resources, from recreation to research. Therefore, the scope of this assessment encompasses all marine areas withing a 3 nautical mile-buffer of the motus, as well as all the land that makes up the motus. 
 
-**insert some pretty photos**
+<div class = "row">
+<div class = "col-md-2">
+<br><br>![Noddies](assets/noddies.jpg)
+</div>
+
+<div class = "col-md-2">
+<br><br>![pandanus-stand](assets/pandanus-stand.JPG)
+</div>
+
+<div class = "col-md-2">
+<br><br>![blue-footed](assets/blue-footed-booby.jpg)
+</div>
+</div>
+
 ***
 
 # Maybe a quick summary of the overall results and conclusions.
@@ -135,6 +162,8 @@ Between the report and the species profiles on the Tetiaroa Society we can see t
 | Native vegetation mixed with coconut grove | 0.5 |
 | Landscaped area | 0.3 |
 | Only coconut grove | 0 | 
+
+*insert weighted average equation*
 
 **Marine Habitat** 
 
@@ -251,6 +280,13 @@ $$
 
 where, $C_c$ is current condition and $C_r$ is reference condition.
 
+The land habitat condition and extent were both calculated using Frank's area estimations of each habitat type. The extent of the coral habitat was calculated by finding the total area of benthic habitat with reef structure, using the following area estimations from LOF: 
+
+
+*insert table*
+
+We considered the habitats....
+
 **Table 5.4. Coastal protectiveness ranks**
 Scores range from 1-4, with 4 being the most protective [@tallis_invest_2011].
 
@@ -305,7 +341,7 @@ We used the Tetiaroa's Society fundraising goal as the reference point, which br
 **Total Yearly Budget** = $2,000,000 
 
 To measure the status of this goal, we used the 2018 and 2019 Tetiaroa Society reports for income in 2018 and 2019, and then a measure of $700,000 per year for 2020 (per Neil and Frank's estimation):
-
+*average*?
 $$
 x_{ce} = \left( \frac { \bar I_{yr}}{ G_{yr} }) 
 $$
@@ -440,7 +476,10 @@ The Tetiaroa Society and The Brando are still involved in the management of the 
 The marine area 3 nm offshore from Tetiaroa is managed solely by the French Polynesian Government. While there exist restrictions on fishing in all FP waters (ie year-round prohibitions on shark fishing), there does not seem to exist a comprehensive management plan for pelagic ecosystems, so we'll score this criteria as 0.5. Because the existing "management plan" is very simple, Frank and Neil feel that it is being enforced well, even if it is not monitored well. This might seem counterintuitive, but it may be that fishers and visitors are adhering to the restrictions more because violation can result in a large fine and possible jail time, acting a strong deterrent despite a lack of monitoring.
 
 ##### Current status 
-The status score will be the average of the land, lagoon and offshore. We will calculate the land score by calculating the weighted average of each motu's score, which leaves room for the score of a specific motu to change if future monitoring finds that the management plans have not been effective in things like deterring poachers or preventing introductions of native species.
+
+The status score was calculated as the average of the land, lagoon and offshore scores. The land score was calculated using the weighted average of each motu's score, weighted by area, which leaves room for the score of a specific motu to change if future monitoring finds that the management plans have not been effective in things like deterring poachers or preventing introductions of native species.
+
+*insert weighted avearge*
 
 ##### Trend
 
@@ -494,6 +533,7 @@ If the answer to the second criteria is "no", the score will be reduced by 0.5.
 
 Based on our limited information, we believe that energy and waste meet both these criteria, while water does not. Furthermore, it is unclear how much water sourced from non-native freshwater is actually being used, so its difficult to give this category a score. If a category has multiple metrics, those will be averaged to get the category score. We will then average the three category scores to get the final score.
 
+*insert weighted average equation*
 ##### Trend
 
 Since we only have the Sustainability Report for 2019, we do not know at this time if any of these measures has changed since 2014 (when the resort opened). For now, the trend will be zero, but with more detailed data can be updated. 
@@ -772,3 +812,8 @@ Ideally, assessments of social resilience would include state and federal level 
 - poaching pressure
 
 ***
+# References / Footnotes
+
+- LOF
+- Tetiaroa Society website
+- any others I use to justify things 
