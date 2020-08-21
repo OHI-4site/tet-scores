@@ -84,9 +84,10 @@ The ecology of Tetiaroa is similar to other small islands in the South Pacific. 
 
 Essentially all human activities that occur on Tetiaroa make use of marine resources, from recreation to research. Therefore, the scope of this assessment encompasses all marine areas withing a 3 nautical mile-buffer of the motus, as well as all the land that makes up the motus. 
 
-<div class = "row">
+<br>
+<br>
 ![](assets/pictures_tet.png)
-</div>
+
 
 ***
 
@@ -752,8 +753,6 @@ $$
 
 where $z_{i}$ are the social pressure measures specific to the goal. Unequal weighting may be appropriate in some cases but is difficult to assess currently, particularly at the global scale. 
 
-
-**Details on how each of these were decided**
 
 ***
 
