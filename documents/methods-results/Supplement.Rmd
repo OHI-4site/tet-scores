@@ -85,17 +85,7 @@ The ecology of Tetiaroa is similar to other small islands in the South Pacific. 
 Essentially all human activities that occur on Tetiaroa make use of marine resources, from recreation to research. Therefore, the scope of this assessment encompasses all marine areas withing a 3 nautical mile-buffer of the motus, as well as all the land that makes up the motus. 
 
 <div class = "row">
-<div class = "col-md-2">
-<br><br>![Noddies](assets/noddies.jpg)
-</div>
-
-<div class = "col-md-2">
-<br><br>![pandanus-stand](assets/pandanus-stand.JPG)
-</div>
-
-<div class = "col-md-2">
-<br><br>![blue-footed](assets/blue-footed-booby.jpg)
-</div>
+![](assets/pictures_tet.png)
 </div>
 
 ***
@@ -135,7 +125,7 @@ kable(scores, align = "l")
 ## Goals Included in Tetiaroa OHI+ Assessment:
 The following goals were included in the Tetiaroa OHI+ assessment:
 
-### Biodiversity (BD)
+### Biodiversity (BD) 
 The Biodiversity (BD) goal is made up of two subgoals, Habitats (HAB) and Species (SPP).
 
 #### Habitats (HAB)
@@ -811,12 +801,13 @@ kable(res_matrix, align = "l")
 
 Ecosystem integrity, e.g., food web integrity, is measured as relative condition of assessed species in a given location (scores from the species subgoal were used to estimate ecosystem integrity). For some goals, there is little evidence that our index of ecosystem integrity directly affects the value of the goal (or subgoal).  In these instances, ecological integrity falls out of the resilience model.
 
-For this assesment we only have one data layer describing ecosystem integrity (res_spp_diversity), however, if there were multiple layers the overall score for ecosystem integrity would be a weighted mean of all the data layers, $i$, that describe ecosystem integrity ($y_{E,i}$) and influence the goal:
+For this assessment we only have one data layer describing ecosystem integrity (res_spp_diversity), however, if there were multiple layers the overall score for ecosystem integrity would be a weighted mean of all the data layers, $i$, that describe ecosystem integrity ($y_{E,i}$) and influence the goal:
 
 $$
 { Y }_{ E }\quad =\quad \frac { \displaystyle\sum _{ i=1 }^{ N }{ { w }_{ i }{ y_E}_{i} }  }{ \displaystyle\sum _{ i=1 }^{ N }{ { w }_{ i }}}, (Eq. 4.11) 
 $$
 
+Ecosystem integrity, as measured by species diversity, helps support multiple goals. Tetiaroa's Conservation Economy relies on both people valuing a healthy atoll ecosystem and wanting to come visit it. It also supports the health of iconic species that are culturally important on Tetiaroa. Ecosystem integrity also helps ensure that coral reefs and native vegetation habitat can sustain biodiversity. 
 
 ##### Regulatory resilience
 Regulatory resilience ($Y_R$)  describes the institutional measures (e.g., rules, regulations, and laws) designed to address ecological pressures. For the global assessment, the regulatory resilience datasets are grouped into five categories that address the 5 pressure categories: fishing pressure, habitat destruction, climate change (including ocean acidification), water pollution, and species introductions (invasive species and genetic escapes). There is also an additional category for goal-specific regulations that apply to a goal or goals, but do not address a larger pressure category. For Tetiaroa, we only included regulation addressing fishing pressure, habitat, and species introductions.
@@ -833,6 +824,8 @@ where, $w_i$ is the weight in Table 4.3.
 
 To calculate the overall regulatory resilience, $Y_{R}$, we averaged the scores for each regulatory category.  
 
+There are three data layers that describe the regulatory resilience on Tetiaroa. French Polynesia has stringent fishing regulations on sharks, marine mammals, turtles, certain crustaceans and certain corals (CITE). Since many of the iconic species evaluated for the ICO goal fall into these categories, these regulations help ensure future conservation and help enhance the ICO goal. Lastly, we included a measure of how much land is considered protected area in Tetiaroa..(FIX THIS once trampling is figured out)
+
 #### Social integrity resilience
 
 Social integrity is intended to describe those processes internal to a community that affect its resilience. It is a function of a wide range of aspects of social structure. Social Integrity per goal for each region, $Y_{S}$, is therefore:
@@ -843,15 +836,14 @@ Social integrity is intended to describe those processes internal to a community
  
 where $y_{S,i}$ are the social integrity measures specific to the goal.
 
-Ideally, assessments of social resilience would include state and federal level rules and other relevant institutional mechanisms as well. However, such information is extremely difficult to access for every single country, and so we relied on global datasets that focus on international treaties and assessments. Another key gap is information on social norms and community (and other local-scale) institutions (such as tenure or use rights) that influence resource use and management in many settings. For Tetiaroa, we used both the management score calculated by the Lasting Special Places goal as well as a measure of local employment to quantify social resilience. 
-
-***
-
-## Results
+Ideally, assessments of social resilience would include state and federal level rules and other relevant institutional mechanisms as well. However, such information is extremely difficult to access for every single country, and so we relied on global datasets that focus on international treaties and assessments. Another key gap is information on social norms and community (and other local-scale) institutions (such as tenure or use rights) that influence resource use and management in many settings. For Tetiaroa, we used both the management score calculated by the Lasting Special Places goal as well as a measure of local employment to quantify social resilience. Since management decisions effect essentially all activities that occur on the island, this resilience layer acts on every goal. The local employment layer acts on goals that are enhanced by increased local knowledge and participation in decision making (CITE), including Conservation Economy, Lasting Special Places, Iconic Speices, and Tourism and Recreation. 
 
 ***
 
 ## Weaknesses
+
+The scores calculated in this assessment could be improved upon by using better data. To highlight places for improvement, we evaluated all the data sources across three dimensions: Its spatial extent, temporal resolution, and fit. 
+
 
 *data matrix*
 

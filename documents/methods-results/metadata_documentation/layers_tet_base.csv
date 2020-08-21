@@ -1,6 +1,6 @@
 layer,fn,name_data_fld,units,name,description,layer_gl,dir,file_exists
-sp_alien,sp_alien.csv,status,scaled 0-1,Nonindigenous terrestrial species,Measure of harmful invasive species,sp_alien,,TRUE
-prs_mgmt,prs_mgmt.csv,pressure_score,scaled 0-1,Poorly managed areas,Inverse of LSP scores,prs_mgmt,,TRUE
+sp_alien,sp_alien.csv,status,scaled 0-1,Prevalance of nonindigenous damaging species,Measure of harmful invasive species,sp_alien,,TRUE
+prs_mgmt,prs_mgmt.csv,pressure_score,scaled 0-1,Inverse of LSP score,Measure of stakeholder engagement and effectiveness of Tetiaroa's management plan ,prs_mgmt,,TRUE
 res_local_emp,res_local_emp.csv,res_score,scaled 0-1,Proportion of local resort employees ,Percentage of staff that is local to Polynesia,res_local_emp,,TRUE
 res_mgmt,res_mgmt.csv,res_score,scaled 0-1,Stakeholder engagement and management effectiveness,"How many criteria that make up a well managed area each zone meets, scaled 0 -1",res_mgmt,,TRUE
 res_mpa,res_mpa.csv,res_score,scaled 0-1,Coastal protected marine areas (habitat preservation),Protected marine areas within 3nm of coastline,res_mpa,,TRUE
@@ -14,8 +14,8 @@ prs_sst,prs_sst.csv,pressure_score,scaled 0-1,Sea surface temperature,Presure du
 prs_uv,prs_uv.csv,pressure_score,scaled 0-1,UV radiation,Pressure due to increasing frequency of UV anomolies,prs_uv,,TRUE
 prs_oa,prs_oa.csv,pressure_score,scaled 0-1,Ocean acidification,"Pressure due to increasing ocean acidification, scaled using biological thresholds",prs_oa,,TRUE
 prs_slr,prs_slr.csv,pressure_score,scaled 0-1,Sea level rise,Pressure due to rising mean sea level,prs_slr,,TRUE
-prs_po_tr,prs_po_tr.csv,pressure_score,scaled 0-1,Pollution from tourism,Inverse of the waste management TR sustainability score ,prs_po_tr,,TRUE
-prs_fp_targetharvest,prs_fp_targetharvest.csv,pressure_score,scaled 0-1,Placeholder for layer quantifying poaching pressure on Tetiaroa,Placeholder for layer quantifying poaching pressure on Tetiaroa,prs_fp_targestharvest,,TRUE
+prs_po_tr,prs_po_tr.csv,pressure_score,scaled 0-1,Inverse of waste management TR sustainability score ,Estimate of pollution pressure from tourism,prs_po_tr,,TRUE
+prs_fp_targetharvest,prs_fp_targetharvest.csv,pressure_score,scaled 0-1,Placeholder for layer quantifying poaching pressure on Tetiaroa,Pressure from illegal  poaching of coconut crabs and turtles,prs_fp_targestharvest,,TRUE
 hab_coral_health,hab_coral_health.csv,health,proportion,Habitat condition of coral,Current condition of coral habitat relative to historical condition,hab_coral_health,,TRUE
 hab_coral_trend,hab_coral_trend.csv,trend,trend,Habitat condition trend of coral,Estimated trend in coral condition,hab_coral_trend,,TRUE
 hab_land_health,hab_land_health.csv,health,proportion,Habitat condition of seaice,Current condition of seaice habitat relative to historical condition,hab_seaice_health,,TRUE
