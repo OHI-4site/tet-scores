@@ -5,7 +5,7 @@ output:
     code_folding: show
     highlight: haddock
     includes:
-       #in_header: ../ohi_hdr.html # copied from global
+       in_header: '~/github/tet-prep/workflow/templates/tet_hdr.html' # copied from global
     theme: cerulean
     toc: yes
     toc_depth: 3
@@ -28,6 +28,7 @@ library(dplyr)
 library(tidyr)
 library(ggplot2)
 library(here)
+library(tidyverse)
 
 options(knitr.kable.NA = '')
 
@@ -99,15 +100,37 @@ Essentially all human activities that occur on Tetiaroa make use of marine resou
 
 ***
 
-# Maybe a quick summary of the overall results and conclusions.
-- paragraph of overall, notable/interesting results
-- flower plot
-- table: quickly describes goal, score, (data?, reference point? trend?)
+# Summary of the overall results
+
+The results indicate that Tetiaroa's marine and coastal resources are supporting most of the goals assessed well, with an overall score of 76. The goals with the highest scores are and Iconic Species (90.02) and Tourism and Recreation (89.68). This suggests that many of the species with the most cultural and spiritual value to Tetiaroa are being protected well, and reflects the extraordinary effort toursim activities on the island have made to implement sustainable practices and minimize its impact on the island's environment. 
+
+The only goal that scored below 50 was Conservation Economy, which reflects the extent to which Tetiaroa's main environmental steward, The Tetiaroa Society, as been successful in generating funding and revenue to support conservation efforts on the island. The low score in this category highlights the continual need for resources to preserve ocean health on Tetiaroa - it may be difficult to sustain the high scores seen for other goals without improvement here in the future. 
+
+
+![](assets/flower_Tetiaroa.png)
+
+
+
+```{r score table, echo=FALSE,message=FALSE,warning=FALSE}
+goals <- read_csv(here("region/conf/goals.csv")) %>% 
+  dplyr::select(goal, name, description)
+scores <- read_csv(here("region/scores.csv")) %>% 
+  filter(dimension == "score" | dimension == "future" | dimension == "status") %>% 
+  dplyr::select(goal,dimension,score) %>% 
+  pivot_wider(id_cols ="goal", names_from = "dimension", values_from = "score") %>% 
+  filter(goal != "Index") %>% 
+  inner_join(.,goals, by = "goal") %>% 
+  dplyr::select(Goal = name, Status = status, Future = future, Score = score, Description = description) %>% 
+  arrange(desc(Score))
+
+
+kable(scores, align = "l")
+```
+
 
 ***
 
-# Models: Methods/Results
-- Describe what the goal is measuring in the context of the OHI+ region and why this is relevant. I would also include the goals we are not including. I think the following should provide more on narrative descriptions of goals/models (vs. mathematical models and such...these are good to include, but I wouldn't use these in place of the narrative information).
+# Models: Methods
 
 ## Goals Included in Tetiaroa OHI+ Assessment:
 The following goals were included in the Tetiaroa OHI+ assessment:
@@ -154,16 +177,22 @@ Frank used Google Earth to estimate the area of coconut grove, coconut grove and
 
 Between the report and the species profiles on the Tetiaroa Society we can see that the native ecosystem has many benefits compared to coconut groves. Also, while landscaped areas are most likely replacing removed or altered native habitat, we know from The Brando's website that they only use native plants and do their best to recreate the ecosystem. We therefore will score these areas slightly better than "only coconut grove". Each area provided by Frank was assigned a score, and then the scores were averaged weighted by the corresponding areas to get the over all score. See full scoring scheme below:
 
-**Table 4.1. Scores for different vegetation zones on Tetiaroa**  
+**Table 4.1. Scores for different vegetation types on Tetiaroa**  
 
-| Habitat | Score |
+| Vegetation Type | Score |
 | :--------------- | :------------ |
 | Only native vegetation | 1 |
 | Native vegetation mixed with coconut grove | 0.5 |
 | Landscaped area | 0.3 |
 | Only coconut grove | 0 | 
 
-*insert weighted average equation*
+
+The condition of the native land habitat was calculated by finding the weighted average of the scored land cover categories (Eq XX) 
+
+$$
+C_{land} = \frac { \displaystyle\sum _{ i=1 }^{ N }{ { (S }_{ i } } \times { A }_{ i }) }{ { { A } }  }, (Eq. 5.6) 
+$$  
+For every $i$ vegetation type, we multiplied the score $S_{i}$ from Table X.X, by the area $A_{i}$ of that vegetation type on Tetiaroa. These were divided by the total area $A$ to find the overall native land habitat condition. 
 
 **Marine Habitat** 
 
@@ -208,12 +237,17 @@ We scaled the lower end of the biodiversity goal to be 0 when 75% species are ex
 
 Threat weights, $w_{i}$, were assigned based on the IUCN threat categories status of each $i$ species, following the weighting schemes developed by Butchart et al. [-@butchart_improvements_2007] (Table 4.2). For the purposes of this analysis, we included only data for extant species for which sufficient data were available to conduct an assessment. We did not include the Data Deficient classification as assessed species following previously published guidelines for a mid-point approach [@schipper_status_2008; @hoffmann_impact_2010].
 
-We first calculated Tetiaroa’s area-weighted average species risk status, $\bar R_{spp}$. For each 0.5 degree grid cell within Tetiaroa, $c$, the risk status, $w$, for each species, $i$, present is summed and multiplied by cell area $A_c$, to get an area- and count-weighted species risk for each cell. This value is then divided by the sum of count-weighted area $A_c \times N_c$ across all cells within Tetiaroa. The result is the area-weighted mean species risk across Tetiaroa.
+The status was calculated by first finding the average threat weight per taxonomic class (Eq. XX), in order to prevent one class from dominating the overall score. Certain classes, such as gastropoda, had many more species than other. We then found the average of all the classes (Eq. XX)
+
 
 $$
-\bar R_{spp} = \frac { \displaystyle\sum_{ c=1 }^{ M } \left( \displaystyle\sum _{ i=1 }^{N_c} w_i \right) \times A_c } 
-                { \displaystyle\sum_{ c=1 }^{ M } A_c \times N_c },  (Eq. 4.1)
+\bar R_{class} = \frac { \displaystyle\sum _{ i=1 }^{ C }{ { w }_{ i } }  }{ { { N }_{c} }  }, (Eq. 5.6) 
 $$
+$$
+\bar R_{spp} = \frac { \displaystyle\sum _{ i=1 }^{ N }{ { \bar R }_{ class } }  }{ { { N } }  }, (Eq. 5.6) 
+$$
+Where $C$ is the taxonomic class, $N_c$ are the total number of classes, $w$ is the threat weights, and $N$ is the total number of species. 
+
 To convert $\bar R_{spp}$ into a score, we set a floor at 25% (representing a catastrophic loss of biodiversity, as noted above) and then rescaled to produce a $x_{spp}$ value between zero and one.
 
 $$
@@ -278,24 +312,30 @@ $$
 h = \frac { C_{ c } }{ { C }_{ r } }
 $$
 
-where, $C_c$ is current condition and $C_r$ is reference condition.
+where, $C_c$ is current condition and $C_r$ is reference condition. Descriptions for how C was calculated for both land and marine habitats are outlined above in the HAB method description (4.1.1.1.1).
 
-The land habitat condition and extent were both calculated using Frank's area estimations of each habitat type. The extent of the coral habitat was calculated by finding the total area of benthic habitat with reef structure, using the following area estimations from LOF: 
+The native land habitat extent was calculated using Frank's area estimations of each habitat type. The extent of the coral habitat was calculated by finding the total area of benthic habitat with reef structure, using estimations from the 2012 LOF expedition (Table X.X). We considered any habitat classification with "reef" or "coral" as evidence of reef extent, summing these areas to find the total reef extent.
 
+**Table X.X. Total area (km2) of benthic habitat types in Tetiaroa** Modified from table on page 21 of the LOF French Polynesia Final Report (CITE).
+```{r lof_table, echo=FALSE}
+lof_table <- read.csv(here("documents/methods-results/metadata_documentation/fp_habtable_clean.csv"), na.strings="") %>% 
+  dplyr::select(Habitat = habitat, Classification = classification, Area = Tetiaroa) %>% 
+  filter(!is.na(Habitat)) %>% 
+  filter(str_detect(Classification, pattern = "coral") | str_detect(Classification, pattern = "reef"))
 
-*insert table*
+kable(lof_table, align = "l")
+```
 
-We considered the habitats....
+The reference area for each habitat is treated as a fixed value; in cases where current area might exceed this reference value (e.g., through restoration), we cap the score at the maximum value (1.0). Although this does not give credit for restoration, data tend to be of poor quality making it difficult to determine true increases, and in general habitat restoration beyond reference values is extremely unlikely. Rank weights for the protective ability of each habitat for the Global OHI ($w_{k}$) come from previous work [@tallis_invest_2011]. Although this work does not include native atoll forest as a category, we ranked it equal to mangroves or salt marshes as they occupy a similar place that these habitats would (shoreline) and were highlighted by the Tetiaroa Society as important to preventing damage to storm surge on the island. 
 
 **Table 5.4. Coastal protectiveness ranks**
 Scores range from 1-4, with 4 being the most protective [@tallis_invest_2011].
 
 Habitat | Protectiveness rank ($w$)
 ------- | -------------------------
-native land habitat | 4
-coral reefs | 3 
+Native land vegetation | 4
+Coral reefs | 3 
 
-The reference area for each habitat is treated as a fixed value; in cases where current area might exceed this reference value (e.g., through restoration), we cap the score at the maximum value (1.0). Although this does not give credit for restoration, data tend to be of poor quality making it difficult to determine true increases, and in general habitat restoration beyond reference values is extremely unlikely. Rank weights for the protective ability of each habitat for the Global OHI ($w_{k}$) come from previous work [@tallis_invest_2011]. Although this work does not include native atoll forest, we ranked it equal to mangroves or salt marshes as they were highlighted by the Tetiaroa Society as important to preventing damage to storm surge on the island. 
 
 #### Trend
 
@@ -322,7 +362,7 @@ _Resilience_
 
 ### Conservation Economy (CE)
 
-The global OHI includes a measure of the jobs and revenue produced from marine-related industries, called the Livelihoods and Economies (LE) goal. Marine-related industries are clearly of huge value to many people, even those who do not directly participate in the industries but value community identity, tax revenue, and indirect economic and social impacts of a stable coastal economy. This goal is composed of two equally important sub-goals, livelihoods and economies, which are assessed across as many marine-related sectors as possible. Livelihoods includes two equally important sub-components, the number of jobs, which is a proxy for livelihood quantity, and the per capita average annual wages, which is a proxy for job quality. Economies is composed of a single component, revenue
+The global OHI includes a measure of the jobs and revenue produced from marine-related industries, called the Livelihoods and Economies (LE) goal. Marine-related industries are clearly of huge value to many people, even those who do not directly participate in the industries but value community identity, tax revenue, and indirect economic and social impacts of a stable coastal economy. This goal is composed of two equally important sub-goals, livelihoods and economies, which are assessed across as many marine-related sectors as possible. Livelihoods includes two equally important sub-components, the number of jobs, which is a proxy for livelihood quantity, and the per capita average annual wages, which is a proxy for job quality. Economies is composed of a single component, revenue.
 
 For Tetiaroa, we are modifying this model to include only one goal capturing the revenue generated by the Tetiaroa Society, which we are calling the Conservation Economy (CE). We felt that including all measures of LE made less sense, as there are very few full time residents on the island, and all of them are employed by The Brando or the Tetiaroa Society. Essentially all of the Tetiaroa Society's activities and expenditures are related to environmental and cultural conservation of the island, which is why we refer to this goal in this context as "Conservation Economy". Also, because a portion of the Tetiaroa Society's income comes from guest fees at the resort, there is a direct link between a healthy ocean or island environment that attracts tourism, and generating the funds necessary to help preserve it. 
 
@@ -338,15 +378,15 @@ We used the Tetiaroa's Society fundraising goal as the reference point, which br
 | Cultural and Educational Programs | $100 K |       |
 | Blue Climate Initiative | $100 K |       |
 
-**Total Yearly Budget** = $2,000,000 
+**Total Yearly Budget Goal** = $2,000,000 
 
-To measure the status of this goal, we used the 2018 and 2019 Tetiaroa Society reports for income in 2018 and 2019, and then a measure of $700,000 per year for 2020 (per Neil and Frank's estimation):
-*average*?
-$$
-x_{ce} = \left( \frac { \bar I_{yr}}{ G_{yr} }) 
-$$
+To measure the status of this goal, we used the 2018 and 2019 Tetiaroa Society reports for income in 2018 and 2019, and then $700,000 as the income for 2020 (per Neil and Frank's estimation). The current status was calculated by dividing the actual income by the ideal budget goal. 
 
-Where $I_{yr}$ is the yearly income and $G_{yr}$ is the yearly fundraising goal. 
+$$
+status_{ce}~=~ \frac { I_{yr}} { I_{ref} },  ~~(Eq ~4.17)
+$$  
+
+Where $I_{yr}$ is the yearly income, and $I_{yr,ref}$ is the yearly budget goal.  
 
 ##### Trend
 
@@ -384,8 +424,9 @@ Iconic species are those that are relevant to local cultural identity through th
 The Iconic Species subgoal aims to assess the conservation status of species that have particular value to Tetiaroa. We decided that for this assessment, our iconic species list would be the list of species highlighted on the [Tetiaroa Society's website](https://www.tetiaroasociety.org/index.php/island).
 
 
-##### Current Status
-After compiling a list of species from this source, we pulled its conservation status using the IUCN RRedlist package and then assigned each species a score based on its conservation status. The overall score is determined by finding the average score per species class, and then taking the overall average among the classes. The table below shows how each IUCN conservation status is scored: 
+##### Current Status 
+
+After compiling a list of species from this source, we pulled its conservation status using the IUCN RRedlist package and then assigned each species a score based on its conservation status. The overall score is determined by finding the average score per species class, and then taking the overall average among the classes (see Eq XX and XX above. The table below shows how each IUCN conservation status is scored: 
 
 **Table 4.2. Weights for assessment of species status based on IUCN risk categories**
 
@@ -399,7 +440,8 @@ After compiling a list of species from this source, we pulled its conservation s
 | Least Concern   |     LC    |  1.0  |
 
 
-##### Trend
+##### Trend 
+
 We calculated trend using data the IUCN provides for current and past assessments of species, which we used to create a time series of average risk status for species within Tetiaroa. Because IUCN assessments are generally infrequent for any given species, we derive the trend as the annual change in risk status for each species across the previous twenty years, rather than a five-year window typical of other goals, and include only taxa with two or more IUCN assessments within the past 20 years.
 
 ##### Data
@@ -441,7 +483,7 @@ where:
     
 <br>
 
-Because Tetiaroa is such a small area, we will adjust these methods. First, instead of just calculating protected area within 1km of the shore, we will treat all land areas as coastal land on Tetiaroa, since most motus (individual islands) are not wider than 1 km anyway. Second, instead of creating a buffer of 3nm and treating that as all offshore, we will split up the marine area into two categories: the lagoon area, and the area extending outwards 3nm from each motu ("offshore"). 
+We used the methods above to assess protected areas in order to create a resilience layer (see X.X). However, because Tetiaroa does not feel as creating more protected areas is a primary goal, we adjusted these methods for the LSP goal. First, instead of just calculating protected area within 1km of the shore, we will treat all land areas as coastal land on Tetiaroa, since most motus (individual islands) are not wider than 1 km anyway. Second, instead of creating a buffer of 3nm and treating that as all offshore, we will split up the marine area into two categories: the lagoon area, and the area extending outwards 3nm from each motu ("offshore"). 
 
 Lastly, we will adjust what we define as "area protected", computing a score for each zone based on if they meet four criteria, developed through conversations with Frank Murphy and Neil Davies: 
 
@@ -479,7 +521,14 @@ The marine area 3 nm offshore from Tetiaroa is managed solely by the French Poly
 
 The status score was calculated as the average of the land, lagoon and offshore scores. The land score was calculated using the weighted average of each motu's score, weighted by area, which leaves room for the score of a specific motu to change if future monitoring finds that the management plans have not been effective in things like deterring poachers or preventing introductions of native species.
 
-*insert weighted avearge*
+$$
+status_{land} = \frac { \displaystyle\sum _{ k=1 }^{ N }{ { (s }_{ m } } \times { A }_{ m }) }{ \displaystyle\sum _{ k=1 }^{ N }{ { A }_{ m } }  }, (Eq. 5.6)
+$$  
+
+Where $s_{m}$ is the score for each motu and $A_{m}$ is the area of that motu, divided by the total area to get a weighted average. 
+
+The status for all zones (land, no-take zone, lagoon and offshore) were averaged to find the overall status. 
+
 
 ##### Trend
 
@@ -531,9 +580,14 @@ For this goal, we will score each sustainability category based on two criteria:
 
 If the answer to the second criteria is "no", the score will be reduced by 0.5.
 
-Based on our limited information, we believe that energy and waste meet both these criteria, while water does not. Furthermore, it is unclear how much water sourced from non-native freshwater is actually being used, so its difficult to give this category a score. If a category has multiple metrics, those will be averaged to get the category score. We will then average the three category scores to get the final score.
+Based on our limited information, we believe that energy and waste meet both these criteria, while water does not. Furthermore, it is unclear how much water sourced from non-native freshwater is actually being used, so its difficult to give this category a score. If a category has multiple metrics, they were averaged to get the category score. We then averaged the three category scores to get the final score.
 
-*insert weighted average equation*
+$$
+status_{tr} = \frac { \displaystyle\sum _{ k=1 }^{ N }{ { (S }_{ c} } \times { M }) }{ \displaystyle\sum _{ k=1 }^{ N }{ { c } }  }, (Eq. 5.6)
+$$  
+
+Where $S_{c}$ is the percent of each sustainability category that is "zero impact", $M_{c}$ is whether or not it is being monitered, and $c$ are the number of categories included in the score. 
+
 ##### Trend
 
 Since we only have the Sustainability Report for 2019, we do not know at this time if any of these measures has changed since 2014 (when the resort opened). For now, the trend will be zero, but with more detailed data can be updated. 
@@ -799,6 +853,8 @@ Ideally, assessments of social resilience would include state and federal level 
 
 ## Weaknesses
 
+*data matrix*
+
 ***
 
 # Future
@@ -814,6 +870,10 @@ Ideally, assessments of social resilience would include state and federal level 
 ***
 # References / Footnotes
 
+- Spatial data from David Smith, Univ of Redlands
 - LOF
 - Tetiaroa Society website
-- any others I use to justify things 
+- any others I use to justify things: 
+- stopover for mariners
+- draft biosecurity plan
+- beachcomber sustainability resort
