@@ -93,7 +93,7 @@ Essentially all human activities that occur on Tetiaroa make use of marine resou
 
 # Summary of the overall results
 
-The results indicate that Tetiaroa's marine and coastal resources are supporting most of the goals assessed well, with an overall score of 76. The goals with the highest scores are and Iconic Species (90.02) and Tourism and Recreation (89.68). This suggests that many of the species with the most cultural and spiritual value to Tetiaroa are being protected well, and reflects the extraordinary effort toursim activities on the island have made to implement sustainable practices and minimize its impact on the island's environment. 
+The results indicate that Tetiaroa's marine and coastal resources are supporting most of the goals assessed well, with an overall score of 76. The goals with the highest scores are and Iconic Species (90.02) and Tourism and Recreation (89.68). This suggests that many of the species with the most cultural and spiritual value to Tetiaroa are being protected well, and reflects the extraordinary effort tourism activities on the island have made to implement sustainable practices and minimize impact on the island's environment. 
 
 The only goal that scored below 50 was Conservation Economy, which reflects the extent to which Tetiaroa's main environmental steward, The Tetiaroa Society, as been successful in generating funding and revenue to support conservation efforts on the island. The low score in this category highlights the continual need for resources to preserve ocean health on Tetiaroa - it may be difficult to sustain the high scores seen for other goals without improvement here in the future. 
 
@@ -156,7 +156,7 @@ Because a long term goal for Tetiaroa is to restore abandoned coconut plantation
 
 Frank used Google Earth to estimate the area of coconut grove, coconut grove and native habitat mix, and just native habitat. He also includes the estimated area of landscaped habitat on Onetahi. We will assign scores based on whether the motu is dominated by native vegetation or by coconut grove. Each motu will receive a score, and then the final score will be calculated using the average weighted by area of the motu. The summary below includes information about the native species and benefits they provide to the island, which is why we consider areas dominated by native species the ideal state of land habitat. Note: if the tree is designated on the Tetiaroa website as 'Polynesian Introduction' we still consider it native.
 
-*Table 1.2*
+Table 1.2
 
 | Motu | Dominant species | Native? | Notes |
 | :----- | :--------- | :----- | :-------------------|
@@ -218,7 +218,7 @@ _Resilience_
 
 
 
-#### Species (SPP)
+#### Species (SPP) 
 
 This subgoal aims to assess the average condition of the marine species within Tetiaroa based on their IUCN status. The target for the species subgoal is to have all species at a risk status of Least Concern.
 
@@ -854,6 +854,7 @@ The scores calculated in this assessment could be improved upon by using better 
 ***
 
 # Future
+
 - Table describing datasets that would be ideal to collect for future iterations of the OHI assessment.
 - water /pollution
 - tourism demand
