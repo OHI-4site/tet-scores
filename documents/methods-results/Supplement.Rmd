@@ -99,29 +99,53 @@ The only goal that scored below 50 was Conservation Economy, which reflects the 
 
 
 ![](assets/flower_Tetiaroa.png)
-
+**Figure X.X. OHI+ Tetiaroa Results** 
 
 
 ```{r score table, echo=FALSE,message=FALSE,warning=FALSE}
-goals <- read_csv(here("region/conf/goals.csv")) %>% 
-  dplyr::select(goal, name, description)
-scores <- read_csv(here("region/scores.csv")) %>% 
-  filter(dimension == "score" | dimension == "future" | dimension == "status") %>% 
-  dplyr::select(goal,dimension,score) %>% 
-  pivot_wider(id_cols ="goal", names_from = "dimension", values_from = "score") %>% 
-  filter(goal != "Index") %>% 
-  inner_join(.,goals, by = "goal") %>% 
-  dplyr::select(Goal = name, Status = status, Future = future, Score = score, Description = description) %>% 
-  arrange(desc(Score))
+# goals <- read_csv(here("region/conf/goals.csv")) %>% 
+#   dplyr::select(goal, name, description)
+# scores <- read_csv(here("region/scores.csv")) %>% 
+#   filter(dimension == "score" | dimension == "future" | dimension == "status") %>% 
+#   dplyr::select(goal,dimension,score) %>% 
+#   pivot_wider(id_cols ="goal", names_from = "dimension", values_from = "score") %>% 
+#   filter(goal != "Index") %>% 
+#   inner_join(.,goals, by = "goal") %>% 
+#   dplyr::select(Goal = name, Status = status, Future = future, Score = score, Description = description) %>% 
+#   arrange(desc(Score))
 
 
-kable(scores, align = "l")
+#kable(scores, align = "l")
 ```
 
 
 ***
 
 # Models: Methods
+
+```{r goal functions, echo=FALSE, warning=FALSE, error=FALSE, results="asis"}
+## data and functions used to list data layers in each goal
+# data with information
+layers <- read.csv(here("metadata_documentation/layers_tet_base.csv"))
+targets <- read.csv(here("metadata_documentation/layers__targets.csv"))
+layers_web <- "http://ohi-science.org/ohi-global/layers.html"
+# function
+data_layers <- function(dimension, goal){ # goal = "ICO"; dimension=c("status", "trend")
+  
+  st <- targets[targets$goal == goal, ]
+  st <- st[st$dimension %in% dimension, ]
+  
+st <- st %>%
+  select(layer) %>%
+  unique()
+st_layers <- filter(layers, layer %in% st$layer) %>%
+  mutate(web_name = gsub(" ", "_", name)) %>%
+  mutate(web_name = tolower(web_name)) %>%
+  mutate(web_name = gsub("/", "", web_name)) %>%
+  mutate(info = sprintf("[%s](%s#%s) (%s): %s", name, layers_web, web_name, layer, description))
+cat(paste(st_layers$info, collapse="\n\n"))
+}
+```
 
 ## Goals Included in Tetiaroa OHI+ Assessment:
 The following goals were included in the Tetiaroa OHI+ assessment:
@@ -138,10 +162,10 @@ The habitat subgoal measures the average condition of marine habitats present in
 The status of the habitat sub-goal, xhab, was assessed as the average of the condition estimates, C, for each habitat, k, present in a region; measured as the loss of habitat and/or % degradation of remaining habitat, such that:
 
 $$
-xhab=∑k=1NCkN,(Eq.1.1)
+x_{hab}= \frac { \displaystyle\sum _{ i=1 }^{ N }{ { (C }_{ k } }) }{N},(Eq.1.1)
 $$
 
-where, Ck=Cc/Cr and N is the number of habitats in a region. Cc is the current condition and Cr is the reference condition specific to each k habitat present in the region (Table 5.2). This formulation ensures that each country is assessed only for those habitats that can exist (e.g., Canada is not assessed on the status of its nonexistent coral reefs).
+where, C_k= Cc/Cr and N is the number of habitats in a region. $C_c$ is the current condition and $C_r$ is the reference condition specific to each k habitat present in the region (Table 5.2). This formulation ensures that each country is assessed only for those habitats that can exist (e.g., Canada is not assessed on the status of its nonexistent coral reefs).
 
 **Table 1.1.** Habitat data Description of condition, extent, and trend calculations for habitat data (Note: extent is not used to calculate the habitat subgoal, but is used for the coastal protection and carbon storage goals). More information about the sources used to generate these values is located in Section 6 and Table 6.1.
 
@@ -156,7 +180,7 @@ Because a long term goal for Tetiaroa is to restore abandoned coconut plantation
 
 Frank used Google Earth to estimate the area of coconut grove, coconut grove and native habitat mix, and just native habitat. He also includes the estimated area of landscaped habitat on Onetahi. We will assign scores based on whether the motu is dominated by native vegetation or by coconut grove. Each motu will receive a score, and then the final score will be calculated using the average weighted by area of the motu. The summary below includes information about the native species and benefits they provide to the island, which is why we consider areas dominated by native species the ideal state of land habitat. Note: if the tree is designated on the Tetiaroa website as 'Polynesian Introduction' we still consider it native.
 
-Table 1.2
+*Table 1.2. Dominant plant species based on plot surveys* 
 
 | Motu | Dominant species | Native? | Notes |
 | :----- | :--------- | :----- | :-------------------|
@@ -215,7 +239,6 @@ _Resilience_
 ```{r HAB r, results="asis", echo=FALSE}
 #data_layers(goal="HAB", dimension=c("resilience"))
 ```
-
 
 
 #### Species (SPP) 
@@ -408,6 +431,8 @@ _Resilience_
 
 
 ### Sense of Place (SP) 
+
+Score = 80
 
 The Sense of Place (SP) goal attempts to capture the aspects of Tetiaroa's coastal and marine system that people value as part of their cultural identity. This definition includes people living near the ocean and those who live far from it but still derive a sense of identity or value from knowing particular places or species exist. This goal is calculated using two equally weighted subgoals: iconic species (ICO) and lasting special places (LSP).
 
@@ -618,7 +643,7 @@ The following goals that are typically included in the OHI global assessment wer
 
 The Carbon Storage goal measures the health of carbon storing habitats. Highly productive coastal wetland ecosystems (e.g., mangroves, salt marshes, seagrass beds) have substantially larger areal carbon burial rates than terrestrial forests, and "Blue Carbon" has been suggested as an alternate, more manageable carbon sequestration approach. The rapid destruction of these coastal habitats may release large amounts of buried carbon back into the ocean-atmosphere system. Our focus here, therefore, is on coastal habitats because they are threatened, have large amounts of stored carbon that would rapidly be released with further habitat destruction, have the highest per-area sequestration rates of any habitat on the planet, and are amenable to management, conservation, and restoration efforts. We refer to this goal as carbon storage but intend its meaning to include sequestration.
 
-Lacking data on the carbon storage abilities of the native rainforest, or of any other areas on Tetiaroa, we only included this goal with placeholder data for now. However, if future data on carbon storage becomes availble, this goal can be updated and scored. 
+Lacking data on the carbon storage abilities of the native rainforest, or of any other areas on Tetiaroa, we only included this goal with placeholder data for now. However, if future data on carbon storage becomes available, this goal can be updated and scored. 
 
 ### Clean Waters (CW)
 
@@ -626,7 +651,7 @@ People value marine waters that are free of pollution and debris for aesthetic a
 
 There have not yet been any comprehensive studies on water contamination on Tetiaroa, with publicly available results. Therefore, while this goal is relevant to Ocean Health on Tetiaroa, it has only been included as a placeholder to be updated as data becomes available. 
 
-### Resource Access Opprotunities (RAO)
+### Resource Access Opportunities (RAO)
 
 People value the ability to access coastal and ocean resources. Isolating what allows for this type of access is difficult, but a necessary component of humans relationship with the ocean. We felt that this goal would be useful to Tetiaroa, as both tourists and local fisherman from other areas of French Polynesia value the ability to access Tetiaroa for various uses. Lacking quantitative data measuring the current status, as well as a agreed upon goal or reference point for this goal, we have included it as a placeholder for now. 
 
@@ -846,10 +871,25 @@ Ideally, assessments of social resilience would include state and federal level 
 
 ## Weaknesses
 
-The scores calculated in this assessment could be improved upon by using better data. To highlight places for improvement, we evaluated all the data sources across three dimensions: Its spatial extent, temporal resolution, and fit. 
+The scores calculated in this assessment can be improved upon by using better data. To highlight places for improvement, we evaluated all the data sources across three dimensions: spatial, temporal, and fit. Each data set is scored across the criteria listed below and given a 0.0(poor), 0.5(fair) or 1.0 (good as applicable). Full dimensions and methods are described in O'hara et al. 2020 and are loosely based upon methods in Fritz et al. (2019)
+
+*Spatial Dimension* 
+
+- Cover: Data focuses on the area of interest, which includes all motus on Tetiaroa, the lagoon, and the area extending 3 nautical miles offshore.Scored as 1.0 if data is specific to Tetiaroa, 0.5 if data from a neighboring state or island is used, and 0 if the data was global. 
+
+*Temporal Dimension*
+
+- Resolution: Temporal data are updated consistently throughout the time period. Habitat data (which include extent maps, health metrics) gets a 1.0 if it is updated every 3-5 years, a 0.5 if it is updated in the last 10 years or earlier, and 0 if we only have static data spanning one year. The rest of the data gets 1.0 if it is updated annually, a 0.5 if it is updated within the last 5 years, and 0 if it is static
+- Span: Temporal data span the entire time period of the assessment, which includes 2014 - 2020. A 1.0 indicates we have data for every year within that time frame, a 0.5 indicates we have only have that time frame, and 0 if it spans less than half the time frame or is a static estimate. 
+
+*Fit Dimension*
+
+- Resolution: Data with a "good fit" allow for detailed exploration of a goal status, pressures or resilience within the broader context. In other words, this criteria examines the level of detail contained in the data. Datasets that included a rich breakdown of categories or sectors received a 1.0
 
 
-*data matrix*
+
+![](assets/dsc_heatmap_gradient.jpg)
+*Figure X.X. Heatmap ranking data inputs for OHI+ Tetiaroa Assessment*
 
 ***
 
@@ -874,3 +914,6 @@ The scores calculated in this assessment could be improved upon by using better 
 - stopover for mariners
 - draft biosecurity plan
 - beachcomber sustainability resort
+- Tallis 2011
+- Ohara et al 2020
+- Fritz 2019

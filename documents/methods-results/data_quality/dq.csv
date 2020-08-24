@@ -1,0 +1,43 @@
+Goal,Layer,Spatial Cover,Temporal Resolution,Temporal Span,Temporal Baseline,Fit Resolution,Fit Comprehensive,Average Score
+HAB/CP,Coral habitat maps,1,0,0,0.5,1,1,0.583333333
+HAB/CP,Coral health and trend from Global OHI,0.5,0,0,0.5,0,0.5,0.25
+HAB/CP,Native vegetation area estimates,1,0,0,0,0.5,1,0.416666667
+SPP/RES,Species range maps,1,NA,NA,NA,1,1,1
+SPP/RES,Species conservation status ,1,0.5,0.5,NA,1,0.5,0.7
+ICO,List of Iconic Species,1,NA,NA,NA,1,1,1
+LSP/PRS/RES,Management zones,1,0,0,0,1,1,0.5
+CE,Tetiaroa Society funding feports,NA,1,0.5,NA,0.5,1,0.75
+TR,Beachcomber LLC sustainability statistics,NA,0.5,0,NA,0.5,0.5,0.375
+PRS,Invasive species reports ,1,0,0,NA,0.5,1,0.5
+PRS,Sea surface temperature,1,1,1,NA,0.5,1,0.9
+PRS,UV ,1,1,1,NA,0.5,1,0.9
+PRS,Sea level rise,1,1,1,1,0.5,1,0.916666667
+PRS,Ocean acidification,1,1,1,1,0.5,1,0.916666667
+RES,Fishing regulations ,0.5,1,NA,0,0.5,0.5,0.5
+RES,Local employment rates,1,0,0,0,0.5,0.5,0.333333333
+RES,Protected areas,1,1,1,1,1,1,1
+RES,Biosecurity plan,1,0,0,0,1,1,0.5
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,,,,-,,,,
