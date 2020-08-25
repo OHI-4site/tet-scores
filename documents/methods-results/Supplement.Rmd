@@ -38,17 +38,13 @@ options(knitr.kable.NA = '')
 
 # Ocean Health Index (OHI) Global Assessment
 
-The Ocean Health Index (OHI) is a scientific framework used to measure how healthy oceans are. Understanding the state of our oceans is a first step towards ensuring they can continue providing humans benefits now and in the future. The Index describes how well we are sustainably managing 10 goals for ocean ecosystems which represent the full suite of benefits that people want and need from the ocean. These goals include: artisanal fishing opportunity, biodiversity, carbon storage, clean waters, coastal livelihoods and economies, coastal protection, food provision, natural products, sense of place, and tourism and recreation. Each goal is given a score ranging from 0 to 100, and the full suite of goal scores are then averaged to obtain an overall index score for each region. The global Ocean Health Index (OHI) assesses ocean health for 220 coastal countries and territories and has been conducted every year starting in 2012. For more information about the philosophy of the Ocean Health Index and model development see http://ohi-science.org/ohi-global/. 
+The Ocean Health Index (OHI) is a scientific framework used to measure how healthy oceans are. Understanding the state of our oceans is a first step towards ensuring they will continue to benefit humans now and in the future. The global Ocean Health Index was originally launched in 2012, with assessments conducted every year thereafter, to assess the condition of our global oceans.  The global assessment describes how well 220 countries (and some territorial regions) are sustainably managing 10 goals that represent the full suite of benefits people want and need from the ocean. These goals include: Artisanal Fishing Opportunity, Biodiversity, Carbon Storage, Clean Waters, coastal Livelihoods and Economies, Coastal Protection, Food Provision, Natural Products, Sense of Place, and Tourism and Recreation.  In addition to the global assessment, the OHI framework has been used to conduct assessments at smaller regional scales for over 36 countries and regions, referred to as OHI+ assessments. 
 
-OHI assessments have also been completed at smaller scales. Code, training, and support is also provided for independent groups interested in leading their own OHI assessments. These are called independent OHI assessments, or “OHI+ assessments”.
+OHI assessments require the calculation of a score for each goal from 0 to 100, and the full suite of goal scores are then averaged to obtain an overall index score. Goal scores are calculated as the average of current status (current condition relative to a reference point) and likely future status.  Likely future status is the current status modified by the following dimensions: pressures predicted to reduce status (e.g., increasing SST, fishing pressures, invasive species);  resilience variables that mitigate pressures (e.g., effective fishing management, protected areas);  and recent trends in status.  For more information about the philosophy of the Ocean Health Index and model development see http://ohi-science.org.  
 
-***
- 
-# OHI+ Tetiaroa Assessment
 
-## Project Goal
+To assess the condition of Tetiaroa’s ocean resources, an OHI+ assessment was conducted as part of a collaboration between Tetiaroa Society’s 4site team and the University of California, Santa Barbara’s National Center for Ecological Analysis and Synthesis (NCEAS).  Here we report the conclusions from our analysis, and describe how we modified the goal models to reflect locally relevant management concerns. 
 
-This report is a summary of the methods and results for the Tetiaroa OHI+ assessment, completed in 2020 in partnership with the Tetiaroa 4site team. The Tetiaroa OHI+ assessment uses the best-available data to measure progress toward target conditions for benefits provided by the atoll’s marine ecosystems, resulting in benefit-specific and overall health scores on a scale of 0 to 100. 
 
 <div class = "row">
 <div class = "col-md-2">
@@ -65,9 +61,9 @@ This report is a summary of the methods and results for the Tetiaroa OHI+ assess
 </div>
 
 
+***
 
-
-## About Tetiaroa Atoll 
+## A description of Tetiaroa Atoll 
 
 <center>
 ![Map of Tetiaroa Atoll](./assets/map_from_web.png)
@@ -80,7 +76,7 @@ In the 1920s, much of the natural vegetation was removed to make way for coconut
 
 In 2014, a luxury eco-resort was established on one of the islands, Onetahi. Called The Brando, is it managed by luxury resort developer Pacific Beachcomber, LLC. The resort strives to be as sustainable as possible by minimizing visitors' impact on the natural environment and creating programs that showcase the ecology and culture of Polynesia. Revenue from the resort helps support The Tetiaroa Society, a non-profit that acts as the main environmental steward of the island, supporting visiting researchers, giving tours to resort guests, and spearheading conservation and restoration projects. 
 
-The ecology of Tetiaroa is similar to other small islands in the South Pacific. The motus native flora and vegetation consists of coastal strand vegetation, which can be classified into four main assemblages: *Pisonia-Pandanus-Guettarda-Hernandia-Cordia* forests, *Suriana-Pemphis-Scaevola-Heliotropisum shurblands*, *Ipomea-Lepturus-Triumfetta-Vigna-Boerhavia* creeping vines and *Cladium-Marsicus-Elocharis-Fimbristyles wetland sedges* (CASUP). Much of the native land vegetation has been displaced by coconut palms, although some of the smaller motus remain almost completely covered by native habitat. In addition to preserving the undisturbed motus, it is also an eventual goal to re-introduce certain native endemic plants that were extirpated in the 1970s and 1980.
+The ecology of Tetiaroa is similar to other small islands in the South Pacific. The motus native flora and vegetation consists of coastal strand vegetation, which can be classified into four main assemblages: *Pisonia-Pandanus-Guettarda-Hernandia-Cordia* forests, *Suriana-Pemphis-Scaevola-Heliotropisum shurblands*, *Ipomea-Lepturus-Triumfetta-Vigna-Boerhavia* creeping vines and *Cladium-Marsicus-Elocharis-Fimbristyles* wetland sedges (CASUP). Much of the native land vegetation has been displaced by coconut palms, although some of the smaller motus remain almost completely covered by native habitat. In addition to preserving the undisturbed motus, it is also an eventual goal to re-introduce certain native endemic plants that were extirpated in the 1970s and 1980.
 
 Tetiaroa is surrounded by coral reefs and has additional reef structures in the lagoon, creating a highly productive and biodiverse marine environment. The reefs in Tetiaroa are relatively undisturbed due to the low number of people that live on or visit the island, and therefore environmental events such as coral bleaching, crown of thorns starfish outbreaks, and cyclones are currently the biggest threats to coral health. 
 
@@ -99,9 +95,11 @@ The only goal that scored below 50 was Conservation Economy, which reflects the 
 
 
 ![](assets/flower_Tetiaroa.png)
-**Figure X.X. OHI+ Tetiaroa Results** 
+**Figure 3.1. OHI+ Tetiaroa Results** Each goal and sub-goal of the Tetiaroa Ocean Health Index assessment is represented by a petal. The length of each petal corresponds to the score (0-100), with longer petals indicating higher scores. The color of the petals also correspond to the scores with red indicating lower scores and blue indicating higher scores. The overall index score is shown in the center of the plot.
+<br>   
 
-
+**Table 3.1. Results for each goal and sub-goal in the Tetiaroa OHI+ assessment.** Goal, and sub-goal, scores, as well as current status and predicted future status. Where 'Status' is the current status relative to the reference point; 'Future' is the likely future status based on the trend, pressures, and resilience; and 'Score' is the final goal or sub-goal score reflected in Figure 3.1.  
+<br>  
 ```{r score table, echo=FALSE,message=FALSE,warning=FALSE}
 goals <- read_csv(here("region/conf/goals.csv")) %>%
   dplyr::select(goal, name, description)
