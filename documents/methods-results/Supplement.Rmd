@@ -126,25 +126,25 @@ The only goal that scored below 50 was Conservation Economy, which reflects the 
 ```{r goal functions, echo=FALSE, warning=FALSE, error=FALSE, results="asis"}
 ## data and functions used to list data layers in each goal
 # data with information
-layers <- read.csv(here("metadata_documentation/layers_tet_base.csv"))
-targets <- read.csv(here("metadata_documentation/layers__targets.csv"))
-layers_web <- "http://ohi-science.org/ohi-global/layers.html"
-# function
-data_layers <- function(dimension, goal){ # goal = "ICO"; dimension=c("status", "trend")
-  
-  st <- targets[targets$goal == goal, ]
-  st <- st[st$dimension %in% dimension, ]
-  
-st <- st %>%
-  select(layer) %>%
-  unique()
-st_layers <- filter(layers, layer %in% st$layer) %>%
-  mutate(web_name = gsub(" ", "_", name)) %>%
-  mutate(web_name = tolower(web_name)) %>%
-  mutate(web_name = gsub("/", "", web_name)) %>%
-  mutate(info = sprintf("[%s](%s#%s) (%s): %s", name, layers_web, web_name, layer, description))
-cat(paste(st_layers$info, collapse="\n\n"))
-}
+# layers <- read.csv(here("metadata_documentation/layers_tet_base.csv"))
+# targets <- read.csv(here("metadata_documentation/layers__targets.csv"))
+# layers_web <- "http://ohi-science.org/ohi-global/layers.html"
+# # function
+# data_layers <- function(dimension, goal){ # goal = "ICO"; dimension=c("status", "trend")
+#   
+#   st <- targets[targets$goal == goal, ]
+#   st <- st[st$dimension %in% dimension, ]
+#   
+# st <- st %>%
+#   select(layer) %>%
+#   unique()
+# st_layers <- filter(layers, layer %in% st$layer) %>%
+#   mutate(web_name = gsub(" ", "_", name)) %>%
+#   mutate(web_name = tolower(web_name)) %>%
+#   mutate(web_name = gsub("/", "", web_name)) %>%
+#   mutate(info = sprintf("[%s](%s#%s) (%s): %s", name, layers_web, web_name, layer, description))
+# cat(paste(st_layers$info, collapse="\n\n"))
+# }
 ```
 
 ## Goals Included in Tetiaroa OHI+ Assessment:
@@ -884,12 +884,12 @@ The scores calculated in this assessment can be improved upon by using better da
 
 *Fit Dimension*
 
-- Resolution: Data with a "good fit" allow for detailed exploration of a goal status, pressures or resilience within the broader context. In other words, this criteria examines the level of detail contained in the data. Datasets that included a rich breakdown of categories or sectors received a 1.0
-
+- Resolution: Data with a "good fit" allow for detailed exploration of a goal status, pressures or resilience within the broader context. In other words, this criteria examines the level of detail contained in the data. Datasets that included a rich breakdown of categories or sectors received a 1.0.
+- Comprehensiveness: This addresses whether or not the data captures the range of conceptual understanding required by the target calculation - in other words, is this the best data to answer the questions we are asking? Data that inform understanding across the entire system (ie all species have a known condition) were scored as 1.0, data that only represented portions of the benefits (only some species have a known condition) got a 0.5, and data that was only loosely related to the goal were scored as a 0. 
 
 
 ![](assets/dsc_heatmap_gradient.jpg)
-*Figure X.X. Heatmap ranking data inputs for OHI+ Tetiaroa Assessment*
+**Figure X.X. Heatmap ranking data inputs for OHI+ Tetiaroa Assessment**
 
 ***
 
