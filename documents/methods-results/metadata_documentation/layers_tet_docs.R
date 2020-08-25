@@ -6,8 +6,7 @@
 ## to update the layers_eez_targets.csv file
 ####################################################
 
-targets <- read.csv(here("region/layers.csv")) %>%
-  filter(!str_detect(targets, "pressures")) #THIS ISNT WORKINGGGGG
+targets <- read.csv(here("documents/methods-results/metadata_documentation/layers_tet_target.csv"))
 
 p_matrix <- read.csv(here("region/conf/pressures_matrix.csv")) %>%
   gather("layer", "weight", -(1:3)) %>%
@@ -52,8 +51,7 @@ targets <- targets %>%
   rbind(p_matrix) %>%
   rbind(r_matrix)
 
-write.csv(targets, here("metadata_documentation/layers_eez_targets.csv"), row.names=FALSE)
+write.csv(targets, here("/documents/methods-results/metadata_documentation/layers_tet_targets.csv"), row.names=FALSE)
 
-layers <- read_csv(here("/region/layers.csv")) %>%
-  dplyr::select(targets,layer) %>%
-  separate(targets,into = c("goal, dimension"), pattern = " ")
+
+
