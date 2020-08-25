@@ -57,3 +57,4 @@ dsc_all_layers <- ggplot(data = dsc_layers, aes(x = criteria, y = Layer)) +
 dsc_all_layers
 
 #save
+ggsave(here("documents/methods-results/assets/dsc_heatmap_gradient.jpg"), width=10, height=8, dpi=300)
