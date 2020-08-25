@@ -1,6 +1,6 @@
 #### Data Selection Criteria (DSC) Heatmap
 #### This script contains code for creating the heatmap scoring each data layer used as 0,0.5, or 1 based on various criteria.
-## Novemeber 13, 2019
+## August 25, 2020
 
 library(ggplot2)
 library(googledrive)
@@ -8,6 +8,7 @@ library(googlesheets4)
 library(dplyr)
 library(cowplot)
 library(tidyverse)
+library(here)
 
 ### read in the data from google sheets
 dsc_scores_raw <- read_csv(here("documents/methods-results/data_quality/dq.csv")) %>%
