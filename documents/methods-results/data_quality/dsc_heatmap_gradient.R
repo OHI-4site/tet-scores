@@ -1,6 +1,6 @@
 #### Data Selection Criteria (DSC) Heatmap
 #### This script contains code for creating the heatmap scoring each data layer used as 0,0.5, or 1 based on various criteria.
-## Novemeber 13, 2019
+## August 25, 2020
 
 library(ggplot2)
 library(googledrive)
