@@ -46,20 +46,6 @@ OHI assessments require the calculation of a score for each goal from 0 to 100, 
 To assess the condition of Tetiaroa’s ocean resources, an OHI+ assessment was conducted as part of a collaboration between Tetiaroa Society’s 4site team and the University of California, Santa Barbara’s National Center for Ecological Analysis and Synthesis (NCEAS).  Here we report the conclusions from our analysis, and describe how we modified the goal models to reflect locally relevant management concerns. 
 
 
-<div class = "row">
-<div class = "col-md-2">
-<br><br>![OHI logo](assets/ohi-logo.jpg)
-</div>
-
-<div class = "col-md-2">
-<br><br>![Tetiaroa Society](assets/TS-logo.png)
-</div>
-
-<div class = "col-md-2">
-<br><br>![CRIOBE logo](assets/CRIOBE-logo.jpg)
-</div>
-</div>
-
 
 ***
 
@@ -82,7 +68,7 @@ Tetiaroa is surrounded by coral reefs and has additional reef structures in the 
 
 
 <br>
-![](assets/pictures_tet.png)
+![](assets/pictures_logos_tet.png)
 
 ***
 
@@ -94,10 +80,10 @@ The only goal that scored below 50 was Conservation Economy.  Tetiaroa's main en
 
 
 ![](assets/flower_Tetiaroa.png)
-**Figure 3.1. OHI+ Tetiaroa Results** Each goal and sub-goal of the Tetiaroa Ocean Health Index assessment is represented by a petal. The length of each petal corresponds to the score (0-100), with longer petals indicating higher scores. The color of the petals also correspond to the scores with red indicating lower scores and blue indicating higher scores. The overall index score is shown in the center of the plot.
+**Figure 2.1. OHI+ Tetiaroa Results** Each goal and sub-goal of the Tetiaroa Ocean Health Index assessment is represented by a petal. The length of each petal corresponds to the score (0-100), with longer petals indicating higher scores. The color of the petals also correspond to the scores with red indicating lower scores and blue indicating higher scores. The overall index score is shown in the center of the plot.
 <br>   
 
-**Table 3.1. Results for each goal and sub-goal in the Tetiaroa OHI+ assessment.** Goal, and sub-goal, scores, as well as current status and predicted future status. Where 'Status' is the current status relative to the reference point; 'Future' is the likely future status based on the trend, pressures, and resilience; and 'Score' is the final goal or sub-goal score reflected in Figure 3.1.  
+**Table 2.1. Results for each goal and sub-goal in the Tetiaroa OHI+ assessment.** Goal, and sub-goal, scores, as well as current status and predicted future status. Where 'Status' is the current status relative to the reference point; 'Future' is the likely future status based on the trend, pressures, and resilience; and 'Score' is the final goal or sub-goal score reflected in Figure 3.1.  
 <br>  
 ```{r score table, echo=FALSE,message=FALSE,warning=FALSE}
 goals <- read_csv(here("region/conf/goals.csv")) %>%
