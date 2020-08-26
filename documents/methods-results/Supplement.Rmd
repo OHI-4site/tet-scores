@@ -70,17 +70,16 @@ To assess the condition of Tetiaroa’s ocean resources, an OHI+ assessment was 
 </center>
 <br>
 
-Tetiaroa Atoll is a group of 13 small islets (called motus) located 33 miles north of Tahiti. Originally settled over 4000 years ago, it served as a retreat for Tahitian royalty, until the arrival of British explorer James Cook in 1769. Despite falling under control of the British Crown for many years thereafter, it was regarded as sacred land by local people. Archaeological remains of temples and platforms built can still be found on various motus. 
+Tetiaroa Atoll is a group of 13 small islets (called motus) located 33 miles north of Tahiti. Originally settled over 4000 years ago, it served as a retreat for Tahitian royalty, until the arrival of British explorer James Cook in 1769. Despite falling under control of the British Crown for many years thereafter, it was regarded as sacred land by local people. Archaeological remains of temples and platforms can still be found on various motus. 
 
-In the 1920s, much of the natural vegetation was removed to make way for coconut palm plantations, which remained active until the early 1960s. In 1967, Tetiaroa was purchased by American actor Marlon Brando, and remains under the ownership of his trust today. The waters around the island fall under the governance of French Polynesia. 
+In the 1920s, much of the natural vegetation was removed to make way for coconut palm plantations, which remained active until the early 1960s. In 1967, Tetiaroa was purchased by American actor, filmmaker, and activist Marlon Brando, and remains under the ownership of his trust today. The waters around the island fall under the governance of French Polynesia. 
 
-In 2014, a luxury eco-resort was established on one of the islands, Onetahi. Called The Brando, is it managed by luxury resort developer Pacific Beachcomber, LLC. The resort strives to be as sustainable as possible by minimizing visitors' impact on the natural environment and creating programs that showcase the ecology and culture of Polynesia. Revenue from the resort helps support The Tetiaroa Society, a non-profit that acts as the main environmental steward of the island, supporting visiting researchers, giving tours to resort guests, and spearheading conservation and restoration projects. 
+In 2014, a luxury eco-resort was established on one of the motus, Onetahi. Called The Brando, is it managed by luxury resort developer Pacific Beachcomber, LLC. The resort strives to be as sustainable as possible by minimizing visitors' impact on the natural environment and creating programs that showcase the ecology and culture of Polynesia. Revenue from the resort helps support The Tetiaroa Society, a non-profit that acts as the main environmental steward of the island, supporting visiting researchers, giving tours to resort guests, and spearheading conservation and restoration projects. 
 
-The ecology of Tetiaroa is similar to other small islands in the South Pacific. The motus native flora and vegetation consists of coastal strand vegetation, which can be classified into four main assemblages: *Pisonia-Pandanus-Guettarda-Hernandia-Cordia* forests, *Suriana-Pemphis-Scaevola-Heliotropisum shurblands*, *Ipomea-Lepturus-Triumfetta-Vigna-Boerhavia* creeping vines and *Cladium-Marsicus-Elocharis-Fimbristyles* wetland sedges (CASUP). Much of the native land vegetation has been displaced by coconut palms, although some of the smaller motus remain almost completely covered by native habitat. In addition to preserving the undisturbed motus, it is also an eventual goal to re-introduce certain native endemic plants that were extirpated in the 1970s and 1980.
+The ecology of Tetiaroa is similar to other small islands in the South Pacific. The native flora and vegetation consists of coastal strand vegetation, which can be classified into four main assemblages: *Pisonia-Pandanus-Guettarda-Hernandia-Cordia* forests, *Suriana-Pemphis-Scaevola-Heliotropisum shurblands*, *Ipomea-Lepturus-Triumfetta-Vigna-Boerhavia* creeping vines and *Cladium-Marsicus-Elocharis-Fimbristyles* wetland sedges (CASUP). Much of the native land vegetation has been displaced by coconut palms, although some of the smaller motus remain almost completely covered by native habitat. In addition to preserving the undisturbed motus, it is also an eventual goal to re-introduce certain native endemic plants that were extirpated in the 1970s and 1980s.
 
 Tetiaroa is surrounded by coral reefs and has additional reef structures in the lagoon, creating a highly productive and biodiverse marine environment. The reefs in Tetiaroa are relatively undisturbed due to the low number of people that live on or visit the island, and therefore environmental events such as coral bleaching, crown of thorns starfish outbreaks, and cyclones are currently the biggest threats to coral health. 
 
-Essentially all human activities that occur on Tetiaroa make use of marine resources, from recreation to research. Therefore, the scope of this assessment encompasses all marine areas withing a 3 nautical mile-buffer of the motus, as well as all the land that makes up the motus. 
 
 <br>
 ![](assets/pictures_tet.png)
@@ -89,9 +88,9 @@ Essentially all human activities that occur on Tetiaroa make use of marine resou
 
 # Summary of the overall results
 
-The results indicate that Tetiaroa's marine and coastal resources are supporting most of the goals assessed well, with an overall score of 76. The goals with the highest scores are and Iconic Species (90.02) and Tourism and Recreation (89.68). This suggests that many of the species with the most cultural and spiritual value to Tetiaroa are being protected well, and reflects the extraordinary effort tourism activities on the island have made to implement sustainable practices and minimize impact on the island's environment. 
+The health of Tetiaroa’s marine and coastal resources are critical to the mission of ensuring “island and coastal communities have a future as rich as their past - strengthening their resilience to global change, enhancing their ecosystem services, and preserving their culture” (https://www.tetiaroasociety.org/). Tetiaroa’s overall OHI score of 76 suggests  that marine and coastal resources are supporting this goal fairly well. The goals with the highest scores are Iconic Species (90.02) and Tourism and Recreation (89.68). This suggests that many of the species with the most cultural and spiritual value to Tetiaroa are well protected, and efforts to implement sustainable tourism practices are successfully mitigating the impact of this activity on the island's environment. 
 
-The only goal that scored below 50 was Conservation Economy, which reflects the extent to which Tetiaroa's main environmental steward, The Tetiaroa Society, as been successful in generating funding and revenue to support conservation efforts on the island. The low score in this category highlights the continual need for resources to preserve ocean health on Tetiaroa - it may be difficult to sustain the high scores seen for other goals without improvement here in the future. 
+The only goal that scored below 50 was Conservation Economy.  Tetiaroa's main environmental steward, The Tetiaroa Society, has been successful in generating funding and revenue to support conservation efforts on the island; however, more effort is needed to meet the continued need for resources to preserve ocean health on Tetiaroa.
 
 
 ![](assets/flower_Tetiaroa.png)
@@ -119,7 +118,7 @@ kable(scores, align = "l")
 
 ***
 
-# Models: Methods
+# Models: Methods and Results
 
 ```{r goal functions, echo=FALSE, warning=FALSE, error=FALSE, results="asis"}
 ## data and functions used to list data layers in each goal
@@ -147,7 +146,10 @@ cat(paste(st_layers$info, collapse="\n\n"))
 ```
 
 ## Goals Included in Tetiaroa OHI+ Assessment:
-The following goals were included in the Tetiaroa OHI+ assessment:
+
+Given that Tetiaroa is a nearly uninhabited island, several of the OHI goals were not relevant to this region (e.g. Livelihoods and Economies).  Furthermore, one of the stated goals of The Tetiaroa society that the “island will serve as an ecological model… as well as a place for all manner of scientific research and investigation.” (https://www.tetiaroasociety.org/) which resulted in the creation of a new goal, Conservation Economy (CE). CE captures the revenue generated by the Tetiaroa Society to use for conservation and research purposes. Given these considerations, we modified the OHI framework to include the following goals (Table 3.1): Sense of Place (comprised of Lasting Special Places and Iconic species subgoals), Resource Access Opportunities (a modified version of Artisanal Opportunities in the original framework), Conservation Economy (a modified version of the Livelihoods and Economies goal), Tourism & Recreation, Biodiversity (comprised of Species Condition and Habitat subgoals), Clean Waters, Habitat Services (Coastal Protection and Carbon Storage subgoals).
+
+The scope of this assessment encompasses all marine areas within a 3 nautical mile-buffer of the motus, as well as all the land that makes up the motus.
 
 ### Biodiversity (BD) 
 
@@ -160,19 +162,19 @@ The Biodiversity (BD) goal is made up of two subgoals, Habitats (HAB) and Specie
 
 <span style="color: #f2cf4a; font-family: Arial, sans-serif; font-size: large;">Score = 70.09</span>
 
-The habitat subgoal measures the average condition of marine habitats present in each region that provide critical habitat for a broad range of species (mangroves, coral reefs, seagrass beds, salt marshes, sea ice edge, and subtidal soft bottom). This subgoal is considered a proxy for the condition of the broad suite of marine species. For this assessment, we include the native vegetation of the motus as well as the coral reef habitats in this goal.
+The habitat subgoal measures the average condition of marine habitats that provide critical habitat for a broad range of species (mangroves, coral reefs, seagrass beds, salt marshes, sea ice edge, and subtidal soft bottom). This subgoal is considered a proxy for the condition of the broad suite of marine species. For this subgoal, we include the native vegetation of the motus and coral reef habitats.
 
 ##### Current Status
 
-The status of the habitat sub-goal, xhab, was assessed as the average of the condition estimates, C, for each habitat, k, present in a region; measured as the loss of habitat and/or % degradation of remaining habitat, such that:
+The status of the habitat sub-goal, $x_{hab}$, was assessed as the average of the condition estimates, C, for each habitat, k, present in a region; measured as the loss of habitat and/or % degradation of remaining habitat, such that:
 
 $$
-x_{hab}= \frac { \displaystyle\sum _{ i=1 }^{ N }{ { (C }_{ k } }) }{N},(Eq.1.1)
+x_{hab}= \frac { \displaystyle\sum _{ i=1 }^{ N }{ { (C }_{ k } }) }{N},(Eq.3.1)
 $$
 
-where, C_k= Cc/Cr and N is the number of habitats in a region. $C_c$ is the current condition and $C_r$ is the reference condition specific to each k habitat present in the region (Table 5.2). This formulation ensures that each country is assessed only for those habitats that can exist (e.g., Canada is not assessed on the status of its nonexistent coral reefs).
+where, $C_k$ = $C_{c}/C_r$ and N is the number of habitats in a region. $C_c$ is the current condition and $C_r$ is the reference condition specific to each k habitat present in the region (Table 3.1).
 
-**Table 1.1.** Habitat data Description of condition, extent, and trend calculations for habitat data (Note: extent is not used to calculate the habitat subgoal, but is used for the coastal protection and carbon storage goals). More information about the sources used to generate these values is located in Section 6 and Table 6.1.
+**Table 3.1.** Description of condition, extent, and trend calculations for habitat data (Note: extent is not used to calculate the habitat subgoal, but is used for the coastal protection and carbon storage goals). More information about the sources used to generate these values is located in Section 6 and Table 6.1.
 
 | Habitat | Condition | Extent | Trend |
 | :----- | :-----------------| :------------ | :--------- |
@@ -181,11 +183,11 @@ where, C_k= Cc/Cr and N is the number of habitats in a region. $C_c$ is the curr
 
 **Land Habitat** 
 
-Because a long term goal for Tetiaroa is to restore abandoned coconut plantation areas to native vegetation, the condition score of the native land habitat will be based on the extent of coconut grove versus extent of native habitat that exists in Tetiaroa. We will also include altered habitat (ie landscaped) since much of the habitat on Onetahi has been altered for construction of the Brando. 
+Native plant species provide several benefits to the island (Table 3.2). A long term goal of Tetiaroa is to remove abandoned coconut plantations to restore the island to its ideal state with native plant species dominating.  Furthermore, given the small size of the motus, there is a tight link between the land and the ocean.  For these reasons, we included native land vegetation in our analysis.   The condition of native land habitat is estimated for several areas based on the extent of native habitat relative to coconut plantations and other altered land (i.e., landscaped areas), since much of the habitat on Onetahi has been altered for construction of the Brando. 
 
-Frank used Google Earth to estimate the area of coconut grove, coconut grove and native habitat mix, and just native habitat. He also includes the estimated area of landscaped habitat on Onetahi. We will assign scores based on whether the motu is dominated by native vegetation or by coconut grove. Each motu will receive a score, and then the final score will be calculated using the average weighted by area of the motu. The summary below includes information about the native species and benefits they provide to the island, which is why we consider areas dominated by native species the ideal state of land habitat. Note: if the tree is designated on the Tetiaroa website as 'Polynesian Introduction' we still consider it native.
+They Tetiaroa Society used Google Earth to estimate the area of coconut grove, mixed coconut grove and native habitat, and native habitat. They also estimated the area of landscaped habitat on Onetahi (Table 3.2). We assigned scores to each area based on the relative dominance of each land cover category (Table 3.3). The final score was calculated by taking an area weighted average of the area scores. Note: if the tree is designated on the Tetiaroa website as 'Polynesian Introduction' we still consider it native.
 
-*Table 1.2. Dominant plant species based on plot surveys* 
+**Table 3.2. Dominant plant species based on plot surveys** 
 
 | Motu | Dominant species | Native? | Notes |
 | :----- | :--------- | :----- | :-------------------|
@@ -196,9 +198,9 @@ Frank used Google Earth to estimate the area of coconut grove, coconut grove and
 | Onetahi | Casuarina equisetifoilia / Ironwood | yes | Introduced by native Polynesians, can grow to 100 ft tall, symbol of the war god 'Oro |
 | A'ie | Mixed forest | yes | No further details |
 
-Between the report and the species profiles on the Tetiaroa Society we can see that the native ecosystem has many benefits compared to coconut groves. Also, while landscaped areas are most likely replacing removed or altered native habitat, we know from The Brando's website that they only use native plants and do their best to recreate the ecosystem. We therefore will score these areas slightly better than "only coconut grove". Each area provided by Frank was assigned a score, and then the scores were averaged weighted by the corresponding areas to get the over all score. See full scoring scheme below:
+Although landscaped areas are most likely to replace native habitat, we know from The Brando's website that only native plants are used as an attempt to recreate the ecosystem. We therefore score these areas slightly better than "only coconut grove". Each area estimated by The Tetiaroa Society was assigned a score (Table 3.3), and then an area weighted average of the scores was used to calculate the overall score
 
-**Table 1.3. Scores for different vegetation types on Tetiaroa**  
+**Table 3.3. Scores for different vegetation types on Tetiaroa**  
 
 | Vegetation Type | Score |
 | :--------------- | :------------ |
@@ -211,20 +213,17 @@ Between the report and the species profiles on the Tetiaroa Society we can see t
 The condition of the native land habitat was calculated by finding the weighted average of the scored land cover categories (Eq 1.2). 
 
 $$
-C_{land} = \frac { \displaystyle\sum _{ i=1 }^{ N }{ { (S }_{ i } } \times { A }_{ i }) }{ { { A } }  }, (Eq. 1.2) 
+C_{land} = \frac { \displaystyle\sum _{ i=1 }^{ N }{ { (S }_{ i } } \times { A }_{ i }) }{ { { A } }  }, (Eq. 3.2) 
 $$  
 For every $i$ vegetation type, we multiplied the score $S_{i}$ from Table X.X, by the area $A_{i}$ of that vegetation type on Tetiaroa. These were divided by the total area $A$ to find the overall native land habitat condition. 
 
 **Marine Habitat** 
 
-The condition of the marine habitat was difficult to establish as temporal data on coral reef extent over time was not available. We therefore used the global score for French Polynesia as a substitute for coral health here. 
-
-**global methods?**
-
+As no previous studies exist to estimate the condition of Tetiaroa’s coral, an estimate of coral health was derived using data from the 2019 OHI Global Assessment. More information on the coral health method can be found in the [OHI Global Methods](http://htmlpreview.github.io/?https://github.com/OHI-Science/ohi-global/published/documents/methods/Supplement.html#62_biodiversity) documentation, Section 6.2.1. No coral health was available for Tetiaroa in the OHI Global Assessment, so we used coral health score for French Polynesia as a proxy.
 
 ##### Trend
 
-Frank does not feel that the land vegetation makeup has changed much over the past 5 years, therefore the trend for land habitats was zero. For coral reefs, we substituted the 2020 global trend score for French Polynesia.  
+The Tetiaroa Society does not feel that the land vegetation makeup has had significant change over the past 5 years, therefore the trend for land habitats was zero. For coral reefs, we substituted the 2020 global trend score for French Polynesia. For coral reefs, we substituted the 2020 global trend score for French Polynesia. The OHI global trend data estimates change in coral condition during a 5 year period based on slope estimates from a linear regression model applied to coral condition in each country from1975-2006. More information on the coral trend method can be found in the [OHI Global Methods](http://htmlpreview.github.io/?https://github.com/OHI-Science/ohi-global/published/documents/methods/Supplement.html#62_biodiversity) documentation, Section 6.2.1.  
 
 ##### Data
 _Status and trend_
@@ -250,36 +249,39 @@ data_layers(goal="HAB", dimension=c("resilience"))
 
 <span style="color: #f2cf4a; font-family: Arial, sans-serif; font-size: large;">Score = 83.29</span>
 
-This subgoal aims to assess the average condition of the marine species within Tetiaroa based on their IUCN status. The target for the species subgoal is to have all species at a risk status of Least Concern.
+This subgoal aims to assess the average condition of the marine species within Tetiaroa based on their IUCN status. 
 
 ##### Current Status
-Species status was calculated as the area and status-weighted average of assessed species within Tetiaroa. Marine species distribution and threat category data mostly came from IUCN Red List of Threatened Species [http://www.iucnredlist.org](http://www.iucnredlist.org). Seabird distributions data came from Birdlife International [http://datazone.birdlife.org](http://datazone.birdlife.org).   
 
-We scaled the lower end of the biodiversity goal to be 0 when 75% species are extinct, a level comparable to the five documented mass extinctions [@barnosky_has_2011] and would constitute a catastrophic loss of biodiversity. 
+Species status was calculated as the average of assessed species for Tetiaroa. Marine species distribution and threat category data mostly came from IUCN Red List of Threatened Species [http://www.iucnredlist.org](http://www.iucnredlist.org). Seabird distribution data came from Birdlife International [http://datazone.birdlife.org](http://datazone.birdlife.org).   
 
-Threat weights, $w_{i}$, were assigned based on the IUCN threat categories status of each $i$ species, following the weighting schemes developed by Butchart et al. [-@butchart_improvements_2007] (Table 4.2). For the purposes of this analysis, we included only data for extant species for which sufficient data were available to conduct an assessment. We did not include the Data Deficient classification as assessed species following previously published guidelines for a mid-point approach [@schipper_status_2008; @hoffmann_impact_2010].
+The reference point for the Species sub-goal is all species have an IUCN status of "Least Concern".  
 
-The status was calculated by first finding the average threat weight per taxonomic class (Eq. 1.3), in order to prevent one class from dominating the overall score. Certain classes, such as gastropoda, had many more species than other. We then found the average of all the classes (Eq. 1.4)
+We scaled the lower end of the biodiversity goal to be 0 when 75% species are extinct, a level comparable to the five documented mass extinctions (Barnosky *et al.* 2011)and would constitute a catastrophic loss of biodiversity. 
+
+Conservation status scores, $w_{i}$, were assigned based on the IUCN threat categories status of each $i$ species, following the weighting schemes developed by Butchart *et al* (2007)  (Table 3.4). For the purposes of this analysis, we included only data for extant species for which sufficient data were available to conduct an assessment. We did not include Data Deficient species. We assessed species following previously published guidelines.
+
+The species fall within 10 taxonomic classes and to avoid overweighting species with many species, status was first calculated for each class as the average of the extinction risk scores (Eq. 3.3). An overall extinction risk status was estimated by averaging the extinction risk score of all 10 classes (Eq. 3.4).
 
 
 $$
-\bar R_{class} = \frac { \displaystyle\sum _{ i=1 }^{ C }{ { w }_{ i } }  }{ { { N }_{c} }  }, (Eq. 1.3) 
+\bar R_{class} = \frac { \displaystyle\sum _{ i=1 }^{ C }{ { w }_{ i } }  }{ { { N }_{c} }  }, (Eq. 3.3) 
 $$
 $$
-\bar R_{spp} = \frac { \displaystyle\sum _{ i=1 }^{ N }{ { \bar R }_{ class } }  }{ { { N } }  }, (Eq. 1.4) 
+\bar R_{spp} = \frac { \displaystyle\sum _{ i=1 }^{ N }{ { \bar R }_{ class } }  }{ { { N } }  }, (Eq. 3.4) 
 $$
-Where $C$ is the taxonomic class, $N_c$ are the total number of classes, $w$ is the threat weights, and $N$ is the total number of species. 
+Where $C$ is the taxonomic class, $N_c$ are the total number of classes, $w$ is the conservation status, and $N$ is the total number of species. 
 
 To convert $\bar R_{spp}$ into a score, we set a floor at 25% (representing a catastrophic loss of biodiversity, as noted above) and then rescaled to produce a $x_{spp}$ value between zero and one.
 
 $$
-x_{spp} = max \left( \frac { \bar R_{SPP} - .25 }{ .75 }, 0 \right), (Eq. 1.5)
+x_{spp} = max \left( \frac { \bar R_{SPP} - .25 }{ .75 }, 0 \right), (Eq. 3.5)
 $$
 
 
-**Table 1.4. Weights for assessment of species status based on IUCN risk categories**
+**Table 3.4. Conservation status for assessment of species status based on IUCN risk categories**
 
-| Risk Category   | IUCN code | Weight|
+| Risk Category   | IUCN code | Conservation Status |
 |-----------------|-----------|-------|
 | Extinct         |     EX    |  0.0  |
 | Critically Endangered | CR  |  0.2  |
@@ -290,7 +292,8 @@ $$
 
 
 ##### Trend
-We calculate trend using data the IUCN provides for current and past assessments of species, which we use to estimate annual change in IUCN risk status for each species.  We then summarize these species trend values for Tetiaroa using the same general approach used to calculate status.
+
+The species trend is calculated using data the IUCN provides for current and past assessments of species. Discrete species assessments between 1965-2020 are used to estimate annual change in IUCN risk status for each species. Species trend is evaluated for species with more than two past assessments. Trend for species with less than two past assessments is estimated using the population trend noted in species history information. We then summarize these species trend values for each region using the same general approach used to calculate status.
 
 ##### Data
 _Status and trend_
@@ -312,22 +315,29 @@ data_layers(goal="SPP", dimension=c("resilience"))
 ```
 
 
-### Coastal Protection (CP) 
+### Habitat Services (HS)
+
+The Habitat Services (HS) goal measures additional services provided by habitats on Tetiaroa in addition to supporting biodiversity. The Habitat Services goal is made up of two equally weighted sub-goals, Coastal Protection (CP) and Carbon Storage (CS). However, due to a lack of data to quantify it, Carbon Storage is included only as a placeholder.
+<br>   
+
+#### Coastal Protection (CP) 
 
 <span style="color: #f2cf4a; font-family: Arial, sans-serif; font-size: large;">Score = 84.92</span>
 
-This goal aims to assess the amount of protection provided by marine and coastal habitats to coastal areas that people value, both inhabited (homes and other structures) and uninhabited (parks, special places, etc.). On Tetiaroa, both the coral reefs and native forest provide protection against storm surge from cyclones. Both habitats were therefore considered in calculated this goal. 
+This subgoal assesses the amount of protection provided by marine and coastal habitats to coastal areas that people value, both inhabited (homes and other structures) and uninhabited (parks, special places, etc.). On Tetiaroa, both the coral reefs and native forest provide protection against storm surge from cyclones, flooding, and sea level rise. 
 
-For an estimate of the extent of coral reefs, we used data from the Living Oceans Foundation French Polynesia report, which was published in 2017 to assess the condition of coral reefs based on the ratio of different benthic habitats on Tetiaroa. 
+For an estimate of the extent of coral reefs, we used data from the Living Oceans Foundation French Polynesia report which was a product of . their 5-year Global Reef Expedition.  The objective of this undertaking was to survey and map the health and resilience of global reefs. The GRE mapped the benthic habitats of the Society Islands in 2012, including Tetiaroa, with the final report published in 2017. 
 
-The Living Oceans Foundation is a non-profit dedicated to ocean protection rooted in science-based solutions. Their 5-year Global Reef Expedition was the largest coral reef survey and high resolution mapping expedition, with the goal of studying the health and resilience of reefs. The GRE mapped out benthic habitats in the Society Islands in 2012, including Tetiaroa. The final report where the habitat areas were published was released in 2017, but the data was collected in 2012. 
+For an estimate of extent of native land habitat, we used area estimations of each habitat type derived by the Tetiaroa Society. 
 
 ##### Current Status 
+
+The Coastal Protection current status is calculated as the current condition of coastal protection habitat relative to the reference point.
 
 The status of this goal, $x_{cp}$, was calculated to be a function of the relative health of the habitats, $k$, weighted by their area and protectiveness rank (Table 5.4), such that:
 
 $$
-x_{cp} = \frac { \displaystyle\sum _{ k=1 }^{ N }{ { (h }_{ k } } \times { w }_{ k }\times { A }_{ k }) }{ \displaystyle\sum _{ k=1 }^{ N }{ { (w }_{ k }\times { A }_{ k }) }  }, (Eq. 1.6)
+x_{cp} = \frac { \displaystyle\sum _{ k=1 }^{ N }{ { (h }_{ k } } \times { w }_{ k }\times { A }_{ k }) }{ \displaystyle\sum _{ k=1 }^{ N }{ { (w }_{ k }\times { A }_{ k }) }  }, (Eq. 3.6)
 $$
 
 where, $w$ is the rank weight of the habitat’s protective ability, $A$ is the area within a region for each $k$ habitat type, and $h$ is a measure of each habitat's condition:
@@ -336,9 +346,9 @@ $$
 h = \frac { C_{ c } }{ { C }_{ r } }
 $$
 
-where, $C_c$ is current condition and $C_r$ is reference condition. Descriptions for how C was calculated for both land and marine habitats are outlined above in the HAB method description (4.1.1.1.1).
+where, $C_c$ is current condition and $C_r$ is reference condition. Descriptions for how $C_c$ was calculated for both land and marine habitats are outlined above in the Biodiversity: Habitats sub-goal (4.1.1.1.1).
 
-The native land habitat extent was calculated using Frank's area estimations of each habitat type. The extent of the coral habitat was calculated by finding the total area of benthic habitat with reef structure, using estimations from the 2012 LOF expedition (Table 1.5). We considered any habitat classification with "reef" or "coral" as evidence of reef extent, summing these areas to find the total reef extent.
+The native land habitat extent was calculated using Frank's area estimations of each habitat type on the motus. The extent of the coral habitat was defined as the total area of benthic habitat with reef structure, using estimations from the 2012 LOF expedition (Table 3.5). We considered any habitat classification with "reef" or "coral" as evidence of reef, and summed these areas for total reef extent.
 
 **Table 1.5. Total area (km^2^) of benthic habitat types in Tetiaroa** Modified from table on page 21 of the LOF French Polynesia Final Report (CITE).
 ```{r lof_table, echo=FALSE}
@@ -350,10 +360,10 @@ lof_table <- read.csv(here("documents/methods-results/metadata_documentation/fp_
 kable(lof_table, align = "l")
 ```
 
-The reference area for each habitat is treated as a fixed value; in cases where current area might exceed this reference value (e.g., through restoration), we cap the score at the maximum value (1.0). Although this does not give credit for restoration, data tend to be of poor quality making it difficult to determine true increases, and in general habitat restoration beyond reference values is extremely unlikely. Rank weights for the protective ability of each habitat for the Global OHI ($w_{k}$) come from previous work [@tallis_invest_2011]. Although this work does not include native atoll forest as a category, we ranked it equal to mangroves or salt marshes as they occupy a similar place that these habitats would (shoreline) and were highlighted by the Tetiaroa Society as important to preventing damage to storm surge on the island. 
+The reference area for each habitat is treated as a fixed value; in cases where current area might exceed this reference value (e.g., through restoration), we cap the score at the maximum value (1.0). Although this does not give credit for restoration, data tend to be of poor quality making it difficult to determine true increases, and in general habitat restoration beyond reference values is extremely unlikely. Rank weights for the protective ability of each habitat for the Global OHI ($w_{k}$) come from previous work (Tallis *et al* 2011). Although this work does not include native atoll forest as a category, we ranked it equal to mangroves or salt marshes given they occupy similar shoreline regions.
 
 **Table 1.6. Coastal protectiveness ranks**
-Scores range from 1-4, with 4 being the most protective [@tallis_invest_2011].
+Scores range from 1-4, with 4 being the most protective (Tallis *et al* 2011).
 
 Habitat | Protectiveness rank ($w$)
 ------- | -------------------------
@@ -363,7 +373,9 @@ Coral reefs | 3
 
 #### Trend
 
-The trend for this goal used the same metrics used for the HAB goal trend. For native land habitat, we assumed a 0 trend as the vegetation make up on Tetiaroa's atolls has not changed significantly over the past 5 years. For coral reefs, we used the 2020 global trend for French Polynesia. 
+The trend for this goal used the same metrics used for the Biodiversity: Habitats  subgoal trend. For native land habitat, we assumed a 0 trend as the vegetation make up on Tetiaroa's motus has not changed over the past 5 years. For coral reefs, we used the same data and approach used to calculate the coral condition trend for the Biodiversity: Habitats sub-goal. 
+
+The Coastal Protection trend will uses the same data and approach used to calculate as the coral condition trend calculated for the Biodiversity: Habitats sub-goal
 
 ##### Data
 _Status and trend_
@@ -384,13 +396,19 @@ _Resilience_
 data_layers(goal="CP", dimension=c("resilience"))
 ```
 
+#### Carbon Storage (CS)
+
+The Carbon Storage goal measures the health of carbon storing habitats. Highly productive coastal wetland ecosystems (e.g., mangroves, salt marshes, seagrass beds) have substantially larger areal carbon burial rates than terrestrial forests, and "Blue Carbon" has been suggested as an alternate, more manageable carbon sequestration approach. The rapid destruction of these coastal habitats may release large amounts of buried carbon back into the ocean-atmosphere system. Our focus here, therefore, is on coastal habitats because they have large amounts of stored carbon that would rapidly be released with further habitat destruction and have the highest per-area sequestration rates of any habitat on the planet.  Although they are threatened, these habitats are amenable to management, conservation, and restoration efforts. We refer to this goal as carbon storage but intend its meaning to include sequestration.
+
+Lacking data on the carbon storage abilities of the native rainforest, or of any other areas on Tetiaroa, we only included this goal as a placeholder for now. However, if future data on carbon storage becomes available, this goal can be updated. 
+
 ### Conservation Economy (CE)
 
 <span style="color: #f2cf4a; font-family: Arial, sans-serif; font-size: large;">Score = 47.07</span>
 
-The global OHI includes a measure of the jobs and revenue produced from marine-related industries, called the Livelihoods and Economies (LE) goal. Marine-related industries are clearly of huge value to many people, even those who do not directly participate in the industries but value community identity, tax revenue, and indirect economic and social impacts of a stable coastal economy. This goal is composed of two equally important sub-goals, livelihoods and economies, which are assessed across as many marine-related sectors as possible. Livelihoods includes two equally important sub-components, the number of jobs, which is a proxy for livelihood quantity, and the per capita average annual wages, which is a proxy for job quality. Economies is composed of a single component, revenue.
+The global OHI includes a measure of the jobs and revenue produced from marine-related industries, called the Livelihoods and Economies (LE) goal. Marine-related industries are clearly of huge value to many people, even those who do not directly participate in the industries but value community identity, tax revenue, and indirect economic and social impacts of a stable coastal economy. This goal is composed of two equally important sub-goals, livelihoods and economies, which are assessed across as many marine-related sectors as possible. Livelihoods assesses  the number of jobs and average annual wages. Economies is composed of a single component, revenue.
 
-For Tetiaroa, we are modifying this model to include only one goal capturing the revenue generated by the Tetiaroa Society, which we are calling the Conservation Economy (CE). We felt that including all measures of LE made less sense, as there are very few full time residents on the island, and all of them are employed by The Brando or the Tetiaroa Society. Essentially all of the Tetiaroa Society's activities and expenditures are related to environmental and cultural conservation of the island, which is why we refer to this goal in this context as "Conservation Economy". Also, because a portion of the Tetiaroa Society's income comes from guest fees at the resort, there is a direct link between a healthy ocean or island environment that attracts tourism, and generating the funds necessary to help preserve it. 
+For Tetiaroa, we modified this model to capture the revenue generated by the Tetiaroa Society, and renamed the goal,  Conservation Economy (CE), to better reflect our objectives. We excluded the other metrics of Livelihoods and Economies because there are very few full time residents on the island, and all of them are employed by The Brando or the Tetiaroa Society. Nearly all of the Tetiaroa Society's activities and expenditures are related to environmental and cultural conservation of the island. Because a portion of the Tetiaroa Society's income comes from guest fees at the resort, there is a direct link between a healthy ocean or island environment that attracts tourism, and generating the funds necessary to help preserve it. 
 
 We used the Tetiaroa's Society fundraising goal as the reference point, which breaks down as follows:
 
@@ -408,17 +426,17 @@ We used the Tetiaroa's Society fundraising goal as the reference point, which br
 
 **Total Yearly Budget Goal** = $2,000,000 
 
-To measure the status of this goal, we used the 2018 and 2019 Tetiaroa Society reports for income in 2018 and 2019, and then $700,000 as the income for 2020 (per Neil and Frank's estimation). The current status was calculated by dividing the actual income by the ideal budget goal. 
+To measure the status of this goal, we used the 2018 and 2019 Tetiaroa Society income reports and $700,000 as the income for 2020 (per the Tetiaroa Society). The current status was calculated by dividing the actual income by the yearly budget goal.
 
 $$
-status_{ce}~=~ \frac { I_{yr}} { I_{ref} },  ~~(Eq ~4.17)
+status_{ce}~=~ \frac { I_{yr}} { I_{ref} },  ~~(Eq ~3.7)
 $$  
 
 Where $I_{yr}$ is the yearly income, and $I_{yr,ref}$ is the yearly budget goal.  
 
 ##### Trend
 
-The trend for this goal was calculated using only the three years of data we have available, rather than the usual five.
+The trend for this goal was calculated using only  three years of available data, rather than the usual five.
 
 ##### Data
 _Status and trend_
@@ -445,22 +463,22 @@ data_layers(goal="CE", dimension=c("resilience"))
 
 <span style="color: #f2cf4a; font-family: Arial, sans-serif; font-size: large;">Score = 84.41</span>
 
-The Sense of Place (SP) goal attempts to capture the aspects of Tetiaroa's coastal and marine system that people value as part of their cultural identity. This definition includes people living near the ocean and those who live far from it but still derive a sense of identity or value from knowing particular places or species exist. This goal is calculated using two equally weighted subgoals: iconic species (ICO) and lasting special places (LSP).
+The Sense of Place (SP) goal attempts to capture the aspects of Tetiaroa's coastal and marine system that people value as part of their cultural identity. This definition includes people living near the ocean and those who live far from it but still derive a sense of identity or value from knowing particular places or species exist. While there are only a small handful of residents on Tetiaroa, the island's pristine ecosystems are valued by scientists, researchers, and conservationists, among others, including the general public. This goal is calculated using two equally weighted subgoals: iconic species (ICO) and lasting special places (LSP).
 
 #### Iconic Species (ICO) 
 
 <span style="color: #f2cf4a; font-family: Arial, sans-serif; font-size: large;">Score = 90.02</span>
 
-Iconic species are those that are relevant to local cultural identity through their relationship to one or more of the following: 1) traditional activities such as fishing, hunting or commerce; 2) local ethnic or religious practices; 3) existence value; and 4) locally-recognized aesthetic value (e.g., touristic attractions/common subjects for art such as whales). Ultimately, almost any species can be iconic to someone, and so the intent with this goal was to focus on those species widely seen as iconic from a cultural or existence value (rather than a livelihoods or extractive reason). Habitat-forming species were not included, nor were species harvested solely for economic or utilitarian purposes (even though they may be iconic to a sector or individual).
+Iconic species are those that are relevant to local cultural identity through their relationship to one or more of the following: 1) traditional activities such as fishing, hunting or commerce; 2) local ethnic or religious practices; 3) existence value; and 4) locally-recognized aesthetic value (e.g., tourist attractions/common subjects for art such as whales). Ultimately, almost any species can be iconic to someone, and so the intent with this goal was to focus on those species widely seen as iconic from a cultural or existence value (rather than a livelihood or extractive reason). Habitat-forming species were not included, nor were species harvested solely for economic or utilitarian purposes (even though they may be iconic to a sector or individual).
 
-The Iconic Species subgoal aims to assess the conservation status of species that have particular value to Tetiaroa. We decided that for this assessment, our iconic species list would be the list of species highlighted on the [Tetiaroa Society's website](https://www.tetiaroasociety.org/index.php/island).
+The Iconic Species subgoal assesses the conservation status of species that have particular value to Tetiaroa. A primary iconic species list  for Tetiaroa was gathered based on species listed on the [Tetiaroa Society’s website](https://www.tetiaroasociety.org/index.php/island).
 
 
 ##### Current Status 
 
-After compiling a list of species from this source, we pulled its conservation status using the IUCN RRedlist package and then assigned each species a score based on its conservation status. The overall score is determined by finding the average score per species class, and then taking the overall average among the classes (see Eq XX and XX above. The table below shows how each IUCN conservation status is scored: 
+After compiling a list of species from this source, conservation statuses were obtained using the RRedlist package and each species was assigned a score based on its conservation status (Table 1.7). 
 
-**Table 1.7. Weights for assessment of species status based on IUCN risk categories**
+**Table 3.8. Weights for assessment of species status based on IUCN risk categories**
 
 | Risk Category   | IUCN code | Weight|
 |-----------------|-----------|-------|
@@ -471,6 +489,7 @@ After compiling a list of species from this source, we pulled its conservation s
 | Near Threatened |     NT    |  0.8  |
 | Least Concern   |     LC    |  1.0  |
 
+The reference point is 100% of species have a status of "Least Concern". The overall score is determined by finding the average score per species class, and then taking the overall average among the classes, as done in the Biodiversity: species sub-goal (see Eq. 3.3, Eq. 3.4 and Eq 3.5). 
 
 ##### Trend 
 
@@ -500,11 +519,12 @@ data_layers(goal="ICO", dimension=c("resilience"))
 
 <span style="color: #f2cf4a; font-family: Arial, sans-serif; font-size: large;">Score = 78.80</span>
 
-The methods for the global OHI assessment use the extent of areas protected as a way to measure the aesthetic, spiritual, and cultural value people hold for a certain place. The model for this goal considers the inland coastal zone (up to 1 km inland) independently from, and equally weighted with, the offshore coastal zone (up to 3 nm offshore).  The status for this goal is calculated as:  
+The lasting special places subgoal focuses on geographic locations that hold particular value for aesthetic, spiritual, cultural, recreational or existence reasons (TRC 2004). For this subgoal, we assume areas that are protected indicate special places (i.e., the effort to protect them suggests they are important places). Clearly this is an imperfect assumption but in many cases it will be true. The model for this goal equally weights protected areas located in the inland coastal zone (up to 1 km inland) and the offshore coastal zone (up to 3 nm offshore).  The status for this goal is calculated as:  
 
 <br>
 
-$$X_{LSP} = \frac{\left(\frac{Area_{P}}{Area_{P_{ref}}} + \frac{Area_{MPA}}{Area_{MPA_{ref}}}\right)}{2}$$
+
+$$X_{LSP} = \frac{\left(\frac{Area_{P}}{Area_{P_{ref}}} + \frac{Area_{MPA}}{Area_{MPA_{ref}}}\right)}{2} ~~(Eq ~3.8)$$ 
 
 where: 
 
@@ -517,20 +537,19 @@ where:
     
 <br>
 
-We used the methods above to assess protected areas in order to create a resilience layer (see X.X). However, because Tetiaroa does not feel as creating more protected areas is a primary goal, we adjusted these methods for the LSP goal. First, instead of just calculating protected area within 1km of the shore, we will treat all land areas as coastal land on Tetiaroa, since most motus (individual islands) are not wider than 1 km anyway. Second, instead of creating a buffer of 3nm and treating that as all offshore, we will split up the marine area into two categories: the lagoon area, and the area extending outwards 3nm from each motu ("offshore"). 
+We used the methods above to assess protected areas in order to create a resilience layer (see X.X). Creating more protected areas is not currently a primary goal of the Tetiaroa Society, however improving management of currently protected areas and increasing participation of diverse stakeholders is. To reflect this objective, we split Tetiaroa’s area into zones based on management schemes: the land area, the no take zone which occupies half the lagoon, the rest of the lagoon, and the area extending outwards 3nm from each motu ("offshore"). 
 
-Lastly, we will adjust what we define as "area protected", computing a score for each zone based on if they meet four criteria, developed through conversations with Frank Murphy and Neil Davies: 
+We computed a score for each zone based on if they meet four criteria considered important for successful management,  (Table 1.8), developed through conversations with Frank Murphy and Neil Davies: 
 
 1. Is there more than one stakeholder?
 2. Is there a management plan for that area in place?
 3. Does there exist some sort of monitoring or tracking of the effects of the management plan?
-4. Has the management plan been effective in changing behaviors or meeting is objectives?
+4. Has the management plan been effective in changing behaviors or meeting its objectives?
 
-Below is a table listing these criteria for different management zones in Tetiaroa, with a 1 indicating this criteria is being fulfilled to the best extent, and a 0 indicating that a criteria does not exist at all:  
 
-**Table 1.8. Criteria for effective management of Tetiaroa**
+**Table 3.9. Criteria for effective management of Tetiaroa** A score of 1 indicates the criteria is fulfilled to the best extent and 0 indicates the criteria does not exist.
 
-| Zone | Multiple Stakeholders? | Plan? | Monitoring? | Effective? |
+| Zone | Multiple Stakeholders | Plan | Monitoring | Effectiveness |
 | :---- | :----------- | :------- | :------- | :------- |
 | All motus | 1 | 1 | 1 | 1 |
 | No-take zone | 1 | 1 | 1 | 0.75 |
@@ -539,26 +558,26 @@ Below is a table listing these criteria for different management zones in Tetiar
 
 **Motus**
 
-The land in Tetiaroa is privately owned by Marlon Brando's trust, which has a 99-year simple fee lease. Brando always wanted Tetiaroa to be preserved as an ecological sanctuary, and therefore helped found The Tetiaroa society to manage all conservation activities on the island. The Tetiaroa Society has worked with the trust, the government and The Brando resort to create management plans for all motus. These areas meet all four criteria.
+The land in Tetiaroa is privately owned by Marlon Brando's trust, which has a 99-year simple fee lease. Brando always wanted Tetiaroa to be preserved as an ecological sanctuary, and helped create The Tetiaroa society to manage all conservation activities on the island. The Tetiaroa Society has worked with the trust, the government, and The Brando resort to create management plans for all motus. These areas meet all four criteria.
 
 **Lagoon No-Take Zone**. 
 
-Half the lagoon is considered a protected "no-take zone", which is enforced by rangers employed with the Tetiaroa Society. According to the Tetiaroa Society's [sustainable use plan](https://www.tetiaroasociety.org/sites/default/files/research-docs/Tetiaroa-CASUP.pdf), this area is recognized by the Ministry for Natural Resources as of June 2014. However, Frank and Neil pointed out that while there are rangers employed, the monitoring effort has not helped to determine how well this area is deterring fisherman or other ecologically damaging activities. Therefore, it meets with first three criteria and scores a 0.75 in its effectiveness. 
+Half the lagoon is considered a protected "no-take zone", which is enforced by rangers employed with the Tetiaroa Society. According to the Tetiaroa Society's [sustainable use plan](https://www.tetiaroasociety.org/sites/default/files/research-docs/Tetiaroa-CASUP.pdf), this area is recognized by the Ministry for Natural Resources as of June 2014. However, Frank and Neil pointed out that while there are rangers employed, the monitoring effort has not helped to determine how well this area is deterring fisherman or other ecologically damaging activities. Therefore, it meets the first three criteria and scores a 0.75.  
 
 **Rest of the lagoon**
 
-The Tetiaroa Society and The Brando are still involved in the management of the rest of the lagoon, so we consider this area to have multiple stakeholders. There is also technically a plan, as seasonal fishing restrictions are in place and enforced. Frank feels this enforcement is pretty effective, more so than the no-take zone. This zone therefore meets 4 out of 4 criteria.
+The Tetiaroa Society and The Brando are involved in the management of the rest of the lagoon, so we consider this area to have multiple stakeholders. There is also a plan, with enforced seasonal fishing restrictions. Frank feels this enforcement is effective, more so than the no-take zone. This zone therefore meets 4 out of 4 criteria.
 
 **Offshore**
 
-The marine area 3 nm offshore from Tetiaroa is managed solely by the French Polynesian Government. While there exist restrictions on fishing in all FP waters (ie year-round prohibitions on shark fishing), there does not seem to exist a comprehensive management plan for pelagic ecosystems, so we'll score this criteria as 0.5. Because the existing "management plan" is very simple, Frank and Neil feel that it is being enforced well, even if it is not monitored well. This might seem counterintuitive, but it may be that fishers and visitors are adhering to the restrictions more because violation can result in a large fine and possible jail time, acting a strong deterrent despite a lack of monitoring.
+The marine area 3 nm offshore from Tetiaroa is managed solely by the French Polynesian Government. Although there are restrictions on fishing in all French Polynesian waters (i.e. year-round prohibitions on shark fishing),  a comprehensive management plan for pelagic ecosystems does not exist, so we score this criteria as 0.5. Because the existing "management plan" is very simple, Frank and Neil feel it is well enforced, even if it is not monitored well. This might seem counterintuitive, but it may be that fishers and visitors are adhering to the restrictions largely because violation can result in large fines and possible jail time, acting a strong deterrent despite a lack of monitoring.
 
 ##### Current status 
 
-The status score was calculated as the average of the land, lagoon and offshore scores. The land score was calculated using the weighted average of each motu's score, weighted by area, which leaves room for the score of a specific motu to change if future monitoring finds that the management plans have not been effective in things like deterring poachers or preventing introductions of native species.
+The status score was calculated as the average of the land, lagoon and offshore scores. The land score was calculated using the weighted average of each motu's score, weighted by area, which leaves room for the score of a specific motu to change if future monitoring finds that the management plans have not been effective in deterring poachers, preventing introductions of non-native species, or managing other issues.
 
 $$
-status_{land} = \frac { \displaystyle\sum _{ k=1 }^{ N }{ { (s }_{ m } } \times { A }_{ m }) }{ \displaystyle\sum _{ k=1 }^{ N }{ { A }_{ m } }  }, (Eq. 5.6)
+status_{land} = \frac { \displaystyle\sum _{ k=1 }^{ N }{ { (s }_{ m } } \times { A }_{ m }) }{ \displaystyle\sum _{ k=1 }^{ N }{ { A }_{ m } }  }, (Eq. 3.9)
 $$  
 
 Where $s_{m}$ is the score for each motu and $A_{m}$ is the area of that motu, divided by the total area to get a weighted average. 
@@ -568,7 +587,9 @@ The status for all zones (land, no-take zone, lagoon and offshore) were averaged
 
 ##### Trend
 
-This management scheme has not changed since 2014, when The Brando opened. Therefore, the trend for this score is zero. 
+
+The management scheme for these zones have not changed since 2014, when The Brando opened. Therefore, the trend for this score is zero. 
+ 
 
 ##### Data
 _Status and trend_
@@ -594,41 +615,43 @@ data_layers(goal="LSP", dimension=c("resilience"))
 
 <span style="color: #f2cf4a; font-family: Arial, sans-serif; font-size: large;">Score = 89.68</span>
 
-For the goal, we calculated a score describing sustainability of [The Brando](https://thebrando.com/) resort, the eco-resort on Onetahi. Data for this goal are descriptive sustainability metrics gathered from [SA Beachcomber's 2019 sustainability report](https://en.calameo.com/read/004500545654d0392cc93). They are all percentages (i.e. 80% energy provided by solar).
+For the goal, the score assesses the progress towards  sustainability of [The Brando](https://thebrando.com/) resort, the eco-resort on Onetahi. 
 
-We did inquire about actual data from The Brando, contacting Alban Perret (sustainability manager). He was not able to share any data at this time, as The Brando has had to push their sustainability work to 2021. Alban said to reach out again in Q2 2021 for an update.
+For this goal, we used sustainability datafrom [SA Beachcomber's 2019 sustainability report](https://en.calameo.com/read/004500545654d0392cc93). We did requestt actual data from The Brando, contacting the sustainability manager, Alban Perret. He was not able to share any data at this time, as The Brando has had to push their sustainability work to 2021. Alban said to reach out again in Q2 2021 for an update.
 
-The Brando has already achieved far more in terms of sustainability than most resorts, so setting a reference point is tricky. They were the first resort building to receive LEED Platinum certification, and already have a very low impact. We'll assume that being 100% sustainable, i.e. have zero footprint, is a goal. While it does not seem totally feasible, the 2019 sustainability report outlines the following broad goal, which supports this reference point: 
+The Brando has already achieved far more in terms of sustainability than most resorts, so setting a reference point is tricky. They were the first resort building to receive LEED Platinum certification, and already have a very low impact. We assume a reference point of 100% sustainability, i.e. have zero footprint. The 2019 sustainability report outlines the following broad goal, which supports this reference point: 
 
 >"Decrease carbon footprint of human activity on the island, working towards zero impact"
 
 
-There are a handful of green / eco / sustainable tourism certifications out there, but one that provides a helpful framework is the [Green Destinations](https://greendestinations.org/green-destinations-standard/) certification. This certification has 100 criteria, but 3 helpful categories under the "Environment and Climate" to group the statistics from the sustainability report:
+There are a handful of green / eco / sustainable tourism certifications, but one that provides a helpful framework is the [Green Destinations](https://greendestinations.org/green-destinations-standard/) certification. This certification has 100 criteria, from which we identified 3 categories under the "Environment and Climate" to group the statistics from the sustainability report:
 
 * Energy use
 * Waste & Recycling
 * Water management
 
+
 ##### Current Status
 
-For this goal, we will score each sustainability category based on two criteria: 
+We scored each sustainability category based on two criteria: 
 
 1. How close it is to 100% sustainable, or zero impact?
-2. Is this category being closely monitored?
+2. Is progress  closely monitored?
 
-If the answer to the second criteria is "no", the score will be reduced by 0.5.
+If the answer to the second criteria is "no", the score was reduced by 0.5.
 
-Based on our limited information, we believe that energy and waste meet both these criteria, while water does not. Furthermore, it is unclear how much water sourced from non-native freshwater is actually being used, so its difficult to give this category a score. If a category has multiple metrics, they were averaged to get the category score. We then averaged the three category scores to get the final score.
+Based on our limited information, we believe that energy and waste meet both these criteria, while water does not. Furthermore, the amount of water sourced from non-native freshwater is unclear, making it difficult to score this category. If a category includes multiple metrics, they were averaged to get the category score. We then averaged the three category scores to get the final score.
+
 
 $$
-status_{tr} = \frac { \displaystyle\sum _{ k=1 }^{ N }{ { (S }_{ c} } \times { M }) }{ \displaystyle\sum _{ k=1 }^{ N }{ { c } }  }, (Eq. 5.6)
+status_{tr} = \frac { \displaystyle\sum _{ k=1 }^{ N }{ { (S }_{ c} } \times { M }) }{ \displaystyle\sum _{ k=1 }^{ N }{ { c } }  }, (Eq. 4.0)
 $$  
 
 Where $S_{c}$ is the percent of each sustainability category that is "zero impact", $M_{c}$ is whether or not it is being monitored, and $c$ are the number of categories included in the score. 
 
 ##### Trend
 
-Since we only have the Sustainability Report for 2019, we do not know at this time if any of these measures has changed since 2014 (when the resort opened). For now, the trend will be zero, but with more detailed data can be updated. 
+Since we only have the Sustainability Report for 2019, we do not know how these measures have changed since 2014 (when the resort opened). For now, we use a  trend of zero, that can be updated with improved data. 
 
 ##### Data
 _Status and trend_
@@ -650,43 +673,24 @@ data_layers(goal="TR", dimension=c("resilience"))
 ```
 
 
-***
-
-## Goals Not Included
-
-The following goals that are typically included in the OHI global assessment were not included in the Tetiaroa OHI+ assessment:
-
-### Carbon Storage (CS)
-
-The Carbon Storage goal measures the health of carbon storing habitats. Highly productive coastal wetland ecosystems (e.g., mangroves, salt marshes, seagrass beds) have substantially larger areal carbon burial rates than terrestrial forests, and "Blue Carbon" has been suggested as an alternate, more manageable carbon sequestration approach. The rapid destruction of these coastal habitats may release large amounts of buried carbon back into the ocean-atmosphere system. Our focus here, therefore, is on coastal habitats because they are threatened, have large amounts of stored carbon that would rapidly be released with further habitat destruction, have the highest per-area sequestration rates of any habitat on the planet, and are amenable to management, conservation, and restoration efforts. We refer to this goal as carbon storage but intend its meaning to include sequestration.
-
-Lacking data on the carbon storage abilities of the native rainforest, or of any other areas on Tetiaroa, we only included this goal with placeholder data for now. However, if future data on carbon storage becomes available, this goal can be updated and scored. 
-
 ### Clean Waters (CW)
 
-People value marine waters that are free of pollution and debris for aesthetic and health reasons. Contamination of waters comes from oil spills, chemicals, eutrophication, algal blooms, disease pathogens (e.g., fecal coliform, viruses, and parasites from sewage outflow), floating trash, and mass kills of organisms due to pollution. People are sensitive to these phenomena occurring in areas they access for recreation or other purposes as well as for simply knowing that clean waters exist. This goal scores highest when the contamination level is zero.
+People value marine waters that are free of pollution and debris for aesthetic and health reasons. Contamination of waters comes from sources such as oil spills, agriculture, sewage, land-based runoff, and trash from human activities.. People are sensitive to water pollution  in areas they access for recreation or other purposes, and generally value the existence of clean waters. This goal scores highest when the contamination level is zero.
 
-There have not yet been any comprehensive studies on water contamination on Tetiaroa, with publicly available results. Therefore, while this goal is relevant to Ocean Health on Tetiaroa, it has only been included as a placeholder to be updated as data becomes available. 
+There are currently no publically available data from comprehensive studies on water contamination on Tetiaroa. Therefore, while this goal is relevant to Ocean Health on Tetiaroa, it is only included as a placeholder to be updated as data becomes available.
 
 ### Resource Access Opportunities (RAO)
 
-People value the ability to access coastal and ocean resources. Isolating what allows for this type of access is difficult, but a necessary component of humans relationship with the ocean. We felt that this goal would be useful to Tetiaroa, as both tourists and local fisherman from other areas of French Polynesia value the ability to access Tetiaroa for various uses. Lacking quantitative data measuring the current status, as well as a agreed upon goal or reference point for this goal, we have included it as a placeholder for now. 
+People value the ability to access coastal and ocean resources. Isolating what allows for this type of access is difficult, but a necessary component of humans' relationship with the ocean. This goal would be useful to Tetiaroa, as both tourists and local fisherman from other areas of French Polynesia value the ability to access Tetiaroa for various uses. Lacking quantitative data to measure current status, as well as an agreed upon reference point, we have included this goal as a placeholder for now.
 
 ### Food Provision (FP)
 
 The Food Provision (FP) goal is made up of two subgoals, Fisheries (FIS) and Mariculture (MAR).
 
-One of the most fundamental services the ocean provides people is the provision of seafood. The Food Provision goal measures the amount of seafood sustainably harvested within an EEZ or region through any means for use primarily in human consumption and thus includes wild-caught commercial fisheries, mariculture, and artisanal-scale and recreational fisheries. 
+One of the most fundamental services the ocean provides people is the provision of seafood. The Food Provision goal measures the amount of seafood sustainably harvested within an EEZ or region through any means for human consumption and thus includes wild-caught commercial fisheries, mariculture, and artisanal-scale fisheries. 
 
-The Food Provision goal was not included in this assessment due to the fact that the number of people that live on Tetiaroa full time is very small, and they do not rely directly on the surrounding waters for food. While there is some fishing (recreational and artisanal), it is not a management goal of the Tetiaroa Society to increase fishing activity and / or develop new fishing opportunities in these waters. Therefore, we did not feel it would be useful to score this goal.  
+The Food Provision goal was not included in this assessment because the number of people that live on Tetiaroa full time is very small, and they do not rely directly on the surrounding waters for food. While there is some fishing (recreational and artisanal), it is not a management goal of the Tetiaroa Society to increase fishing activity and / or develop new fishing opportunities in these waters. Therefore, we did not feel it would be useful to include this goal.  
 
-#### Fisheries (FIS)
-
-The Fisheries subgoal aims to assess the amount of wild-caught seafood that can be sustainably harvested. The people who live on Tetiaroa do not really rely on wild-caught seafood as a major food source, and increasing wild caught fishing around Tetiaroa is not a management goal of The Brando or The Tetiaroa Society, the main environmental management parties and stewards of the island.
-
-#### Mariculture (MAR)
-
-The Mariculture subgoal attempts to measure a region's food production from mariculture relative to its capacity. This goal was not included in the assessment as there is no existing mariculture or plans to develop mariculture in Tetiaroa. 
 
 ### Artisanal Fishing Opportunity (AO)
 
@@ -704,11 +708,8 @@ This type of harvesting of natural products for sale or trade does not occur on 
 
 The Livelihoods & Economies (LE) goal is made up of two subgoals, Livelihoods (LIV) and Economies (ECO). The Conservation Economy included in this assessment serves as a replacement for the Economies goal.
 
-The jobs and revenue produced from marine-related industries are clearly of huge value to many people, even those who do not directly participate in the industries but value community identity, tax revenue, and indirect economic and social impacts of a stable coastal economy. This goal measures both livelihood quantity and job quality.   
-
-#### Livelihoods (LIV)
-
 While The Brando and the Tetiaroa Society do provide livelihoods to a small number of people, it is not a goal to increase the number of jobs provided or expand the tourism industry in Tetiaroa. Rather, a long term goal is to create an ecological sanctuary and preserve the island from further development. It is a goal to create and generate revenue to help accomplish this vision, which is why we included the Conservation Economy goal, but left out the Livelihoods goal. 
+
 
 ***
 
