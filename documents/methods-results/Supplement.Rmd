@@ -857,11 +857,22 @@ Ecosystem integrity, as measured by species diversity, helps support multiple go
 
 ##### Regulatory resilience
 
-Regulatory resilience ($Y_R$)  describes the institutional measures (e.g., rules, regulations, and laws) designed to address ecological pressures. For the global assessment, the regulatory resilience datasets are grouped into five categories that address the 5 pressure categories: fishing pressure, habitat destruction, climate change (including ocean acidification), water pollution, and species introductions (invasive species and genetic escapes). There is also an additional category for goal-specific regulations that apply to a goal or goals, but do not address a larger pressure category. For Tetiaroa, we only included regulation addressing fishing pressure, habitat destruction, and species introductions.
+Regulatory resilience describes the institutional measures (e.g., rules, regulations, and laws) designed to address ecological pressures. The regulatory resilience datasets are grouped into five categories that address the 5 pressure categories: fishing pressure, habitat destruction, climate change, water pollution, and alien species. For this assessment we use two resilience layers for each pressure category where possible: regulations and management.  
 
-<u>Fishing Regulations:</u> French Polynesia has stringent fishing regulations on sharks, marine mammals, turtles, certain crustaceans and certain corals (Mariners Stopover Plan). Since many of the iconic species evaluated for the ICO goal fall into these categories, these regulations help ensure future conservation and help enhance the ICO goal. To score this goal, we divided the number of species with stringent protections by the total number of species. 
+Regulation layers are based on if there are established rules to prevent ecological pressures. For alien species, we use the presence of rules to prevent the introduction and spread of invasive species from boats, vessels, and cargo. Fishing and habitat regulations are based on the establishment of protected areas. For fishing resilience, we use the presence of marine protected areas and for habitats, we consider both terrestrial protected areas and marine protected areas. Due to the lack of permanent residents, pollution and climate change don't have localized rules and therefore aren't considered as resilience layers.
 
-<u>Habitat resilience:</u> We included a measure of how much of Tetiaroa falls under a recognized protected area. Officially, this only includes the no-take zone established in the lagoon, as well as the land. We scored this by finding the percentage of land that is protected out of the total area considered in the scope of this project. 
+Management layers are derived for climate change, habitats, fishing, and alien species based on evaluation of three questions:   
+ 1. Is there a management plan?    
+ 2. Does there exist some sort of monitoring or tracking of the effects of the management plan?   
+ 3. Has the management plan been effective in changing behaviors or meeting its objectives?   
+ 
+A score of one is given for every "Yes" response, a zero given for a "No" response, and 0.5 given if management plans or monitoring programs are "In Development". The overall resilience layer score is the sum over three. Since the inverse of the habitat management resilience is used for a social pressure, we will consider this a social resilience instead of an ecological one.    
+
+<u>Fishing Regulations:</u> French Polynesia has stringent fishing regulations on sharks, marine mammals, turtles, certain crustaceans and certain corals (Mariners Stopover Plan, 2020). Mirroring what was done for the Lasting Special Places goal, we gave this resilience score a 1 for the first criteria, a 0 for the second, and a 1 for the third. 
+
+<u>Habitat resilience:</u> We included a measure of how much of Tetiaroa falls under a recognized protected area. Officially, this only includes the no-take zone established in the lagoon, as well as the land. For this protected area, The Tetiaroa Society has implemented a management plan with monitoring, but feel that it should be a 0.75 in its effectiveness. 
+
+<u>Alien Species</u>: Tetiaroa has begun implementing a robust biosecurity plan in order to prevent more non-native species from being introduced to the island (cite). After reviewing this plan and the best biosecurity practices for small islands (Sherley, 2000), we score this regulation as 1 in the first criteria, a 1 in the second criteria, and a 0.5 in the last one since the full suite of preventative measures have yet to be implemented. 
 
 ### Social resilience
 
@@ -872,7 +883,7 @@ Social integrity is intended to describe those processes internal to a community
 
 ## Weaknesses
 
-The scores calculated in this assessment can be improved upon by using better data. To highlight places for improvement, we evaluated all the data sources across three dimensions: spatial, temporal, and fit. Each data set is scored across the criteria listed below and given a 0.0 (poor), 0.5 (fair) or 1.0 (good as applicable). Full dimensions and methods are described in O'hara et al. 2020 and are loosely based upon methods in Fritz et al. (2019)
+This assessment relied on 19 different data sources to create the 36 data layers used to caluculate each goal, pressure or resilience score. The results could be refined by using more data specific to the Tetiaroa region. To highlight opportunities to improve the data used for future assessments, we evaluated all the data sources across three dimensions: spatial, temporal, and fit. Each data set is scored across the criteria listed below and given a 0.0 (poor), 0.5 (fair) or 1.0 (good as applicable). Full dimensions and methods are described in O'hara et al. 2020 and are loosely based upon methods in Fritz et al. (2019)
 
 **Spatial Dimension** 
 
