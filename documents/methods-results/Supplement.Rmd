@@ -79,7 +79,7 @@ Tetiaroa is surrounded by coral reefs and has additional reef structures in the 
 
 # Summary of the overall results
 
-The health of Tetiaroa’s marine and coastal resources are critical to the mission of ensuring “island and coastal communities have a future as rich as their past - strengthening their resilience to global change, enhancing their ecosystem services, and preserving their culture” (https://www.tetiaroasociety.org/). Tetiaroa’s overall OHI score of 76 suggests that marine and coastal resources are supporting this goal fairly well. The goals with the highest scores are Iconic Species (90.02) and Tourism and Recreation (89.68). This suggests that many of the species with the most cultural and spiritual value to Tetiaroa are well protected, and efforts to implement sustainable tourism practices are successfully mitigating the impact of this activity on the island's environment. 
+The health of Tetiaroa’s marine and coastal resources are critical to the mission of ensuring “island and coastal communities have a future as rich as their past - strengthening their resilience to global change, enhancing their ecosystem services, and preserving their culture” (https://www.tetiaroasociety.org/). Tetiaroa’s overall OHI score of 79 suggests that marine and coastal resources are supporting this goal fairly well. The goals with the highest scores are Iconic Species (91.73) and Tourism and Recreation (89.68). This suggests that many of the species with the most cultural and spiritual value to Tetiaroa are well protected, and efforts to implement sustainable tourism practices are successfully mitigating the impact of this activity on the island's environment. 
 
 The only goal that scored below 50 was Conservation Economy. Tetiaroa's main environmental steward, The Tetiaroa Society, has been successful in generating funding and revenue to support conservation efforts on the island; however, more effort is needed to meet the continued need for resources to fund research and complete projects focusing on retoration and preservation of ocean health on Tetiaroa.
 
@@ -169,7 +169,7 @@ where, $C_k$ = $C_{c}/C_r$ and N is the number of habitats in a region. $C_c$ is
 
 | Habitat | Condition | Extent | Trend |
 | :----- | :-----------------| :------------ | :--------- |
-| Native land vegetation | Scored based on relative area of coconut palms, native forest, and landscaped area (see below) | Frank's map | No trend
+| Native land vegetation | Scored based on relative area of coconut palms, native forest, and landscaped area (see below) | Estimates from the Tetiaroa Society | No trend
 | Coral reef | Used global OHI score for French Polynesia | Total extent of coral reef within 3 nm of Tetiaroa | Used global trend for French Polynesia
 
 **Land Habitat** 
@@ -759,7 +759,6 @@ Sea surface temperature pressure scores are found using the same methods as the 
 <u>Ultraviolet Radiation</u> 
 Ultraviolet radiation pressure scores are found using the same methods as the OHI Global assessment. Additional information on how this data is processed to obtain 0-1 scores can be found [here](http://ohi-science.org/ohiprep_v2020/globalprep/prs_uv/v2020/uv_dataprep.html). The global data is cropped to a 3 nautical mile boundary around Palmyra.
 
-<br>   
 Data Sources:  
 
 - Feely, R.A., S.C. Doney, and S.R. Cooley. 2009. Ocean acidification: Present conditions and future changes in a high-CO2 world. Oceanography 22(4):36–47   
@@ -768,15 +767,15 @@ Data Sources:
 - Jari Hovila, Antii Arola, and Johanna Tamminen (2014), OMI/Aura Surface UVB Irradiance and Erythemal Dose Daily L2 Global Gridded 0.25 degree x 0.25 degree V3, NASA Goddard Space Flight Center, Goddard Earth Sciences Data and Information Services Center (GES DISC), Accessed [June 22, 2020] DOI:10.5067/Aura/OMI/DATA2028.
 <br> 
 
-<u>Habitat Destruction</u>
+**Habitat Destruction**
 
-?
+Habiat desctruction occurs 
 
-<u>Water Pollution</u>
+**Water Pollution**
 
 Potential sources for water pollution on Tetiaroa include emissions from boats, trash from visitors or nearby areas, and runoff from any built environment on the island, including The Brando. For now, we use the inverse of the Waste Management score as the pollution pressure, which assumes that any waste not processed by The Brando is being emitted to the environment.
 
-<u>Alien Species</u>
+**Alien Species**
 
 There are various invasive species on Tetiaroa, most of them terrestrial. For this pressure, we considered 5 that are the highest priority for eradication, which includes: 2 species of rat, ants, mosquitos, and biting flies. While there are projects in progress for all these species, full eradication has only occurred for rats on 2 of the motus. We scored each motu based on how many out of the 5 had been successfully eradicated, and then took the area weighted average of all motus for the final pressure score. 
 
@@ -908,7 +907,8 @@ This assessment relied on 19 different data sources to create the 36 data layers
 
 # Future
 
-- Table describing datasets that would be ideal to collect for future iterations of the OHI assessment.
+In addition to identifying ways existing data could be improved upon, we also identified various data gaps, which if filled would improve the accuracy of results. We list ideas for what types of datasets would be most ideal to use for any future assessments below: 
+
 - water /pollution
 - tourism demand
 - more detailed vegetation data, to help inform restoration goals 
@@ -919,6 +919,8 @@ This assessment relied on 19 different data sources to create the 36 data layers
 
 ***
 # Acknowledgements
+
+Thank you to Frank Murphy and Neil Davies for their collaboration and support throughout this project. We would also like to thank Dr. David Smith from the University of Redlands, who provided shapefiles of Tetiaroa's motus. Special thanks to Carol Raydon for sharing the photos used in this report. 
 
 
 ***
