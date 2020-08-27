@@ -42,10 +42,15 @@ The Ocean Health Index (OHI) is a scientific framework used to measure how healt
 
 OHI assessments require the calculation of a score for each goal from 0 to 100, and the full suite of goal scores are then averaged to obtain an overall index score. Goal scores are calculated as the average of current status (current condition relative to a reference point) and likely future status.  Likely future status is the current status modified by the following dimensions: pressures predicted to reduce status (e.g., increasing SST, fishing pressures, invasive species);  resilience variables that mitigate pressures (e.g., effective fishing management, protected areas);  and recent trends in status.  For more information about the philosophy of the Ocean Health Index and model development see http://ohi-science.org.  
 
-
 To assess the condition of Tetiaroa’s ocean resources, an OHI+ assessment was conducted as part of a collaboration between Tetiaroa Society’s 4site team and the University of California, Santa Barbara’s National Center for Ecological Analysis and Synthesis (NCEAS).  Here we report the conclusions from our analysis, and describe how we modified the goal models to reflect locally relevant management concerns. 
 
+The tet-prep.html and tet-scores.html repositories contain all the data and scripts used to conduct the Tetiaroa assessment.  Future researchers can use this resource to build upon this assessment as better data become available and goal models evolve to better assess the status of this marine environment.Furthermore, the repository promotes transparent and open research, as well as more streamlined collaboration. (Stewart Lowndes et al. 2017)
+https://www.nature.com/articles/s41559-017-0160.pdf?origin=ppub
 
+<center>
+![](./assets/logos_tet.png)
+</center>
+<br>
 
 ***
 
@@ -74,9 +79,9 @@ Tetiaroa is surrounded by coral reefs and has additional reef structures in the 
 
 # Summary of the overall results
 
-The health of Tetiaroa’s marine and coastal resources are critical to the mission of ensuring “island and coastal communities have a future as rich as their past - strengthening their resilience to global change, enhancing their ecosystem services, and preserving their culture” (https://www.tetiaroasociety.org/). Tetiaroa’s overall OHI score of 76 suggests  that marine and coastal resources are supporting this goal fairly well. The goals with the highest scores are Iconic Species (90.02) and Tourism and Recreation (89.68). This suggests that many of the species with the most cultural and spiritual value to Tetiaroa are well protected, and efforts to implement sustainable tourism practices are successfully mitigating the impact of this activity on the island's environment. 
+The health of Tetiaroa’s marine and coastal resources are critical to the mission of ensuring “island and coastal communities have a future as rich as their past - strengthening their resilience to global change, enhancing their ecosystem services, and preserving their culture” (https://www.tetiaroasociety.org/). Tetiaroa’s overall OHI score of 76 suggests that marine and coastal resources are supporting this goal fairly well. The goals with the highest scores are Iconic Species (90.02) and Tourism and Recreation (89.68). This suggests that many of the species with the most cultural and spiritual value to Tetiaroa are well protected, and efforts to implement sustainable tourism practices are successfully mitigating the impact of this activity on the island's environment. 
 
-The only goal that scored below 50 was Conservation Economy.  Tetiaroa's main environmental steward, The Tetiaroa Society, has been successful in generating funding and revenue to support conservation efforts on the island; however, more effort is needed to meet the continued need for resources to preserve ocean health on Tetiaroa.
+The only goal that scored below 50 was Conservation Economy. Tetiaroa's main environmental steward, The Tetiaroa Society, has been successful in generating funding and revenue to support conservation efforts on the island; however, more effort is needed to meet the continued need for resources to fund research and complete projects focusing on retoration and preservation of ocean health on Tetiaroa.
 
 
 ![](assets/flower_Tetiaroa.png)
@@ -701,20 +706,22 @@ While The Brando and the Tetiaroa Society do provide livelihoods to a small numb
 
 ## Pressures
 
-The pressure score, $p$, describes the cumulative pressures acting on a goal which suppress the goal score.  Pressure scores range from 0 to 1, and they are calculated for each goal and region and include both ecological ($p_{E}$) and social pressures ($p_{S}$) (Table 1.9, Figure X.X), such that:
+The pressure score, $p$, describes the cumulative pressures acting on a goal which suppress the goal score.  Pressure scores range from 0 to 1, and they are calculated for each goal and region and include both ecological ($p_{E}$) and social pressures ($p_{S}$) (Table 5.1, Figure 5.1), such that:
 
 $$
 { p }\quad =\quad \gamma *{ p }_{ E }\quad +\quad (1-\gamma )*{ p }_{ S }, (Eq. 4.6)
 $$
 
-where $\gamma$ is the relative weight for ecological vs. social pressures and equals 0.5 for the global assessment. At global scales, little evidence exists to support unequal weighting of ecological and social pressures for most goals; furthermore, unequal weighting would require unique values for each goal and there is currently no empirical work to guide such decisions. At local or regional scales there may be clear evidence for unequal weights per goal and $\gamma$ should be adjusted accordingly.
+where $\gamma$ is the relative weight for ecological vs. social pressures and equals 0.5 for the global assessment. At local or regional scales there may be clear evidence for unequal weights per goal and $\gamma$ should be adjusted accordingly.
 
-**Figure x.x. Pressure components**
+
+**Figure 3.1. Pressure components**
 Pressure is calculated using both social and ecological pressures.  Ecological pressures include 5 subcategories (fishing pressure, habitat destruction, climate change, water pollution, and species/genetic introductions).  
-
 ![](../../documents/methods-results/assets/PressureComponentsPieChart.png)
 
-**Table 1.9. Pressure data and categories**
+
+<br>
+**Table 3.1. Pressure data and categories**
 Description of the stressor data layers used to calculate overall pressure for each goal and region for the global assessment (descriptions of pressure data in section 6).  Each data layer is assigned to an ecological or social category, and ecological data are assigned to one of five subcategories. 
 
 ```{r pressure categories, echo = FALSE, warning=FALSE, message = FALSE, error =FALSE}
@@ -732,13 +739,54 @@ kable(pressure_cat, align = "l")
 
 ```
 
+### Ecological Pressure
+
 The global OHI includes five ecological pressure categories (Figure XX). For this assessment, we included four of broad, globally-relevant categories of ecological stressors: fishing pressure, climate change (including ocean acidification), water pollution, and species introductions (invasive species and genetic escapes). The four categories are intended to capture known pressures to the social-ecological system associated with each goal. More pressures can be added to Tetiaroa's assessment as data becomes more available. The intensity of each stressor within each OHI region is scaled from 0 to 1, with 1 indicating the highest stress (e.g., example of one of these data layers is [sea surface temperature](https://github.com/OHI-Science/ohi-global/blob/draft/eez/layers/cc_sst.csv)).
+
+**Climate Change**
+
+Four stressors are considered as climate change pressures: ocean acidification, sea level rise, sea surface temperature, and ultraviolet radiation. 
+
+<u>Ocean Acidification</u> 
+Ocean acidification pressure scores are found using the same methods as the OHI Global assessment. Additional information on how this data is processed to obtain 0-1 scores can be found [here](https://cdn.rawgit.com/OHI-Science/ohiprep/master/globalprep/prs_oa/v2017/create_oa_layer.html). The global data is cropped to a 3 nautical mile boundary around Palmyra.   
+
+<u>Sea Level Rise</u> 
+Sea level rise pressure scores are found using the same methods as the OHI Global assessment. Additional information on how this data is processed to obtain 0-1 scores can be found [here](https://ohi-science.org/ohiprep_v2019/globalprep/prs_slr/v2019/slr_layer_prep_v2.html). The global data is cropped to a 3 nautical mile boundary around Palmyra.  
+
+<u>Sea Surface Temperature</u> 
+Sea surface temperature pressure scores are found using the same methods as the OHI Global assessment. Additional information on how this data is processed to obtain 0-1 scores can be found [here](http://ohi-science.org/ohiprep_v2020/globalprep/prs_sst/v2018/sst_layer_prep.html). The global data is cropped to a 3 nautical mile boundary around Palmyra.  
+
+<u>Ultraviolet Radiation</u> 
+Ultraviolet radiation pressure scores are found using the same methods as the OHI Global assessment. Additional information on how this data is processed to obtain 0-1 scores can be found [here](http://ohi-science.org/ohiprep_v2020/globalprep/prs_uv/v2020/uv_dataprep.html). The global data is cropped to a 3 nautical mile boundary around Palmyra.
+
+<br>   
+Data Sources:  
+
+- Feely, R.A., S.C. Doney, and S.R. Cooley. 2009. Ocean acidification: Present conditions and future changes in a high-CO2 world. Oceanography 22(4):36–47   
+- AVISO [Monthly mean Maps of Sea Level Anomaly](https://www.aviso.altimetry.fr/data/products/sea-surface-height-products/global/gridded-sea-level-anomalies-mean-and-climatology.html)   
+- Saha, Korak; Zhao, Xuepeng; Zhang, Huai-min; Casey, Kenneth S.; Zhang, Dexin; Zhang, Yongsheng; Baker-Yeboah, Sheekela; Relph, John M.; Krishnan, Ajay; Ryan, Thomas (2018). The Coral Reef Temperature Anomaly Database (CoRTAD) Version 6 - Global, 4 km Sea Surface Temperature and Related Thermal Stress Metrics for 1982 to 2017. NOAA National Centers for Environmental Information. Dataset. https://doi.org/10.25921/ffw7-cs39. Accessed: July 23, 2020.   
+- Jari Hovila, Antii Arola, and Johanna Tamminen (2014), OMI/Aura Surface UVB Irradiance and Erythemal Dose Daily L2 Global Gridded 0.25 degree x 0.25 degree V3, NASA Goddard Space Flight Center, Goddard Earth Sciences Data and Information Services Center (GES DISC), Accessed [June 22, 2020] DOI:10.5067/Aura/OMI/DATA2028.
+<br> 
+
+<u>Habitat Destruction</u>
+
+?
+
+<u>Water Pollution</u>
+
+Potential sources for water pollution on Tetiaroa include emissions from boats, trash from visitors or nearby areas, and runoff from any built environment on the island, including The Brando. For now, we use the inverse of the Waste Management score as the pollution pressure, which assumes that any waste not processed by The Brando is being emitted to the environment.
+
+<u>Alien Species</u>
+
+There are various invasive species on Tetiaroa, most of them terrestrial. For this pressure, we considered 5 that are the highest priority for eradication, which includes: 2 species of rat, ants, mosquitos, and biting flies. While there are projects in progress for all these species, full eradication has only occurred for rats on 2 of the motus. We scored each motu based on how many out of the 5 had been successfully eradicated, and then took the area weighted average of all motus for the final pressure score. 
+
+### Social Pressures 
 
 We also included one social pressure, which is the inverse of the Lasting Special Places goal score. The methods used to calculate Lasting Special Places were based on existing management strategies rather than just protected areas, and therefore we feel the inverse of the score captures how those strategies might be lacking for certain zones in Tetiaroa. 
 
 We determined the rank sensitivity of each goal/subgoal to each stressor (or, when possible, an element of the goal, such as a specific habitat).  We ranked ecological pressures as having ‘high’ (score = 3), ‘medium’ (score = 2), ‘low’ (score = 1), or 'no' (score = NA) impact (Table 4.2). The pressure ranks are based on a rough estimate of the global average intensity and frequency of the stressor. We recognize that this will create over- and under-estimates for different places around the planet, but to address such variance in a meaningful way would require a separate weighting matrix for every single region on the planet, which is not feasible at this time.  
 
-**Table 2.1. Pressure matrix**
+**Table 3.2. Pressure matrix**
 Rank sensitivity of each goal (or, goal element) to each stressor.
 ```{r pressure matrix, echo = FALSE}
 
@@ -754,38 +802,9 @@ kable(pressure_matrix, align = "l")
 
 ```
 
-#### Ecological Pressures 
+### Caveats 
 
-To estimate the cumulative effect of the ecological pressures, $P_E$, we first determined the cumulative pressure, $p$, within each ecological category, $i$ (e.g., pollution, fishing, etc.):
-
-$$
-{ p }_{ i }\quad =\quad \frac { \displaystyle\sum _{ i=1 }^{ N }{ { w }_{ i }{ s }_{ i } }  }{ 3 }, (Eq. 4.7)
-$$
-
-Where $w_i$ is the sensitivity ranks (Table 4.2) describing the relative sensitivity of each goal to each stressor, and $s_i$ is intensity of the stressor in each region on a scale of 0-1. We divided by the maximum weighted intensity that could be achieved by the worst stressor (max = 3.0).
-
-If $p_i$ > 1.0, we set the value equal to 1.0. This formulation assumes that any cumulative pressure load greater than the maximum intensity of the worst stressor is equivalent to maximum stressor intensity.
-
-For the goals for which sensitivity ranks were assigned for specific habitats or livelihood sectors (i.e., goal elements), we calculated the weighted sum of the pressures for only those habitats or sectors that were present in the country.
-
-The overall ecological pressure, $p_E$, acting on each goal and region was calculated as the weighted-average of the pressure scores, $p$, for each category, $i$, with weights set as the maximum rank in each pressure category ($w_{i\_max}$) for each goal, such that:
-
-$$
-{ p }_{ E }\quad =\quad \frac { \displaystyle\sum _{ i=1 }^{ N }{ { (w }_{ i\_ max }*{ p }_{ i }) }  }{ \displaystyle\sum_{ i=1 }^{ N } { { w }_{ i\_ max } }  },  (Eq. 4.8)
-$$
-
-Stressors that have no impact drop out rather than being assigned a rank of zero, which would affect the average score.
-
-
-#### Social pressures
-
-Social pressures describe the lack of effectiveness of government and social institutions.  Social stressors are described for each region on a scale of 0 to 1 (with one indicating the highest pressure). Social pressure is then calculated as the average of the social stressors:
-
-$$
-{ p }_{ S }\quad =\quad \frac { \displaystyle\sum _{ i=1 }^{ N }{ z_{ i } }  }{ N }, (Eq. 4.9)
-$$
-
-where $z_{i}$ are the social pressure measures specific to the goal. Unequal weighting may be appropriate in some cases but is difficult to assess currently, particularly at the global scale. 
+A key assumption in our assessment of ecological pressures is that each goal has a linear and additive response to increases in intensity of the stressors. Clearly many ecosystems respond non-linearly to increased stressor intensity, exhibiting threshold responses, and there are likely nonlinear interactions among stressors. Unfortunately little is known about the nature of these types of nonlinearities and interactions so we could not include them in any meaningful way.  
 
 
 ***
@@ -800,7 +819,7 @@ $$
 
 We chose $\gamma = 0.5$ so the weight of resilience components that address ecological systems (ecosystem and regulatory) vs. social systems would be equivalent to the proportions used in the model to calculate pressure. 
 
-**Figure 4.3. Resilience components**
+**Figure 3.2. Resilience components**
 Resilience includes both ecological and social resilience categories.  Ecological resilience includes an ecosystem and regulatory category.  The regulatory category includes 5 subcategories that mirror the pressure categories (fishing pressure, habitat destruction, climate change, water pollution, and species/genetic introductions) as well as a goal-specific category.
 
 ![](../../documents/methods-results/assets/ResiliencePieChart.png)
@@ -808,7 +827,7 @@ Resilience includes both ecological and social resilience categories.  Ecologica
 Each resilience category is composed of 1 or more data layers (Table 4.3) with values scaled from 0-1, reflecting the magnitude of resilience, for each region (an example of one of these data layers describes [tourism regulations that preserve biodiversity](https://github.com/OHI-Science/ohi-global/blob/draft/eez/layers/g_tourism.csv)).  Each resilience data layer is assigned a weight of 0.5 or 1 (Table 4.3) that is applied equally across all the goals (or, goal elements) influenced by the resilience layer (i.e., resilience matrix, Table 4.4). This information is used to calculate a score for each resilience category. The weight reflects information about governance. 
 
 
-**Table 2.2. Resilience categories and weights**
+**Table 3.3. Resilience categories and weights**
 The data layers used to calculate resilience for each goal and region for the global assessment (descriptions of data layers and sources are in section 6).  Each data layer is assigned to an ecological or social category.  The ecological category is broken into an ecosystem and regulatory category type.
 ```{r Resilience categories and weight table, echo=FALSE, warning=FALSE, message=FALSE, error=FALSE}
 full_lyr_names <- read.csv(here("documents/methods-results/metadata_documentation/layers_tet_base.csv")) %>% 
@@ -834,42 +853,20 @@ kable(res_matrix, align = "l")
 
 Ecosystem integrity, e.g., food web integrity, is measured as relative condition of assessed species in a given location (scores from the species subgoal were used to estimate ecosystem integrity). For some goals, there is little evidence that our index of ecosystem integrity directly affects the value of the goal (or subgoal).  In these instances, ecological integrity falls out of the resilience model.
 
-For this assessment we only have one data layer describing ecosystem integrity (res_spp_diversity), however, if there were multiple layers the overall score for ecosystem integrity would be a weighted mean of all the data layers, $i$, that describe ecosystem integrity ($y_{E,i}$) and influence the goal:
-
-$$
-{ Y }_{ E }\quad =\quad \frac { \displaystyle\sum _{ i=1 }^{ N }{ { w }_{ i }{ y_E}_{i} }  }{ \displaystyle\sum _{ i=1 }^{ N }{ { w }_{ i }}}, (Eq. 4.11) 
-$$
-
 Ecosystem integrity, as measured by species diversity, helps support multiple goals. Tetiaroa's Conservation Economy relies on both people valuing a healthy atoll ecosystem and wanting to come visit it. It also supports the health of iconic species that are culturally important on Tetiaroa. Ecosystem integrity also helps ensure that coral reefs and native vegetation habitat can sustain biodiversity. 
 
 ##### Regulatory resilience
-Regulatory resilience ($Y_R$)  describes the institutional measures (e.g., rules, regulations, and laws) designed to address ecological pressures. For the global assessment, the regulatory resilience datasets are grouped into five categories that address the 5 pressure categories: fishing pressure, habitat destruction, climate change (including ocean acidification), water pollution, and species introductions (invasive species and genetic escapes). There is also an additional category for goal-specific regulations that apply to a goal or goals, but do not address a larger pressure category. For Tetiaroa, we only included regulation addressing fishing pressure, habitat, and species introductions.
 
-**Did I do this?**Weights were based effectiveness of governance. Governance is a function of 1) institutional structures that address the intended objective, 2) a clear process for implementing the institution is in place, and 3) whether the institution has been effective at meeting stated objectives. At global scales it is very difficult to assess these three elements; we usually only had information on whether institutions exist. However, in some cases we had detailed information on institutions that enabled us to assess whether they would contribute to effective management, and thus, increased ocean health. In those latter cases, we gave more weight to those measures (Table 4.3). 
+Regulatory resilience ($Y_R$)  describes the institutional measures (e.g., rules, regulations, and laws) designed to address ecological pressures. For the global assessment, the regulatory resilience datasets are grouped into five categories that address the 5 pressure categories: fishing pressure, habitat destruction, climate change (including ocean acidification), water pollution, and species introductions (invasive species and genetic escapes). There is also an additional category for goal-specific regulations that apply to a goal or goals, but do not address a larger pressure category. For Tetiaroa, we only included regulation addressing fishing pressure, habitat destruction, and species introductions.
 
-For each region and goal, we calculated a score for each regulatory category, $y_{R, i}$, as a weighted mean of the resilience data layers, $r_{i}$, that influence the goal (Table 4.4):
+<u>Fishing Regulations:</u> French Polynesia has stringent fishing regulations on sharks, marine mammals, turtles, certain crustaceans and certain corals (Mariners Stopover Plan). Since many of the iconic species evaluated for the ICO goal fall into these categories, these regulations help ensure future conservation and help enhance the ICO goal. To score this goal, we divided the number of species with stringent protections by the total number of species. 
 
-$$
-y_{R, i}\quad =\quad \frac { \displaystyle\sum _{ i=1 }^{ N }{ { w }_{ i }{ r }_{ i } }  }{ \displaystyle\sum _{ i=1 }^{ N }{w_i} }, (Eq. 4.12) 
-$$
+<u>Habitat resilience:</u> We included a measure of how much of Tetiaroa falls under a recognized protected area. Officially, this only includes the no-take zone established in the lagoon, as well as the land. We scored this by finding the percentage of land that is protected out of the total area considered in the scope of this project. 
 
-where, $w_i$ is the weight in Table 4.3.
+### Social resilience
 
-To calculate the overall regulatory resilience, $Y_{R}$, we averaged the scores for each regulatory category.  
+Social integrity is intended to describe those processes internal to a community that affect its resilience. It is a function of a wide range of aspects of social structure. Ideally, assessments of social resilience would include state and federal level rules and other relevant institutional mechanisms. For this assessment we consider social resilience to be based on general management of Tetiaroa's ecosystems, as well as how the extent to which local Polynesians are involved in the operations of the island. For management, we used a lack of management as a social pressure and will use the inverse of this score as our resilience layer. The management layer was derived using the same method as the Lasting Special Places layer. As a proxy for local knowledge, we used the percentage of the staff employed by the Brando that are local Polynesian's - however a better measure might include extent to which local Polynesians are involved in high level decision making and resource management on the island or have access to certain resources on Tetiaroa.   
 
-There are three data layers that describe the regulatory resilience on Tetiaroa. French Polynesia has stringent fishing regulations on sharks, marine mammals, turtles, certain crustaceans and certain corals (Mariners Stopover Plan). Since many of the iconic species evaluated for the ICO goal fall into these categories, these regulations help ensure future conservation and help enhance the ICO goal. Lastly, we included a measure of how much land is considered protected area in Tetiaroa.(FIX THIS once trampling is figured out)
-
-#### Social integrity resilience
-
-Social integrity is intended to describe those processes internal to a community that affect its resilience. It is a function of a wide range of aspects of social structure. Social Integrity per goal for each region, $Y_{S}$, is therefore:
-
- $$
- Y_{ S}\quad =\quad \frac { \displaystyle\sum _{ i=1 }^{ N }{ { y }_{ S,i } }  }{ N }, (Eq. 4.13)
- $$
- 
-where $y_{S,i}$ are the social integrity measures specific to the goal.
-
-Ideally, assessments of social resilience would include state and federal level rules and other relevant institutional mechanisms as well. However, such information is extremely difficult to access for every single country, and so we relied on global datasets that focus on international treaties and assessments. Another key gap is information on social norms and community (and other local-scale) institutions (such as tenure or use rights) that influence resource use and management in many settings. For Tetiaroa, we used both the management score calculated by the Lasting Special Places goal as well as a measure of local employment to quantify social resilience. Since management decisions affect essentially all activities that occur on the island, this resilience layer acts on every goal. The local employment layer acts on goals that are enhanced by increased local knowledge and participation in decision making (CITE), including Conservation Economy, Lasting Special Places, Iconic Species, and Tourism and Recreation. 
 
 ***
 
@@ -891,9 +888,10 @@ The scores calculated in this assessment can be improved upon by using better da
 - Resolution: Data with a "good fit" allow for detailed exploration of a goal status, pressures or resilience within the broader context. In other words, this criteria examines the level of detail contained in the data. Datasets that included a rich breakdown of categories or sectors received a 1.0.
 - Comprehensiveness: This addresses whether or not the data captures the range of conceptual understanding required by the target calculation - in other words, is this the best data to answer the questions we are asking? Data that inform understanding across the entire system (ie all species have a known condition) were scored as 1.0, data that only represented portions of the benefits (only some species have a known condition) got a 0.5, and data that was only loosely related to the goal were scored as a 0. 
 
-
+<br>
+<br>
 ![](assets/dsc_heatmap_gradient.jpg)
-**Figure X.X. Heatmap ranking data inputs for OHI+ Tetiaroa Assessment**
+**Figure 4.1. Heatmap ranking data inputs for OHI+ Tetiaroa Assessment**
 
 ***
 
@@ -909,7 +907,11 @@ The scores calculated in this assessment can be improved upon by using better da
 - poaching pressure
 
 ***
-# References / Footnotes
+# Acknowledgements
+
+
+***
+# References 
 
 - Spatial data from David Smith, Univ of Redlands
 - LOF
