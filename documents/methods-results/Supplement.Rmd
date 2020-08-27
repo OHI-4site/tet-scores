@@ -872,7 +872,7 @@ Social integrity is intended to describe those processes internal to a community
 
 ## Weaknesses
 
-The scores calculated in this assessment can be improved upon by using better data. To highlight places for improvement, we evaluated all the data sources across three dimensions: spatial, temporal, and fit. Each data set is scored across the criteria listed below and given a 0.0(poor), 0.5(fair) or 1.0 (good as applicable). Full dimensions and methods are described in O'hara et al. 2020 and are loosely based upon methods in Fritz et al. (2019)
+The scores calculated in this assessment can be improved upon by using better data. To highlight places for improvement, we evaluated all the data sources across three dimensions: spatial, temporal, and fit. Each data set is scored across the criteria listed below and given a 0.0 (poor), 0.5 (fair) or 1.0 (good as applicable). Full dimensions and methods are described in O'hara et al. 2020 and are loosely based upon methods in Fritz et al. (2019)
 
 **Spatial Dimension** 
 
