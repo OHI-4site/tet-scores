@@ -57,7 +57,7 @@ https://www.nature.com/articles/s41559-017-0160.pdf?origin=ppub
 ## A description of Tetiaroa Atoll 
 
 <center>
-![Map of Tetiaroa Atoll](./assets/map_from_web.png)
+![Image from Google Maps](./assets/google_map.png)
 </center>
 <br>
 
