@@ -769,7 +769,9 @@ Data Sources:
 
 **Habitat Destruction**
 
-Habiat desctruction occurs 
+Habitat destruction from various industries or overcrowding is a significant pressure on many coastal and intertidal environments. On Tetiaroa, this might result from tourists walking in sensitive, shallow intertidal areas, accidentally disturbing coral structures while snorkeling or boating, or participating in recreational fishing. A good way to quantify this goal might be using the number of people on the island at peak tourism (ie population density), with a reference point representing the maximum number of people that could sustainably visit the island at once. Jamie did something similar with OHI+ Northeast to represent beach trampling pressure. 
+
+Lacking data, we added an empty layer that can be updated as data on visitor numbers and visitor activities becomes available and a realistic reference point can be calculated.
 
 **Water Pollution**
 
