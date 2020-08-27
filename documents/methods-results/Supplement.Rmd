@@ -48,7 +48,7 @@ The tet-prep.html and tet-scores.html repositories contain all the data and scri
 https://www.nature.com/articles/s41559-017-0160.pdf?origin=ppub
 
 <center>
-![](./assets/logos_tet.png)
+![](./assets/logos_tet_uh.png)
 </center>
 <br>
 
@@ -73,7 +73,7 @@ Tetiaroa is surrounded by coral reefs and has additional reef structures in the 
 
 
 <br>
-![](assets/pictures_logos_tet.png)
+![](assets/pictures_tet.png)
 
 ***
 
@@ -884,7 +884,7 @@ Social integrity is intended to describe those processes internal to a community
 
 ## Weaknesses
 
-This assessment relied on 19 different data sources to create the 36 data layers used to caluculate each goal, pressure or resilience score. The results could be refined by using more data specific to the Tetiaroa region. To highlight opportunities to improve the data used for future assessments, we evaluated all the data sources across three dimensions: spatial, temporal, and fit. Each data set is scored across the criteria listed below and given a 0.0 (poor), 0.5 (fair) or 1.0 (good as applicable). Full dimensions and methods are described in O'hara et al. 2020 and are loosely based upon methods in Fritz et al. (2019)
+This assessment relied on 19 different data sources to create the 36 data layers used to calculate each goal, pressure or resilience score. To highlight opportunities to improve the data used for future assessments, we evaluated all the data sources across three dimensions: spatial, temporal, and fit. Each data set is scored across the criteria listed below and given a 0.0 (poor), 0.5 (fair) or 1.0 (good as applicable). Full dimensions and methods are described in O'hara et al. 2020 and are loosely based upon methods in Fritz et al. (2019)
 
 **Spatial Dimension** 
 
@@ -897,7 +897,7 @@ This assessment relied on 19 different data sources to create the 36 data layers
 
 **Fit Dimension**
 
-- Resolution: Data with a "good fit" allow for detailed exploration of a goal status, pressures or resilience within the broader context. In other words, this criteria examines the level of detail contained in the data. Datasets that included a rich breakdown of categories or sectors received a 1.0.
+- Resolution: Data with a "good fit" allows for detailed exploration of a goal status, pressures or resilience within the broader context. In other words, this criteria examines the level of detail contained in the data. Datasets that included a rich breakdown of categories or sectors received a 1.0.
 - Comprehensiveness: This addresses whether or not the data captures the range of conceptual understanding required by the target calculation - in other words, is this the best data to answer the questions we are asking? Data that inform understanding across the entire system (ie all species have a known condition) were scored as 1.0, data that only represented portions of the benefits (only some species have a known condition) got a 0.5, and data that was only loosely related to the goal were scored as a 0. 
 
 <br>
