@@ -916,7 +916,9 @@ In addition to identifying ways existing data could be improved upon, we also id
 
 We think building a strong data sharing partnership with The Brando will help with any future assessments by gaining more insight into potential sources for pollution and other population pressures on the island, since tourism is the main reason humans are visiting Tetiaroa and using its ocean resources. Furthermore, strengthening data sharing agreements and protocols with visiting researchers will help future analysts access more of the data that has been collected on Tetiaroa. This may also help encourage repetition of studies, and improve the accuracy of future OHI assessments by providing evidence of how each goal has changed over time. 
 
-## Alignment
+## Alignment with Palmyra
+
+The Palmyra and Tetiaroa projects aligned methods and reference points where possible. Specifically, the Species, Iconic Species, and Coastal Protection goals used the same methods. However, island attributes, management priorities, and data availability made alignment across the entire assessment unfeasible. The Palmyra assessment included a Research goal which was not included in the Tetiaroa assessment. Due to differences in available data, methods for the following goals are not the same across the two assessments: Tourism and Recreation, and Habitats (both coral and native forest). The methods for Lasting Special Places differed as well, due to differences in management goals for each islands' stakeholders. The Clean Waters and Resource Access Opportunities goals were not calcuated for the Tetiaroa assessment due to lack of avialable data, and the Carbon Storage goal was not calculated for either assessment.
 
 ***
 # Acknowledgements
