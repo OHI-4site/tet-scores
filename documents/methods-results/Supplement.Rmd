@@ -36,16 +36,17 @@ options(knitr.kable.NA = '')
 
 ***
 
-# Ocean Health Index (OHI) Global Assessment
+Effective management of marine systems requires quantitative assessments of ocean health. To assess the ocean condition of Tetiaroa a collaborative effort was undertaken between Tetiaroa Society’s 4site team and the University of California, Santa Barbara’s National Center for Ecological Analysis and Synthesis (NCEAS). The Ocean Health Index (OHI) framework was used to assess Tetiaroa. Tetiaroa is a mostly uninhabited collection of islets in the Windward group of the Society Islands of French Polynesia. The islets are under a 99-year lease contracted by Marlon Brando, and are the location of a small vacation resort, the Brando. Management, conservation, and protection of the entire island are carried out by the Tetiaroa Society, a US-based non-profit organization. Specifically, we assessed the performance of 5 goals: Sense of Place, Conservation Economy, Habitat Services, Tourism and Recreation, and Biodiversity. Using best available data and locally relevant reference points, each goal was scored on a scale of 0-100. Goal scores were then averaged to obtain an overall health score for Tetiaroa. The overall score for Tetiaroa was 79, with goal scores ranging from 48 for the Conservation Economy goal and to 90 for the Tourism and Recreation goal.
+
+The Tetiaroa OHI+ [Github repository](https://github.com/OHI-4site/tet-prep) contains all the data and scripts used to conduct the Tetiaroa assessment. Future researchers can use this resource to build upon this assessment as better data become available and goal models evolve to better assess the status of the marine and terrestrial environments around Tetiaroa. Furthermore, the repository promotes transparent and open research, as well as more streamlined collaboration (Stewart Lowndes *et al.*, 2017).
+
+# Applying the Ocean Health Index (OHI) to Tetiaroa
 
 The Ocean Health Index (OHI) is a scientific framework used to measure how healthy oceans are. Understanding the state of our oceans is a first step towards ensuring they will continue to benefit humans now and in the future. The global Ocean Health Index was originally launched in 2012, with assessments conducted every year thereafter, to assess the condition of our global oceans.  The global assessment describes how well 220 countries (and some territorial regions) are sustainably managing 10 goals that represent the full suite of benefits people want and need from the ocean. These goals include: Artisanal Fishing Opportunity, Biodiversity, Carbon Storage, Clean Waters, coastal Livelihoods and Economies, Coastal Protection, Food Provision, Natural Products, Sense of Place, and Tourism and Recreation.  In addition to the global assessment, the OHI framework has been used to conduct assessments at smaller regional scales for over 36 countries and regions, referred to as OHI+ assessments. 
 
 OHI assessments require the calculation of a score for each goal from 0 to 100, and the full suite of goal scores are then averaged to obtain an overall index score. Goal scores are calculated as the average of current status (current condition relative to a reference point) and likely future status.  Likely future status is the current status modified by the following dimensions: pressures predicted to reduce status (e.g., increasing SST, fishing pressures, invasive species);  resilience variables that mitigate pressures (e.g., effective fishing management, protected areas);  and recent trends in status.  For more information about the philosophy of the Ocean Health Index and model development see http://ohi-science.org.  
 
 To assess the condition of Tetiaroa’s ocean resources, an OHI+ assessment was conducted as part of a collaboration between Tetiaroa Society’s 4site team and the University of California, Santa Barbara’s National Center for Ecological Analysis and Synthesis (NCEAS).  Here we report the conclusions from our analysis, and describe how we modified the goal models to reflect locally relevant management concerns. 
-
-The tet-prep.html and tet-scores.html repositories contain all the data and scripts used to conduct the Tetiaroa assessment.  Future researchers can use this resource to build upon this assessment as better data become available and goal models evolve to better assess the status of this marine environment.Furthermore, the repository promotes transparent and open research, as well as more streamlined collaboration. (Stewart Lowndes et al. 2017)
-https://www.nature.com/articles/s41559-017-0160.pdf?origin=ppub
 
 <center>
 ![](./assets/logos_tet_uh.png)
@@ -79,7 +80,7 @@ Tetiaroa is surrounded by coral reefs and has additional reef structures in the 
 
 # Summary of the overall results
 
-The health of Tetiaroa’s marine and coastal resources are critical to the mission of ensuring “island and coastal communities have a future as rich as their past - strengthening their resilience to global change, enhancing their ecosystem services, and preserving their culture” (https://www.tetiaroasociety.org/). Tetiaroa’s overall OHI score of 79 suggests that marine and coastal resources are supporting this goal fairly well. The goals with the highest scores are Iconic Species (91.73) and Tourism and Recreation (89.68). This suggests that many of the species with the most cultural and spiritual value to Tetiaroa are well protected, and efforts to implement sustainable tourism practices are successfully mitigating the impact of this activity on the island's environment. 
+The health of Tetiaroa’s marine and coastal resources are critical to the mission of ensuring “island and coastal communities have a future as rich as their past - strengthening their resilience to global change, enhancing their ecosystem services, and preserving their culture” (https://www.tetiaroasociety.org/). Tetiaroa’s overall OHI score of 79 suggests that marine and coastal resources are supporting this goal fairly well. The goals with the highest scores are Iconic Species (92) and Tourism and Recreation (90). This suggests that many of the species with the most cultural and spiritual value to Tetiaroa are well protected, and efforts to implement sustainable tourism practices are successfully mitigating the impact of this activity on the island's environment. 
 
 The only goal that scored below 50 was Conservation Economy. Tetiaroa's main environmental steward, The Tetiaroa Society, has been successful in generating funding and revenue to support conservation efforts on the island; however, more effort is needed to meet the continued need for resources to fund research and complete projects focusing on retoration and preservation of ocean health on Tetiaroa.
 
@@ -88,7 +89,7 @@ The only goal that scored below 50 was Conservation Economy. Tetiaroa's main env
 **Figure 2.1. OHI+ Tetiaroa Results** Each goal and sub-goal of the Tetiaroa Ocean Health Index assessment is represented by a petal. The length of each petal corresponds to the score (0-100), with longer petals indicating higher scores. The color of the petals also correspond to the scores with red indicating lower scores and blue indicating higher scores. Grey petals indicate goals that were included but did not have enough data to calculate a score. The overall index score is shown in the center of the plot.
 <br>   
 
-**Table 2.1. Results for each goal and sub-goal in the Tetiaroa OHI+ assessment.** Goal, and sub-goal, scores, as well as current status and predicted future status. Where 'Status' is the current status relative to the reference point; 'Future' is the likely future status based on the trend, pressures, and resilience; and 'Score' is the final goal or sub-goal score reflected in Figure 3.1.  
+**Table 2.1. Results for each goal and sub-goal in the Tetiaroa OHI+ assessment.** Goal, and sub-goal, scores, as well as current status and predicted future status. Where 'Status' is the current status relative to the reference point; 'Future' is the likely future status based on the trend, pressures, and resilience; and 'Score' is the final goal or sub-goal score reflected in Figure 2.1.  
 <br>  
 ```{r score table, echo=FALSE,message=FALSE,warning=FALSE}
 goals <- read_csv(here("region/conf/goals.csv")) %>%
@@ -100,7 +101,10 @@ scores <- read_csv(here("region/scores.csv")) %>%
   filter(goal != "Index") %>%
   inner_join(.,goals, by = "goal") %>%
   dplyr::select(Goal = name, Status = status, Future = future, Score = score, Description = description) %>%
-  arrange(desc(Score))
+  arrange(desc(Score)) %>%
+  mutate(Status = round(Status),
+         Future = round(Future),
+         Score = round(Score))
 
 
 kable(scores, align = "l")
@@ -138,26 +142,26 @@ cat(paste(st_layers$info, collapse="\n\n"))
 
 ## Goals Included in Tetiaroa OHI+ Assessment:
 
-Given that Tetiaroa is a nearly uninhabited island, several of the OHI goals were not relevant to this region (e.g. Livelihoods and Economies).  Furthermore, one of the stated goals of The Tetiaroa society that the “island will serve as an ecological model… as well as a place for all manner of scientific research and investigation.” (https://www.tetiaroasociety.org/) which resulted in the creation of a new goal, Conservation Economy (CE). CE captures the revenue generated by the Tetiaroa Society to use for conservation and research purposes. Given these considerations, we modified the OHI framework to include the following goals (Table 3.1): Sense of Place (comprised of Lasting Special Places and Iconic species subgoals), Resource Access Opportunities (a modified version of Artisanal Opportunities in the original framework), Conservation Economy (a modified version of the Livelihoods and Economies goal), Tourism & Recreation, Biodiversity (comprised of Species Condition and Habitat subgoals), Clean Waters, Habitat Services (Coastal Protection and Carbon Storage subgoals).
+Since Tetiaroa is a nearly uninhabited island, several of the OHI goals were not relevant to this region (e.g. Livelihoods and Economies).  Furthermore, one of the stated goals of The Tetiaroa society that the “island will serve as an ecological model… as well as a place for all manner of scientific research and investigation.” (https://www.tetiaroasociety.org/) which resulted in the creation of a new goal, Conservation Economy (CE). CE captures the revenue generated by the Tetiaroa Society to use for conservation and research purposes. Given these considerations, we modified the OHI framework to include the following goals (Table 3.1): Sense of Place (comprised of Lasting Special Places and Iconic species subgoals), Resource Access Opportunities (a modified version of Artisanal Opportunities in the original framework), Conservation Economy (a modified version of the Livelihoods and Economies goal), Tourism & Recreation, Biodiversity (comprised of Species Condition and Habitat subgoals), Clean Waters, Habitat Services (Coastal Protection and Carbon Storage subgoals).
 
 The scope of this assessment encompasses all marine areas within a 3 nautical mile-buffer of the motus, as well as all the land that makes up the motus.
 
 ### Biodiversity (BD) 
 
-<span style="color: #f2cf4a; font-family: Arial, sans-serif; font-size: large;">Score = 76.69</span>
+<span style="color: #f2cf4a; font-family: Arial, sans-serif; font-size: large;">Score = 80</span>
 
 The Biodiversity (BD) goal is made up of two subgoals, Habitats (HAB) and Species (SPP).
 
 
 #### Habitats (HAB)
 
-<span style="color: #f2cf4a; font-family: Arial, sans-serif; font-size: large;">Score = 70.09</span>
+<span style="color: #f2cf4a; font-family: Arial, sans-serif; font-size: large;">Score = 71</span>
 
 The habitat subgoal measures the average condition of marine habitats that provide critical habitat for a broad range of species (mangroves, coral reefs, seagrass beds, salt marshes, sea ice edge, and subtidal soft bottom). This subgoal is considered a proxy for the condition of the broad suite of marine species. For this subgoal, we include the native vegetation of the motus and coral reef habitats.
 
 ##### Current Status
 
-The status of the habitat sub-goal, $x_{hab}$, was assessed as the average of the condition estimates, C, for each habitat, k, present in a region; measured as the loss of habitat and/or % degradation of remaining habitat, such that:
+The status of the habitat sub-goal, $x_{hab}$, was assessed as the average of the condition estimates, $C$, for each habitat, $k$, present in a region; measured as the loss of habitat and/or % degradation of remaining habitat, such that:
 
 $$
 x_{hab}= \frac { \displaystyle\sum _{ i=1 }^{ N }{ { (C }_{ k } }) }{N},(Eq.3.1)
@@ -165,7 +169,7 @@ $$
 
 where, $C_k$ = $C_{c}/C_r$ and N is the number of habitats in a region. $C_c$ is the current condition and $C_r$ is the reference condition specific to each k habitat present in the region (Table 3.1).
 
-**Table 3.1.** Description of condition, extent, and trend calculations for habitat data (Note: extent is not used to calculate the habitat subgoal, but is used for the coastal protection and carbon storage goals). More information about the sources used to generate these values is located in Section 6 and Table 6.1.
+**Table 3.1.** Description of condition, extent, and trend calculations for habitat data (Note: extent is not used to calculate the habitat subgoal, but is used for the coastal protection and carbon storage goals). More information about the sources used to generate these values is located in Section 6, References.
 
 | Habitat | Condition | Extent | Trend |
 | :----- | :-----------------| :------------ | :--------- |
@@ -201,12 +205,12 @@ Although landscaped areas are most likely to replace native habitat, we know fro
 | Only coconut grove | 0 | 
 
 
-The condition of the native land habitat was calculated by finding the weighted average of the scored land cover categories (Eq 1.2). 
+The condition of the native land habitat was calculated by finding the weighted average of the scored land cover categories (Eq 3.2). 
 
 $$
 C_{land} = \frac { \displaystyle\sum _{ i=1 }^{ N }{ { (S }_{ i } } \times { A }_{ i }) }{ { { A } }  }, (Eq. 3.2) 
 $$  
-For every $i$ vegetation type, we multiplied the score $S_{i}$ from Table X.X, by the area $A_{i}$ of that vegetation type on Tetiaroa. These were divided by the total area $A$ to find the overall native land habitat condition. 
+For every $i$ vegetation type, we multiplied the score $S_{i}$ from Table 3.3, by the area $A_{i}$ of that vegetation type on Tetiaroa. These were divided by the total area $A$ to find the overall native land habitat condition. 
 
 **Marine Habitat** 
 
@@ -238,7 +242,7 @@ data_layers(goal="HAB", dimension=c("resilience"))
 
 #### Species (SPP) 
 
-<span style="color: #f2cf4a; font-family: Arial, sans-serif; font-size: large;">Score = 83.29</span>
+<span style="color: #f2cf4a; font-family: Arial, sans-serif; font-size: large;">Score = 89</span>
 
 This subgoal aims to assess the average condition of the marine species within Tetiaroa based on their IUCN status. 
 
@@ -308,12 +312,14 @@ data_layers(goal="SPP", dimension=c("resilience"))
 
 ### Habitat Services (HS)
 
+<span style="color: #f2cf4a; font-family: Arial, sans-serif; font-size: large;">Score = 89</span>
+
 The Habitat Services (HS) goal measures additional services provided by habitats on Tetiaroa in addition to supporting biodiversity. The Habitat Services goal is made up of two equally weighted sub-goals, Coastal Protection (CP) and Carbon Storage (CS). However, due to a lack of data to quantify it, Carbon Storage is included only as a placeholder.
 <br>   
 
 #### Coastal Protection (CP) 
 
-<span style="color: #f2cf4a; font-family: Arial, sans-serif; font-size: large;">Score = 84.92</span>
+<span style="color: #f2cf4a; font-family: Arial, sans-serif; font-size: large;">Score = 89</span>
 
 This subgoal assesses the amount of protection provided by marine and coastal habitats to coastal areas that people value, both inhabited (homes and other structures) and uninhabited (parks, special places, etc.). On Tetiaroa, both the coral reefs and native forest provide protection against storm surge from cyclones, flooding, and sea level rise. 
 
@@ -325,7 +331,7 @@ For an estimate of extent of native land habitat, we used area estimations of ea
 
 The Coastal Protection current status is calculated as the current condition of coastal protection habitat relative to the reference point.
 
-The status of this goal, $x_{cp}$, was calculated to be a function of the relative health of the habitats, $k$, weighted by their area and protectiveness rank (Table 5.4), such that:
+The status of this goal, $x_{cp}$, was calculated to be a function of the relative health of the habitats, $k$, weighted by their area and protectiveness rank (Table 3.6), such that:
 
 $$
 x_{cp} = \frac { \displaystyle\sum _{ k=1 }^{ N }{ { (h }_{ k } } \times { w }_{ k }\times { A }_{ k }) }{ \displaystyle\sum _{ k=1 }^{ N }{ { (w }_{ k }\times { A }_{ k }) }  }, (Eq. 3.6)
@@ -341,7 +347,7 @@ where, $C_c$ is current condition and $C_r$ is reference condition. Descriptions
 
 The native land habitat extent was calculated using Frank's area estimations of each habitat type on the motus. The extent of the coral habitat was defined as the total area of benthic habitat with reef structure, using estimations from the 2012 LOF expedition (Table 3.5). We considered any habitat classification with "reef" or "coral" as evidence of reef, and summed these areas for total reef extent.
 
-**Table 1.5. Total area (km^2^) of benthic habitat types in Tetiaroa** Modified from table on page 21 of the LOF French Polynesia Final Report.
+**Table 3.5. Total area (km^2^) of benthic habitat types in Tetiaroa** Modified from table on page 21 of the LOF French Polynesia Final Report.
 ```{r lof_table, echo=FALSE}
 lof_table <- read.csv(here("documents/methods-results/metadata_documentation/fp_habtable_clean.csv"), na.strings="") %>% 
   dplyr::select(Habitat = habitat, Classification = classification, Area = Tetiaroa) %>% 
@@ -353,7 +359,7 @@ kable(lof_table, align = "l")
 
 The reference area for each habitat is treated as a fixed value; in cases where current area might exceed this reference value (e.g., through restoration), we cap the score at the maximum value (1.0). Although this does not give credit for restoration, data tend to be of poor quality making it difficult to determine true increases, and in general habitat restoration beyond reference values is extremely unlikely. Rank weights for the protective ability of each habitat for the Global OHI ($w_{k}$) come from previous work (Tallis *et al* 2011). Although this work does not include native atoll forest as a category, we ranked it equal to mangroves or salt marshes given they occupy similar shoreline regions.
 
-**Table 1.6. Coastal protectiveness ranks**
+**Table 3.6. Coastal protectiveness ranks**
 Scores range from 1-4, with 4 being the most protective (Tallis *et al* 2011).
 
 Habitat | Protectiveness rank ($w$)
@@ -395,7 +401,7 @@ Lacking data on the carbon storage abilities of the native rainforest, or of any
 
 ### Conservation Economy (CE)
 
-<span style="color: #f2cf4a; font-family: Arial, sans-serif; font-size: large;">Score = 47.07</span>
+<span style="color: #f2cf4a; font-family: Arial, sans-serif; font-size: large;">Score = 48</span>
 
 The global OHI includes a measure of the jobs and revenue produced from marine-related industries, called the Livelihoods and Economies (LE) goal. Marine-related industries are clearly of huge value to many people, even those who do not directly participate in the industries but value community identity, tax revenue, and indirect economic and social impacts of a stable coastal economy. This goal is composed of two equally important sub-goals, livelihoods and economies, which are assessed across as many marine-related sectors as possible. Livelihoods assesses  the number of jobs and average annual wages. Economies is composed of a single component, revenue.
 
@@ -403,7 +409,7 @@ For Tetiaroa, we modified this model to capture the revenue generated by the Tet
 
 We used the Tetiaroa's Society fundraising goal as the reference point, which breaks down as follows:
 
-**Table 1.7. Ideal yearly budget for Tetiaroa Society Operations**
+**Table 3.7. Ideal yearly budget for Tetiaroa Society Operations**
 
 | Item | Yearly Cost | Description | 
 | :------- | :--------: | :------------ |
@@ -452,13 +458,13 @@ data_layers(goal="CE", dimension=c("resilience"))
 
 ### Sense of Place (SP) 
 
-<span style="color: #f2cf4a; font-family: Arial, sans-serif; font-size: large;">Score = 84.41</span>
+<span style="color: #f2cf4a; font-family: Arial, sans-serif; font-size: large;">Score = 88</span>
 
 The Sense of Place (SP) goal attempts to capture the aspects of Tetiaroa's coastal and marine system that people value as part of their cultural identity. This definition includes people living near the ocean and those who live far from it but still derive a sense of identity or value from knowing particular places or species exist. While there are only a small handful of residents on Tetiaroa, the island's pristine ecosystems are valued by scientists, researchers, and conservationists, among others, including the general public. This goal is calculated using two equally weighted subgoals: iconic species (ICO) and lasting special places (LSP).
 
 #### Iconic Species (ICO) 
 
-<span style="color: #f2cf4a; font-family: Arial, sans-serif; font-size: large;">Score = 90.02</span>
+<span style="color: #f2cf4a; font-family: Arial, sans-serif; font-size: large;">Score = 92</span>
 
 Iconic species are those that are relevant to local cultural identity through their relationship to one or more of the following: 1) traditional activities such as fishing, hunting or commerce; 2) local ethnic or religious practices; 3) existence value; and 4) locally-recognized aesthetic value (e.g., tourist attractions/common subjects for art such as whales). Ultimately, almost any species can be iconic to someone, and so the intent with this goal was to focus on those species widely seen as iconic from a cultural or existence value (rather than a livelihood or extractive reason). Habitat-forming species were not included, nor were species harvested solely for economic or utilitarian purposes (even though they may be iconic to a sector or individual).
 
@@ -467,7 +473,7 @@ The Iconic Species subgoal assesses the conservation status of species that have
 
 ##### Current Status 
 
-After compiling a list of species from this source, conservation statuses were obtained using the RRedlist package and each species was assigned a score based on its conservation status (Table 1.7). 
+After compiling a list of species from this source, conservation statuses were obtained using the RRedlist package and each species was assigned a score based on its conservation status (Table 3.8). 
 
 **Table 3.8. Weights for assessment of species status based on IUCN risk categories**
 
@@ -508,7 +514,7 @@ data_layers(goal="ICO", dimension=c("resilience"))
 
 #### Lasting Special Places (LSP)
 
-<span style="color: #f2cf4a; font-family: Arial, sans-serif; font-size: large;">Score = 78.80</span>
+<span style="color: #f2cf4a; font-family: Arial, sans-serif; font-size: large;">Score = 84</span>
 
 The lasting special places subgoal focuses on geographic locations that hold particular value for aesthetic, spiritual, cultural, recreational or existence reasons (TRC, 2004). For this subgoal, we assume areas that are protected indicate special places (i.e., the effort to protect them suggests they are important places). Clearly this is an imperfect assumption but in many cases it will be true. The model for this goal equally weights protected areas located in the inland coastal zone (up to 1 km inland) and the offshore coastal zone (up to 3 nm offshore).  The status for this goal is calculated as:  
 
@@ -530,7 +536,7 @@ where:
 
 We used the methods above to assess protected areas in order to create a resilience layer (see X.X). Creating more protected areas is not currently a primary goal of the Tetiaroa Society, however improving management of currently protected areas and increasing participation of diverse stakeholders is. To reflect this objective, we split Tetiaroa’s area into zones based on management schemes: the land area, the no take zone which occupies half the lagoon, the rest of the lagoon, and the area extending outwards 3nm from each motu ("offshore"). 
 
-We computed a score for each zone based on if they meet four criteria considered important for successful management,  (Table 1.8), developed through conversations with Frank Murphy and Neil Davies: 
+We computed a score for each zone based on if they meet four criteria considered important for successful management,  (Table 3.9), developed through conversations with Frank Murphy and Neil Davies: 
 
 1. Is there more than one stakeholder?
 2. Is there a management plan for that area in place?
@@ -561,7 +567,7 @@ The Tetiaroa Society and The Brando are involved in the management of the rest o
 
 **Offshore**
 
-The marine area 3 nm offshore from Tetiaroa is managed solely by the French Polynesian Government. Although there are restrictions on fishing in all French Polynesian waters (i.e. year-round prohibitions on shark fishing),  a comprehensive management plan for pelagic ecosystems does not exist, so we score this criteria as 0.5. Because the existing "management plan" is very simple, Frank and Neil feel it is well enforced, even if it is not monitored well. This might seem counterintuitive, but it may be that fishers and visitors are adhering to the restrictions largely because violation can result in large fines and possible jail time, acting a strong deterrent despite a lack of monitoring.
+The marine area 3 nm offshore from Tetiaroa is managed solely by the French Polynesian Government. Although there are restrictions on fishing in all French Polynesian waters (i.e. year-round prohibitions on shark fishing),  a comprehensive management plan for pelagic ecosystems does not exist, so we score this criteria as 0.5. Because the existing "management plan" is very simple, Frank and Neil feel it is well enforced, even if it is not monitored well. This might seem counter intuitive, but it may be that fishers and visitors are adhering to the restrictions largely because violation can result in large fines and possible jail time, acting a strong deterrent despite a lack of monitoring.
 
 ##### Current status 
 
@@ -604,11 +610,11 @@ data_layers(goal="LSP", dimension=c("resilience"))
 
 ### Tourism and Recreation (TR)
 
-<span style="color: #f2cf4a; font-family: Arial, sans-serif; font-size: large;">Score = 89.68</span>
+<span style="color: #f2cf4a; font-family: Arial, sans-serif; font-size: large;">Score = 90</span>
 
 For the goal, the score assesses the progress towards  sustainability of [The Brando](https://thebrando.com/) resort, the eco-resort on Onetahi. 
 
-For this goal, we used sustainability datafrom [SA Beachcomber's 2019 sustainability report](https://en.calameo.com/read/004500545654d0392cc93). We did requestt actual data from The Brando, contacting the sustainability manager, Alban Perret. He was not able to share any data at this time, as The Brando has had to push their sustainability work to 2021. Alban said to reach out again in Q2 2021 for an update.
+For this goal, we used sustainability datafrom [SA Beachcomber's 2019 sustainability report](https://en.calameo.com/read/004500545654d0392cc93). We did request actual data from The Brando, contacting the sustainability manager, Alban Perret. He was not able to share any data at this time, as The Brando has had to push their sustainability work to 2021. Alban said to reach out again in Q2 2021 for an update.
 
 The Brando has already achieved far more in terms of sustainability than most resorts, so setting a reference point is tricky. They were the first resort building to receive LEED Platinum certification, and already have a very low impact. We assume a reference point of 100% sustainability, i.e. have zero footprint. The 2019 sustainability report outlines the following broad goal, which supports this reference point: 
 
@@ -635,7 +641,7 @@ Based on our limited information, we believe that energy and waste meet both the
 
 
 $$
-status_{tr} = \frac { \displaystyle\sum _{ k=1 }^{ N }{ { (S }_{ c} } \times { M }) }{ \displaystyle\sum _{ k=1 }^{ N }{ { c } }  }, (Eq. 4.0)
+status_{tr} = \frac { \displaystyle\sum _{ k=1 }^{ N }{ { (S }_{ c} } \times { M }) }{ \displaystyle\sum _{ k=1 }^{ N }{ { c } }  }, (Eq. 3.10)
 $$  
 
 Where $S_{c}$ is the percent of each sustainability category that is "zero impact", $M_{c}$ is whether or not it is being monitored, and $c$ are the number of categories included in the score. 
@@ -706,10 +712,10 @@ While The Brando and the Tetiaroa Society do provide livelihoods to a small numb
 
 ## Pressures
 
-The pressure score, $p$, describes the cumulative pressures acting on a goal which suppress the goal score.  Pressure scores range from 0 to 1, and they are calculated for each goal and region and include both ecological ($p_{E}$) and social pressures ($p_{S}$) (Table 5.1, Figure 5.1), such that:
+The pressure score, $p$, describes the cumulative pressures acting on a goal which suppress the goal score.  Pressure scores range from 0 to 1, and they are calculated for each goal and region and include both ecological ($p_{E}$) and social pressures ($p_{S}$) (Table 3.10, Figure 3.1), such that:
 
 $$
-{ p }\quad =\quad \gamma *{ p }_{ E }\quad +\quad (1-\gamma )*{ p }_{ S }, (Eq. 4.6)
+{ p }\quad =\quad \gamma *{ p }_{ E }\quad +\quad (1-\gamma )*{ p }_{ S }, (Eq. 3.11)
 $$
 
 where $\gamma$ is the relative weight for ecological vs. social pressures and equals 0.5 for the global assessment. At local or regional scales there may be clear evidence for unequal weights per goal and $\gamma$ should be adjusted accordingly.
@@ -721,8 +727,8 @@ Pressure is calculated using both social and ecological pressures.  Ecological p
 
 
 <br>
-**Table 3.1. Pressure data and categories**
-Description of the stressor data layers used to calculate overall pressure for each goal and region for the global assessment (descriptions of pressure data in section 6).  Each data layer is assigned to an ecological or social category, and ecological data are assigned to one of five subcategories. 
+**Table 3.10. Pressure data and categories**
+Description of the stressor data layers used to calculate overall pressure for Tetiaroa.  Each data layer is assigned to an ecological or social category, and ecological data are assigned to one of five subcategories. 
 
 ```{r pressure categories, echo = FALSE, warning=FALSE, message = FALSE, error =FALSE}
 
@@ -761,7 +767,7 @@ Ultraviolet radiation pressure scores are found using the same methods as the OH
 
 **Habitat Destruction**
 
-Habitat destruction from various industries or overcrowding is a significant pressure on many coastal and intertidal environments. On Tetiaroa, this might result from tourists walking in sensitive, shallow intertidal areas, accidentally disturbing coral structures while snorkeling or boating, or participating in recreational fishing. A good way to quantify this goal might be using the number of people on the island at peak tourism (ie population density), with a reference point representing the maximum number of people that could sustainably visit the island at once. Jamie did something similar with OHI+ Northeast to represent beach trampling pressure. 
+Habitat destruction from various industries or overcrowding is a significant pressure on many coastal and intertidal environments. On Tetiaroa, this might result from tourists walking in sensitive, shallow intertidal areas, accidentally disturbing coral structures while snorkeling or boating, or participating in recreational fishing. A good way to quantify this goal might be using the number of people on the island at peak tourism (ie population density), with a reference point representing the maximum number of people that could sustainably visit the island at once. Jamie Afflerbach did something similar with OHI+ Northeast to represent beach trampling pressure. 
 
 Lacking data, we added an empty layer that can be updated as data on visitor numbers and visitor activities becomes available and a realistic reference point can be calculated.
 
@@ -777,9 +783,9 @@ There are various invasive species on Tetiaroa, most of them terrestrial. For th
 
 We also included one social pressure, which is the inverse of the Lasting Special Places goal score. The methods used to calculate Lasting Special Places were based on existing management strategies rather than just protected areas, and therefore we feel the inverse of the score captures how those strategies might be lacking for certain zones in Tetiaroa. 
 
-We determined the rank sensitivity of each goal/subgoal to each stressor (or, when possible, an element of the goal, such as a specific habitat).  We ranked ecological pressures as having ‘high’ (score = 3), ‘medium’ (score = 2), ‘low’ (score = 1), or 'no' (score = NA) impact (Table 4.2). The pressure ranks are based on a rough estimate of the global average intensity and frequency of the stressor. We recognize that this will create over- and under-estimates for different places around the planet, but to address such variance in a meaningful way would require a separate weighting matrix for every single region on the planet, which is not feasible at this time.  
+We determined the rank sensitivity of each goal/subgoal to each stressor (or, when possible, an element of the goal, such as a specific habitat).  We ranked ecological pressures as having ‘high’ (score = 3), ‘medium’ (score = 2), ‘low’ (score = 1), or 'no' (score = NA) impact (Table 3.11). The pressure ranks are based on a rough estimate of the global average intensity and frequency of the stressor. We recognize that this will create over- and under-estimates for different places around the planet, but to address such variance in a meaningful way would require a separate weighting matrix for every single region on the planet, which is not feasible at this time.  
 
-**Table 3.2. Pressure matrix**
+**Table 3.11. Pressure matrix**
 Rank sensitivity of each goal (or, goal element) to each stressor.
 ```{r pressure matrix, echo = FALSE}
 
@@ -797,17 +803,17 @@ kable(pressure_matrix, align = "l")
 
 ### Caveats 
 
-A key assumption in our assessment of ecological pressures is that each goal has a linear and additive response to increases in intensity of the stressors. Clearly many ecosystems respond non-linearly to increased stressor intensity, exhibiting threshold responses, and there are likely nonlinear interactions among stressors. Unfortunately little is known about the nature of these types of nonlinearities and interactions so we could not include them in any meaningful way.  
+A key assumption in our assessment of ecological pressures is that each goal has a linear and additive response to increases in intensity of the stressors. Clearly many ecosystems respond non-linearly to increased stressor intensity, exhibiting threshold responses, and there are likely nonlinear interactions among stressors. Unfortunately little is known about the nature of these types of non-linearities and interactions so we could not include them in any meaningful way.  
 
 
 ***
 
 ## Resilience 
 
-To calculate resilience for each goal and region, $r$, we assess three resilience categories (Table 4.3, Figure 4.3): ecological integrity, $Y_{E}$, regulatory efforts that address ecological pressures, $Y_R$, and social integrity, $Y_{S}$. The first two measures address ecological resilience while the third addresses social resilience. When all three aspects are relevant to a goal, resilience is calculated as:
+To calculate resilience for each goal and region, $r$, we assess three resilience categories (Table 3.12, Figure 3.2): ecosystem integrity, $Y_{E}$, regulatory efforts that address ecological pressures, $Y_R$, and social integrity, $Y_{S}$. The first two measures address ecological resilience while the third addresses social resilience. When all three aspects are relevant to a goal, resilience is calculated as:
 
 $$
-r\quad =\quad \gamma *(\frac { { Y }_{ E }+ {Y}_{R} }{ 2 } )+(1-\gamma )*{ Y }_{ S }, (Eq. 4.10)
+r\quad =\quad \gamma *(\frac { { Y }_{ E }+ {Y}_{R} }{ 2 } )+(1-\gamma )*{ Y }_{ S }, (Eq. 3.12)
 $$
 
 We chose $\gamma = 0.5$ so the weight of resilience components that address ecological systems (ecosystem and regulatory) vs. social systems would be equivalent to the proportions used in the model to calculate pressure. 
@@ -817,11 +823,11 @@ Resilience includes both ecological and social resilience categories.  Ecologica
 
 ![](../../documents/methods-results/assets/ResiliencePieChart.png)
 
-Each resilience category is composed of 1 or more data layers (Table 4.3) with values scaled from 0-1, reflecting the magnitude of resilience, for each region (an example of one of these data layers describes [tourism regulations that preserve biodiversity](https://github.com/OHI-Science/ohi-global/blob/draft/eez/layers/g_tourism.csv)).  Each resilience data layer is assigned a weight of 0.5 or 1 (Table 4.3) that is applied equally across all the goals (or, goal elements) influenced by the resilience layer (i.e., resilience matrix, Table 4.4). This information is used to calculate a score for each resilience category. The weight reflects information about governance. 
+Each resilience category is composed of 1 or more data layers (Table 3.12) with values scaled from 0-1, reflecting the magnitude of resilience. Each resilience data layer is assigned a weight of 0.5 or 1 (Table 3.12) that is applied equally across all the goals (or, goal elements) influenced by the resilience layer (i.e., resilience matrix, Table 3.13). This information is used to calculate a score for each resilience category. The weight reflects information about governance. 
 
 
-**Table 3.3. Resilience categories and weights**
-The data layers used to calculate resilience for each goal and region for the global assessment (descriptions of data layers and sources are in section 6).  Each data layer is assigned to an ecological or social category.  The ecological category is broken into an ecosystem and regulatory category type.
+**Table 3.12. Resilience categories and weights**
+The data layers used to calculate resilience for Tetiaroa.  Each data layer is assigned to an ecological or social category.  The ecological category is broken into an ecosystem and regulatory category type.
 ```{r Resilience categories and weight table, echo=FALSE, warning=FALSE, message=FALSE, error=FALSE}
 full_lyr_names <- read.csv(here("documents/methods-results/metadata_documentation/layers_tet_base.csv")) %>% 
   select(layer, name)
@@ -833,7 +839,7 @@ kable(res_cat, align = "l")
 ```
 
 
-**Table 2.3. Resilience matrix**
+**Table 3.13. Resilience matrix**
 Describes which goals/subgoals (and goal elements) are influenced by the resilience data layers.
 ```{r Resilience matrix, echo=FALSE, warning=FALSE, error=FALSE, message=FALSE}
 res_matrix <- read.csv(here("region/conf/resilience_matrix.csv"), na.strings="") 
@@ -876,7 +882,7 @@ Social integrity is intended to describe those processes internal to a community
 
 ## Weaknesses
 
-This assessment relied on 19 different data sources to create the 36 data layers used to calculate each goal, pressure or resilience score. To highlight opportunities to improve the data used for future assessments, we evaluated all the data sources across three dimensions: spatial, temporal, and fit. Each data set is scored across the criteria listed below and given a 0.0 (poor), 0.5 (fair) or 1.0 (good as applicable). Full dimensions and methods are described in O'hara et al. 2020 and are loosely based upon methods in Fritz et al. (2019)
+This assessment relied on 19 different data sources to create the 36 data layers used to calculate each goal, pressure or resilience score. To highlight opportunities to improve the data used for future assessments, we evaluated all the data sources across three dimensions: spatial, temporal, and fit. Each data set is scored across the criteria listed below and given a 0.0 (poor), 0.5 (fair) or 1.0 (good as applicable). A 'NA' value is assigned if the criteria is not applciable to a particular dataset. Full dimensions and methods are described in O'hara et al. 2020 and are loosely based upon methods in Fritz et al. 2019.
 
 **Spatial Dimension** 
 
@@ -886,6 +892,7 @@ This assessment relied on 19 different data sources to create the 36 data layers
 
 - Resolution: Temporal data are updated consistently throughout the time period. Habitat data (which include extent maps, health metrics) gets a 1.0 if it is updated every 3-5 years, a 0.5 if it is updated in the last 10 years or earlier, and 0 if we only have static data spanning one year. The rest of the data gets 1.0 if it is updated annually, a 0.5 if it is updated within the last 5 years, and 0 if it is static
 - Span: Temporal data span the entire time period of the assessment, which includes 2014 - 2020. A 1.0 indicates we have data for every year within that time frame, a 0.5 indicates we have only have that time frame, and 0 if it spans less than half the time frame or is a static estimate. 
+- Baseline: Some goals require comparison to a historic benchmark. A score of 1 is assigned when data are available more than 10 years before the beginning of the study period (i.e. 2004 or earlier), a score of 0.5 is given if data are less than or equal to 10 years (i.e. later than 2004), and a score of 0 is given if no historic data is available.  
 
 **Fit Dimension**
 
@@ -895,7 +902,7 @@ This assessment relied on 19 different data sources to create the 36 data layers
 <br>
 <br>
 ![](assets/dsc_heatmap_gradient.jpg)
-**Figure 4.1. Heatmap ranking data inputs for OHI+ Tetiaroa Assessment**
+**Figure 3.3. Heatmap ranking data inputs for OHI+ Tetiaroa Assessment**
 
 ***
 
